@@ -1,11 +1,12 @@
+#%%
 """This module contains classes and functions for creating DateBased"""
-
+#%%
 import pyspark.sql.functions as F
-from PhenoPackages.NHSDPhenoPpackage.phenotype_extractor_pyspark.ParentPhenoClasses import PhenoTable
-from PhenoPackages.Parametrisation.NHSD_pheno_parametrisation import ParameterSet
-from PhenoPackages.ReportGeneration.PhenoReportGenerator import ReportGenerator
+from pheno_package.nhsd_package.nhsd_docker_pyspark_package.ParentPhenoClasses import PhenoTable
+from pheno_package.parametrisation_package.NHSD_pheno_parametrisation import ParameterSet
+from pheno_package.report_generator_package.PhenoReportGenerator import ReportGenerator
 
-
+#%%
 class DataFrameSet(PhenoTable):
 
     def __init__(self, df_raw, production_date_str, parameter_object):
@@ -140,7 +141,7 @@ class DataFrameSet(PhenoTable):
         df_out = df_out.filter((F.col(new_evdt_col) >= start_date) & (F.col(new_evdt_col) <= end_date))
         return df_out, report_list
 
-
+#%%
 def event_pheno_extractor(df_raw, param_yaml, table_tag):
     PS = ParameterSet(param_yaml, table_tag)
     DFS = DataFrameSet(df_raw, PS.production_date_str, PS)

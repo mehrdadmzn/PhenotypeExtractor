@@ -1,6 +1,3 @@
-/TRE_Pheno_Extractor/NHSD_BHF_DSC/pheno_classes/
-/.dbx/
-/dbx_project/
+/extraction_codebase/NHSD_BHF_DSC/pheno_classes/
 
-/conda_venv/
-/test_folder/
+/temp_folder/

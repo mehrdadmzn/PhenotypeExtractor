@@ -1,8 +1,12 @@
+# %%
 """This module contains parent classes for phenotype data collections"""
+# %%
 import pyspark.sql.functions as F
 from pyspark.sql.window import Window
 from pyspark.sql import DataFrame
 
+
+# %%
 def first_eventdate_extractor(df: DataFrame, index_col, date_col):
     window_spec = Window.partitionBy(df[index_col]).orderBy(F.col(date_col).asc_nulls_last())
     df_rank = df.withColumn("rank_col", F.row_number().over(window_spec))
@@ -10,6 +14,7 @@ def first_eventdate_extractor(df: DataFrame, index_col, date_col):
     return (df_out)
 
 
+# %%
 def concat_nonnull_eventdate_extractor(df: DataFrame, index_col, date_col):
     window_spec = Window.partitionBy(df[index_col]).orderBy(F.col(date_col).asc_nulls_last())
     df_out = df.withColumn("rank_col", F.row_number().over(window_spec))
@@ -27,7 +32,7 @@ def concat_nonnull_eventdate_extractor(df: DataFrame, index_col, date_col):
     return df_out
 
 
-
+# %%
 class PhenoTable:
     def __init__(self, parameter_object):
         self.ps = parameter_object

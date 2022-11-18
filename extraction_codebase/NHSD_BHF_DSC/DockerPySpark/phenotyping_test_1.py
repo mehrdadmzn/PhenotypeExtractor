@@ -1,3 +1,5 @@
+#%%
+
 import datetime
 
 # findspark.init()
@@ -5,29 +7,33 @@ import datetime
 import pyspark
 import pyspark.sql.functions as F
 from pyspark.sql import SparkSession
-from PhenoPackages.NHSDPhenoPpackage.phenotype_extractor_pyspark.local_only.local_simulated_functions import \
+from pheno_package.nhsd_package.nhsd_docker_pyspark_package.local_only.local_simulated_functions import \
     show_all_dfs
-from PhenoPackages.NHSDPhenoPpackage.phenotype_extractor_pyspark.DateBasedPhenoFunctions import \
+from pheno_package.nhsd_package.nhsd_docker_pyspark_package.DateBasedPhenoFunctions import \
     event_pheno_extractor
+#%%
 
-# df = SparkSession.read.format("csv").load("Fake_data/NHS_BHF_DSC/GDPPR.csv")
+# df = SparkSession.read.format("csv").load("fake_data/NHS_BHF_DSC/GDPPR.csv")
 #sc = pyspark.SparkContext()
 #sq = pyspark.SQLContext(sc)
 spark = SparkSession.builder.master("local[1]").appName("NHS_TRE_Simulation").getOrCreate()
 # Load skinny table
-skinny_df = spark.read.format("csv").option("header", "true").load("../../Fake_data/NHS_BHF_DSC/skinny.csv")
+skinny_df = spark.read.format("csv").option("header", "true").load("../../fake_data/NHS_BHF_DSC/skinny.csv")
 
 # Load gdppr
-gdppr_df = spark.read.format("csv").option("header", "true").load("../../Fake_data/NHS_BHF_DSC/GDPPR.csv")
+gdppr_df = spark.read.format("csv").option("header", "true").load("../../fake_data/NHS_BHF_DSC/GDPPR.csv")
 
 # Load sgss
-sgss_df = spark.read.format("csv").option("header", "true").load("../../Fake_data/NHS_BHF_DSC/sgss.csv")
+sgss_df = spark.read.format("csv").option("header", "true").load("../../fake_data/NHS_BHF_DSC/sgss.csv")
+
+#%%
 
 # Set dates
-#start_date_str = "2019-12-01"  # Start of the pandemic
-#end_date_str = "2022-08-31"  # final_production date
-#start_date = datetime.datetime(2019, 12, 1)
-#end_date = datetime.datetime(2022, 8, 31)
+start_date_str = "2019-12-01"  # Start of the pandemic
+end_date_str = "2022-08-31"  # final_production date
+start_date = datetime.datetime(2019, 12, 1)
+end_date = datetime.datetime(2022, 8, 31)
+# %%
 
 # Basic covid_df
 covid_df_1 = skinny_df.select(["NHS_NUMBER_DEID"])
@@ -35,6 +41,8 @@ covid_df_1 = covid_df_1.withColumn("start_date", F.to_date(F.lit(start_date_str)
     F.lit(end_date_str)))
 covid_df_1 = covid_df_1.withColumn("isin_skinny", F.lit(1))
 covid_df_1.show()
+# %%
+
 # Params
 param_yaml = """\
 sgss:
@@ -66,6 +74,7 @@ optional_settings:
 print(sgss_df.dtypes)
 print(sgss_df.filter(F.col("PERSON_ID_DEID").isNull()).count())
 
+#%%
 
 
 # Add SGSS
