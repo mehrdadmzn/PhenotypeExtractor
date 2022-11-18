@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #import ipynb_py_convert
-#ipynb-py-convert nhsd_docker_pyspark_package/FacadeFunctions.py nhsd_databricks_package/FacadeFunctions.ipynb
+ipynb-py-convert nhsd_docker_pyspark_package/FacadeFunctions.py nhsd_databricks_package/FacadeFunctions.ipynb
 
-#ipynb-py-convert nhsd_docker_pyspark_package/ParentPhenoClasses.py nhsd_databricks_package/ParentPhenoClasses.ipynb
+ipynb-py-convert nhsd_docker_pyspark_package/ParentPhenoClasses.py nhsd_databricks_package/ParentPhenoClasses.ipynb
 
-ipynb-py-convert phenotype_extractor_pyspark/DateBasedPhenoFunctions.py phenotype_extractor_databricks/DateBasedPhenoFunctions.ipynb
+ipynb-py-convert nhsd_docker_pyspark_package/DateBasedPhenoFunctions.py nhsd_databricks_package/DateBasedPhenoFunctions.ipynb
