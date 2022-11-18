@@ -4,27 +4,26 @@ import datetime
 
 # findspark.init()
 
-import pyspark
 import pyspark.sql.functions as F
 from pyspark.sql import SparkSession
-from pheno_package.nhsd_package.nhsd_docker_pyspark_package.local_only.local_simulated_functions import \
+from pheno_package.nhsd_docker_pyspark_package import \
     show_all_dfs
-from pheno_package.nhsd_package.nhsd_docker_pyspark_package.DateBasedPhenoFunctions import \
+from pheno_package.nhsd_docker_pyspark_package import \
     event_pheno_extractor
 #%%
 
-# df = SparkSession.read.format("csv").load("fake_data/NHS_BHF_DSC/GDPPR.csv")
+# df = SparkSession.read.format("csv").load("fake_data/NHSD_BHF_DSC/GDPPR.csv")
 #sc = pyspark.SparkContext()
 #sq = pyspark.SQLContext(sc)
 spark = SparkSession.builder.master("local[1]").appName("NHS_TRE_Simulation").getOrCreate()
 # Load skinny table
-skinny_df = spark.read.format("csv").option("header", "true").load("../../fake_data/NHS_BHF_DSC/skinny.csv")
+skinny_df = spark.read.format("csv").option("header", "true").load("../../fake_data/NHSD_BHF_DSC/skinny.csv")
 
 # Load gdppr
-gdppr_df = spark.read.format("csv").option("header", "true").load("../../fake_data/NHS_BHF_DSC/GDPPR.csv")
+gdppr_df = spark.read.format("csv").option("header", "true").load("../../fake_data/NHSD_BHF_DSC/GDPPR.csv")
 
 # Load sgss
-sgss_df = spark.read.format("csv").option("header", "true").load("../../fake_data/NHS_BHF_DSC/sgss.csv")
+sgss_df = spark.read.format("csv").option("header", "true").load("../../fake_data/NHSD_BHF_DSC/sgss.csv")
 
 #%%
 

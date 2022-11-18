@@ -2,7 +2,7 @@
 """This module contains classes and functions for creating DateBased"""
 #%%
 import pyspark.sql.functions as F
-from pheno_package.nhsd_package.nhsd_docker_pyspark_package.ParentPhenoClasses import PhenoTable
+from pheno_package.nhsd_docker_pyspark_package.ParentPhenoClasses import PhenoTable
 from pheno_package.parametrisation_package.NHSD_pheno_parametrisation import ParameterSet
 from pheno_package.report_generator_package.PhenoReportGenerator import ReportGenerator
 
