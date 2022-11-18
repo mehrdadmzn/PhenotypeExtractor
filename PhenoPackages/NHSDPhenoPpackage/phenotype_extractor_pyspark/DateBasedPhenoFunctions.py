@@ -1,7 +1,7 @@
 """This module contains classes and functions for creating DateBased"""
 
 import pyspark.sql.functions as F
-from PhenoPackages.NHSD_pheno_package.phenotype_extractor.ParentPhenoClasses import PhenoTable
+from PhenoPackages.NHSDPhenoPpackage.phenotype_extractor_pyspark.ParentPhenoClasses import PhenoTable
 from PhenoPackages.Parametrisation.NHSD_pheno_parametrisation import ParameterSet
 from PhenoPackages.ReportGeneration.PhenoReportGenerator import ReportGenerator
 

@@ -1,4 +1,4 @@
-from PhenoPackages.NHSD_pheno_package.phenotype_extractor.DateBasedPhenoFunctions import DataFrameSet
+from PhenoPackages.NHSDPhenoPpackage.phenotype_extractor_pyspark.DateBasedPhenoFunctions import DataFrameSet
 
 
 def show_all_dfs(dfset: DataFrameSet):

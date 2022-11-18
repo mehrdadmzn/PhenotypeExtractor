@@ -5,9 +5,9 @@ import datetime
 import pyspark
 import pyspark.sql.functions as F
 from pyspark.sql import SparkSession
-from PhenoPackages.NHSD_pheno_package.phenotype_extractor.local_only.local_simulated_functions import \
+from PhenoPackages.NHSDPhenoPpackage.phenotype_extractor_pyspark.local_only.local_simulated_functions import \
     show_all_dfs
-from PhenoPackages.NHSD_pheno_package.phenotype_extractor.DateBasedPhenoFunctions import \
+from PhenoPackages.NHSDPhenoPpackage.phenotype_extractor_pyspark.DateBasedPhenoFunctions import \
     event_pheno_extractor
 
 # df = SparkSession.read.format("csv").load("Fake_data/NHS_BHF_DSC/GDPPR.csv")
