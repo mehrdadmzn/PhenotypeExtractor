@@ -1,0 +1,10 @@
+sgss_yaml = """
+table_tag:
+  sgss:
+    index_col: PERSON_ID_DEID
+    event_date_col: Specimen_Date
+    impute_date_null_values: yes
+    event_date_cleaning_order:
+      - Specimen_Date
+      - Lab_Report_Date
+"""
