@@ -9,11 +9,21 @@ sgss:
   evdt_pheno: sgss_evdt
   start_date_qc: "2019-12-01"
   end_date_qc: "2022-08-31"
+gdppr:
+  table_tag: gdppr
+  production_date_str: '2022-08-31'
+  index_col: PERSON_ID_DEID
+final_table:
+  table_tag: covid
+  index_col: NHS_NUMBER_DEID
+  evdt_pheno: covid_evdt
+  start_date_qc: "2019-12-01"
+  end_date_qc: "2022-08-31"
 optional_settings:
   full_report: yes
   spark_cache_midway: yes
   impute_multi_col_null_dates: yes
-  impute_multi_col_invalid_date: yes
+  impute_multi_col_invalid_dates: yes
   drop_null_ids: yes
   drop_remaining_null_dates: yes
   drop_remaining_invalid_dates: yes
