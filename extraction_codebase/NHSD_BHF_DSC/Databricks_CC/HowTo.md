@@ -12,3 +12,16 @@ The Databricks community edition does not support GitHub integration and token-b
 - The data will be added to the `DBFS/Filestore/tables/Fake_data`
 - Update the files after each local update
 
+## Updating ipynb files from local py files
+- In the local system/environment/interpreter, install ipynb-py-convert using `pip install ipynb-py-convert`
+  - Note: If you use PySpark in Docker, install within the image and commit the container
+- Considering that local `.py` files are in `nhsd_docker_pyspark_package` and `.ipynb` are in `nhsd_databricks_package`:
+  - Run a bash script in the same folder as these folders
+``` 
+    #!/bin/bash
+
+    ipynb-py-convert nhsd_docker_pyspark_package/ChangedFile.py nhsd_databricks_package/ChangedFile.ipynb
+```
+ - Commit to a public repository
+ - Copy the file link on GitHub
+ - Import the `.ipynb` file to the Databricks workspace

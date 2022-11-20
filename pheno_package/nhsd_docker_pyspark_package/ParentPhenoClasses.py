@@ -5,6 +5,8 @@ import pyspark.sql.functions as F
 from pyspark.sql.window import Window
 from pyspark.sql import DataFrame
 
+from pheno_package.parametrisation_package.NHSD_pheno_parametrisation import ParameterSet
+
 
 # %%
 def first_eventdate_extractor(df: DataFrame, index_col, date_col):
@@ -34,13 +36,13 @@ def concat_nonnull_eventdate_extractor(df: DataFrame, index_col, date_col):
 
 # %%
 class PhenoTable:
-    def __init__(self, parameter_object):
+    def __init__(self, parameter_object: ParameterSet):
         self.ps = parameter_object
         # pheno DFs
         self.__pheno_df_basic = None
         self.__pheno_df_full = None
         self.__pheno_df_json = None
-        self.__isin_flag_col = f'''isin_{self.ps.table_tag}'''
+        self.isin_flag_col = f'''isin_{self.ps.table_tag}'''
 
     @property
     def pheno_df_basic(self):
@@ -93,5 +95,5 @@ class PhenoTable:
         if df_long is not None:
             df_long = df_long.withColumnRenamed("col", self.ps.evdt_pheno)
             if add_isin_flag:
-                df_long = df_long.withColumn(self.__isin_flag_col, F.lit(1))
+                df_long = df_long.withColumn(self.isin_flag_col, F.lit(1))
         return df_long

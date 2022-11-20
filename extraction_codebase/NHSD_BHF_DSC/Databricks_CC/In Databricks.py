@@ -9,4 +9,5 @@ for x in [1, 2]:
 
 # COMMAND ----------
 
-
+for y in ["3", "5"]:
+    print(y)

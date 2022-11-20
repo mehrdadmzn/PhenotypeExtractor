@@ -1,12 +1,13 @@
-#%%
+# %%
 """This module contains classes and functions for creating DateBased"""
-#%%
+# %%
 import pyspark.sql.functions as F
 from pheno_package.nhsd_docker_pyspark_package.ParentPhenoClasses import PhenoTable
 from pheno_package.parametrisation_package.NHSD_pheno_parametrisation import ParameterSet
 from pheno_package.report_generator_package.PhenoReportGenerator import ReportGenerator
 
-#%%
+
+# %%
 class DataFrameSet(PhenoTable):
 
     def __init__(self, df_raw, production_date_str, parameter_object):
@@ -141,7 +142,46 @@ class DataFrameSet(PhenoTable):
         df_out = df_out.filter((F.col(new_evdt_col) >= start_date) & (F.col(new_evdt_col) <= end_date))
         return df_out, report_list
 
-#%%
+    def make_first_eventdate_pheno(self, add_isin_flag=True):
+        if self.pheno_df_full is not None:
+            df_out = self.pheno_df_full.select(self.ps.index_col, F.array_min(F.col("list_distinct")).alias(
+                f'''{self.ps.evdt_pheno}_first'''))
+            if add_isin_flag:
+                df_out = df_out.withColumn(self.isin_flag_col, F.lit(1))
+            return df_out
+        else:
+            return None
+
+    def make_last_eventdate_pheno(self, add_isin_flag=True):
+        if self.pheno_df_full is not None:
+            df_out = self.pheno_df_full.select(self.ps.index_col, F.array_max(F.col("list_distinct")).alias(
+                f'''{self.ps.evdt_pheno}_last'''))
+            if add_isin_flag:
+                df_out = df_out.withColumn(self.isin_flag_col, F.lit(1))
+            return df_out
+        else:
+            return None
+
+    def make_distinct_eventdate_pheno(self, add_isin_flag=True):
+        if self.pheno_df_full is not None:
+            df_out = self.pheno_df_full.select(self.ps.index_col, F.explode(F.col("list_distinct")).alias(
+                f'''{self.ps.evdt_pheno}_distinct'''))
+            if add_isin_flag:
+                df_out = df_out.withColumn(self.isin_flag_col, F.lit(1))
+            return df_out
+        else:
+            return None
+
+    def make_all_qc_eventdate_pheno(self, add_isin_flag=True):
+        if self.pheno_df_full is not None:
+            df_out = self.pheno_df_full.select(self.ps.index_col, F.explode(F.col("list_all")).alias(
+                f'''{self.ps.evdt_pheno}_all'''))
+            if add_isin_flag:
+                df_out = df_out.withColumn(self.isin_flag_col, F.lit(1))
+            return df_out
+        else:
+            return None
+# %%
 def event_pheno_extractor(df_raw, param_yaml, table_tag):
     PS = ParameterSet(param_yaml, table_tag)
     DFS = DataFrameSet(df_raw, PS.production_date_str, PS)
@@ -205,8 +245,10 @@ def event_pheno_extractor(df_raw, param_yaml, table_tag):
     DFS.df_valid = DFS.df_min_null
     if PS.impute_multi_col_invalid_dates:
         print(f'''#### out-of-range dates are being corrected''')
-        DFS.df_valid, report_list, DFS.temp_df_datediff, DFS.temp_df_datediff_col_list = DFS.multi_event_date_endpoint_correction(
-            DFS.df_valid, PS.evdt_col_list, PS.evdt_pheno, PS.start_date_qc, PS.end_date_qc, full_report=PS.full_report)
+        DFS.df_valid, report_list, DFS.temp_df_datediff, DFS.temp_df_datediff_col_list = \
+            DFS.multi_event_date_endpoint_correction(
+                DFS.df_valid, PS.evdt_col_list, PS.evdt_pheno, PS.start_date_qc, PS.end_date_qc,
+                full_report=PS.full_report)
 
         print(*report_list, sep="\n")
 
