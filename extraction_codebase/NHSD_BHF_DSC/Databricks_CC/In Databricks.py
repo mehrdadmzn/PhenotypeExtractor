@@ -24,4 +24,16 @@ for y in ["3", "5"]:
 
 # COMMAND ----------
 
+# MAGIC %scala
+# MAGIC val x = 1
+
+# COMMAND ----------
+
+# MAGIC %r
+# MAGIC 
+# MAGIC a <- 3
+# MAGIC print(a)
+
+# COMMAND ----------
+
 
