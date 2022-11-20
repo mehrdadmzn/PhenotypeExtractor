@@ -1,8 +1,8 @@
-# %%
+# COMMAND ----------
 '''
 To load data in Pyspark Docker or Databricks Community Edition
 '''
-# %%
+# COMMAND ----------
 import datetime
 # findspark.init()
 import pyspark.sql.functions as F
@@ -15,7 +15,7 @@ import yaml
 
 from pheno_package.nhsd_docker_pyspark_package.FacadeFunctions import covid_pheno_date_based, show_dfset_dfs
 
-# %%
+# COMMAND ----------
 
 # df = SparkSession.read.format("csv").load("fake_data/NHSD_BHF_DSC/GDPPR.csv")
 # sc = pyspark.SparkContext()
@@ -35,8 +35,8 @@ gdppr_df = import_csv("GDPPR.csv", databricks_import=False)
 sgss_df = import_csv("sgss.csv", databricks_import=False)
 sgss_df = spark_pyspark.read.format("csv").option("header", "true").load("/opt/project/fake_data/NHSD_BHF_DSC/sgss.csv")
 
-# %%
-# %%
+# COMMAND ----------
+
 
 # Params
 param_yaml = """\
@@ -66,14 +66,14 @@ optional_settings:
   drop_remaining_invalid_dates: yes
 """
 pyaml = yaml.load(param_yaml, Loader=yaml.SafeLoader)
-# Set dates
+# COMMAND ----------
 start_date_str = pyaml.get("quality_control").get("start_date_qc")
 end_date_str = pyaml.get("quality_control").get("end_date_qc")
 
 start_date = str_to_date(start_date_str)
 end_date = str_to_date(end_date_str)
 
-# %%
+# COMMAND ----------
 
 # Basic covid_df
 covid_df_1 = skinny_df.select(["NHS_NUMBER_DEID"])
@@ -85,7 +85,7 @@ covid_df_1.show()
 print(sgss_df.dtypes)
 print(sgss_df.filter(F.col("PERSON_ID_DEID").isNull()).count())
 
-# %%
+# COMMAND ----------
 
 
 # Add SGSS
