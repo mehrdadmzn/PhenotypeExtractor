@@ -7,7 +7,7 @@ from pyspark.sql import DataFrame
 
 
 # %%
-def csv_loader_spark(spark_session, table_name: str, path: str = "/opt/project/fake_data/NHSD_BHF_DSC") -> DataFrame:
+def csv_loader_spark(spark_session, table_name: str, path: str) -> DataFrame:
     """
 
     Args:
@@ -51,7 +51,7 @@ def csv_loader_databricks(spark_session, table_name: str, path: str = "/FileStor
 
 
 # %%
-def import_csv(table_name, databricks_import=True):
+def import_csv(spark_session, table_name, path,  databricks_import=True):
     """
 
     Args:
@@ -64,8 +64,8 @@ def import_csv(table_name, databricks_import=True):
     """
 
     if databricks_import:
-        spark_session = spark
-        return csv_loader_databricks(spark_session, table_name, path="/FileStore/tables/fake_data")
+        #spark_session = spark
+        return csv_loader_databricks(spark_session, table_name, path=path)
     else:
         spark_session = SparkSession.builder.master("local[1]").appName("NHS_TRE_Simulation").getOrCreate()
-        return csv_loader_spark(spark_session, table_name, path="/opt/project/fake_data/NHSD_BHF_DSC")
+        return csv_loader_spark(spark_session, table_name, path=path)

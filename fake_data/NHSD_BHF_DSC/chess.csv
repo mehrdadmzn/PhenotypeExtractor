@@ -1,0 +1,15 @@
+﻿PERSON_ID_DEID,InfectionSwabDate,Details,LabTestDate,HospitalAdmissionDate
+cat_1,2020-06-12,All dates are valid,2020-07-11,2020-07-12
+cat_1,2022-02-03,Second infections. Main date col is null,2022-01-04,
+cat_2,2019-08-11,secondary date is invalid ,1980-01-01,2019-12-12
+cat_2,,all are null,,
+cat_3,,"first date is invalid, second is null",,1900-01-01
+cat_3,1930-01-01,first is invalid,2021-07-23,1900-01-01
+cat_1,1930-01-01,all are invalid,1930-01-01,1900-01-01
+cat_4,2021-10-18,All are the same,2021-10-18,2021-10-18
+cat_1,2028-03-08,first and one of the alternatives are invalid,2021-02-19,2028-03-08
+,2021-10-12,Id is null,2021-10-12,
+cat_4,,First date is null,2021-11-03,
+cat_2,2021-02-11,Two nulls. only one alternative is correct,,
+cat_1,1900-02-03,Only one of the alternatives are correct,2022-09-22,2029-02-03
+cat_99,2021-02-22,not in skinny,2021-02-22,2021-02-22
