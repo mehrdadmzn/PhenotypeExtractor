@@ -8,10 +8,14 @@ class ParameterSet:
     def __init__(self, parameter_yaml, table_tag):
         pyaml = yaml.load(parameter_yaml, Loader=yaml.SafeLoader)
         self.table_tag = pyaml.get(table_tag).get("table_tag")
+        self.pheno_pattern = pyaml.get(table_tag).get("pheno_pattern")
         self.production_date_str = pyaml.get(table_tag).get("production_date_str")
         self.index_col = pyaml.get(table_tag).get("index_col")
         self.evdt_col_raw = pyaml.get(table_tag).get("evdt_col_raw")
         self.evdt_col_list = pyaml.get(table_tag).get("evdt_col_list")
+        self.code_col = None
+        if "code_col" in list(pyaml.get(table_tag).keys()):
+            self.code_col = pyaml.get(table_tag).get("code_col")
         self.evdt_pheno = pyaml.get(table_tag).get("evdt_pheno")
         self.start_date_qc = pyaml.get("quality_control").get("start_date_qc")
         self.end_date_qc = pyaml.get("quality_control").get("end_date_qc")

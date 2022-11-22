@@ -10,7 +10,7 @@ from pyspark.sql import SparkSession
 
 from pheno_package.helper_funcitons.DateHelperModule import str_to_date
 from pheno_package.input_output_package.CsvFileLoader import import_csv
-from pheno_package.nhsd_docker_pyspark_package.DateBasedPhenoFunctions import event_pheno_extractor
+from pheno_package.nhsd_docker_pyspark_package.PhenoExtractionHelperFuncitons import make_dfset_object
 import yaml
 
 from pheno_package.nhsd_docker_pyspark_package.FacadeFunctions import covid_pheno_date_based, show_dfset_dfs
@@ -24,17 +24,21 @@ from pheno_package.pyspark_databricks_interface.DockerPysparkToDatabricks import
 spark_pyspark = SparkSession.builder.master("local[1]").appName("NHS_TRE_Simulation").getOrCreate()
 
 # Load skinny table
-skinny_df = import_csv(spark_session= spark_pyspark, table_name="skinny.csv", path= "../../../fake_data/NHSD_BHF_DSC", databricks_import=False)
-#skinny_df = spark_pyspark.read.format("csv").option("header", "true").load("../../../fake_data/NHSD_BHF_DSC/skinny.csv")
+skinny_df = import_csv(spark_session=spark_pyspark, table_name="skinny.csv", path="../../../fake_data/NHSD_BHF_DSC",
+                       databricks_import=False)
+# skinny_df = spark_pyspark.read.format("csv").option("header", "true").load("../../../fake_data/NHSD_BHF_DSC/skinny.csv")
 
 # Load gdppr
-gdppr_df = import_csv(spark_session= spark_pyspark, table_name="GDPPR.csv", path= "../../../fake_data/NHSD_BHF_DSC", databricks_import=False)
+gdppr_df = import_csv(spark_session=spark_pyspark, table_name="GDPPR.csv", path="../../../fake_data/NHSD_BHF_DSC",
+                      databricks_import=False)
 
 # Load sgss
-sgss_df = import_csv(spark_session= spark_pyspark, table_name="sgss.csv", path= "../../../fake_data/NHSD_BHF_DSC", databricks_import=False)
+sgss_df = import_csv(spark_session=spark_pyspark, table_name="sgss.csv", path="../../../fake_data/NHSD_BHF_DSC",
+                     databricks_import=False)
 
 # Load chess
-chess_df = import_csv(spark_session= spark_pyspark, table_name="chess.csv", path= "../../../fake_data/NHSD_BHF_DSC", databricks_import=False)
+chess_df = import_csv(spark_session=spark_pyspark, table_name="chess.csv", path="../../../fake_data/NHSD_BHF_DSC",
+                      databricks_import=False)
 
 # COMMAND ----------
 
@@ -44,8 +48,11 @@ param_yaml = """\
 quality_control:
   start_date_qc: "2019-12-01"  # Start of the pandemic
   end_date_qc: "2022-08-31"  # final_production date
+  check_birth_death_limits: yes # Todo
+
 sgss:
   table_tag: sgss
+  pheno_pattern: date # Todo
   production_date_str: '2022-08-31'
   index_col: PERSON_ID_DEID
   evdt_col_raw: Specimen_Date
@@ -55,6 +62,7 @@ sgss:
   evdt_pheno: sgss_evdt
 chess:
   table_tag: chess
+  pheno_pattern: date_based # Todo
   production_date_str: '2022-08-31'
   index_col: PERSON_ID_DEID
   evdt_col_raw: HospitalAdmissionDate
@@ -65,6 +73,7 @@ chess:
   evdt_pheno: chess_evdt
 gdppr:
   table_tag: gdppr
+  pheno_pattern: code_based_diagnosis # Todo
   index_col: PERSON_ID_DEID
   evdt_col_raw: Specimen_Date
   evdt_col_list:
@@ -104,6 +113,7 @@ covid_df_1.show()
 print(sgss_df.dtypes)
 print(sgss_df.filter(F.col("PERSON_ID_DEID").isNull()).count())
 
+
 # COMMAND ----------
 
 
@@ -112,18 +122,25 @@ def run_sgss():
     sgss_dfset, pheno_full_long = covid_pheno_date_based(sgss_df, param_yaml, table_tag="sgss", distinct_dates=True)
     pheno_full_long.show()
     print(sgss_dfset.pheno_df_full.collect())
-    sgss_pheno_first= sgss_dfset.make_first_eventdate_pheno(add_isin_flag=True)
+    # Todo before extracting first or last, check eventdates before birth (or study design) or after death (or study exit)
+    # Todo or ensure that all eventdates are cleaned before applying this function
+
+    sgss_pheno_first = sgss_dfset.make_first_eventdate_pheno(add_isin_flag=True)
     sgss_pheno_first.show()
 
-    sgss_pheno_last= sgss_dfset.make_last_eventdate_pheno(add_isin_flag=True)
+    sgss_pheno_last = sgss_dfset.make_last_eventdate_pheno(add_isin_flag=True)
     sgss_pheno_last.show()
 
-    sgss_pheno_distinct= sgss_dfset.make_distinct_eventdate_pheno(add_isin_flag=True)
+    sgss_pheno_distinct = sgss_dfset.make_distinct_eventdate_pheno(add_isin_flag=True)
     sgss_pheno_distinct.show()
 
-    sgss_pheno_all= sgss_dfset.make_all_qc_eventdate_pheno(add_isin_flag=False)
+    sgss_pheno_all = sgss_dfset.make_all_qc_eventdate_pheno(add_isin_flag=False)
     sgss_pheno_all.show()
-#run_sgss()
+
+
+run_sgss()
+
+
 # COMMAND ----------
 def run_chess():
     chess_dfset, pheno_full_long = covid_pheno_date_based(chess_df, param_yaml, table_tag="chess", distinct_dates=True)
@@ -142,33 +159,34 @@ def run_chess():
     chess_pheno_all = chess_dfset.make_all_qc_eventdate_pheno(add_isin_flag=False)
     chess_pheno_all.show()
 
-#run_chess()
+
+# run_chess()
 # COMMAND ----------
 # Check master code list
 # this is similar to the master codelist in TRE
 # For test, it includes HF and IS (bith with SNOMED and ICD-10 codes) and Diabetes with only SNOMED code.
 # We will add icd-10 codes later.
 
-masterdf = import_csv(spark_session= spark_pyspark, table_name="master_codelist.csv", path= "../../../codelists/v_01", databricks_import=False)
+masterdf = import_csv(spark_session=spark_pyspark, table_name="master_codelist.csv", path="../../../codelists/v_01",
+                      databricks_import=False)
 display(masterdf)
-#masterdf.show(n=30)
-# COMMAND ----------
+# masterdf.show(n=30)
+# COMMAND ---------
 
 display(masterdf.select(F.col("name")).distinct().orderBy("name"))
 # COMMAND ----------
 
-display(masterdf.filter(F.col("name")=="HF").select(F.col("terminology")).distinct())
+masterdf.filter(F.col("name") == "HF").select(F.col("terminology")).distinct().show()
 # COMMAND ----------
 
-display(masterdf.filter(F.col("name")=="diabetes").select(F.col("terminology")).distinct())
+masterdf.filter(F.col("name") == "diabetes").select(F.col("terminology")).distinct().show()
 
 # COMMAND ----------
-display(masterdf.filter(F.col("name")=="diabetes").filter(F.col("code_type")==0))
+display(masterdf.filter(F.col("name") == "diabetes").filter(F.col("code_type") == 0))
 
-
+# COMMAND ----------
+masterdf.select(F.col("code_type")).distinct().show()
 
 # COMMAND ----------
 # Add GDPPR
-display(gdppr_df)
-
-
+# display(gdppr_df)

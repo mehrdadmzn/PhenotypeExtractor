@@ -2,7 +2,7 @@
 # """This module contains functions and APIs for one-line running of phenotype extraction"""
 from pyspark.sql import DataFrame
 
-from pheno_package.nhsd_docker_pyspark_package.DateBasedPhenoFunctions import event_pheno_extractor, DataFrameSet
+from pheno_package.nhsd_docker_pyspark_package.DataFrameSet import DataFrameSet, make_dfset
 
 
 # %%
@@ -10,13 +10,13 @@ from pheno_package.nhsd_docker_pyspark_package.DateBasedPhenoFunctions import ev
 
 
 def covid_pheno_date_based(df: DataFrame, param_yaml: str, table_tag: str, distinct_dates=True):
-    dfset, ps = event_pheno_extractor(df, param_yaml, table_tag=table_tag)
+    dfset, ps = make_dfset(df, param_yaml, table_tag=table_tag)
     dfset.extract_full_pheno_df()
     pheno_full_long = dfset.explode_array_col(dfset.pheno_df_full, ("list_distinct" if distinct_dates else "list_all"),
                                               dfset.ps.index_col,
                                               dfset.ps.evdt_pheno)
-    #dfset.extract_basic_pheno_df()
-    #pheno_basic_long = dfset.pheno_df_basic
+    # dfset.extract_basic_pheno_df()
+    # pheno_basic_long = dfset.pheno_df_basic
     return dfset, pheno_full_long
 
 

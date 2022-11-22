@@ -1,11 +1,17 @@
-﻿NHS_NUMBER_DEID,DATE,CODE,Details
-cat_1,2020-06-12,11530004,brittle diabetes
-cat_1,2021-07-11,170747006,Diabetic on insulin
-cat_1,2020-05-13,472969004,History of diabetes
-cat_2,2019-03-11,421750000,Ketoacidosis in diabetes
-cat_2,,193489006,"Diabetec iritis, Null dates"
-cat_3,2021-01-12,84114007,Hf
-cat_3,2021-02-11,1240381000000100,covid diagnosis
-cat_1,2020-01-12,1321541000000100,covid diagnosis
-cat_4,2017-01-13,"1321761000000103	","Covid diagnosis, before pandemic"
-cat_1,2028-03-08,"1321761000000103	","Covid diagnosis, after pandemic"
+﻿NHS_NUMBER_DEID,DATE,RECORD_DATE,CODE,Details
+cat_1,2020-06-12,2018-08-09,11530004,brittle diabetes-DATE larger than RECORD_DATE
+cat_4,2018-09-11,2019-08-11,421750000,Ketoacidosis in diabetes-DATE smaller than RECORD_DATE
+cat_1,2021-07-11,2022-01-01,170747006,Diabetic on insulin-RECORD_DATE larger than DATE
+cat_1,2020-05-13,,472969004,History of diabetes-RECROD_DATE null
+cat_2,,2019-03-11,421750000,Ketoacidosis in diabetes-DATE null
+cat_4,2019-09-11,2019-09-11,421750000,Ketoacidosis in diabetes-both dates are the same
+cat_2,,,193489006,Diabetec iritis Null dates
+cat_3,2021-01-12,,84114007,Hf Only DATE
+cat_3,,2019-03-11,421750000,Ketoacidosis in diabetes-DATE null
+cat_3,2021-02-11,,1240381000000100,covid diagnosis
+cat_1,2020-01-12,,1321541000000100,covid diagnosis
+cat_4,2017-01-13,,1321761000000103,Covid diagnosis before pandemic
+cat_1,2028-03-08,,1321761000000103,Covid diagnosis after pandemic
+, 2021-07-13,2021-07-13,421750000,Ketoacidosis in diabetes-ID Null and dates are the same
+cat_3,2021-07-13,2021-07-13,,Ketoacidosis in diabetes-code null
+cat_3,2028-03-08,1770-03-08,421750000,Ketoacidosis in diabetes-both dates are invalid
