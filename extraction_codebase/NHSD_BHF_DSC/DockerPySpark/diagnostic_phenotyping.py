@@ -25,7 +25,9 @@ skinny_df = import_csv(spark_session=spark_pyspark, table_name="skinny.csv", pat
 # Load gdppr
 gdppr_df = import_csv(spark_session=spark_pyspark, table_name="GDPPR.csv", path="../../../fake_data/NHSD_BHF_DSC",
                       databricks_import=False)
-
+# Load gdppr
+hes_apc_df = import_csv(spark_session=spark_pyspark, table_name="hes_apc.csv", path="../../../fake_data/NHSD_BHF_DSC",
+                        databricks_import=False)
 # COMMAND ----------
 # Check master code list
 # this is similar to the master codelist in TRE
@@ -69,9 +71,9 @@ diabetes	ICD10	H280	Diabetic cataract	1	20210127
 diabetes	ICD10	H360	Diabetic retinopathy	1	20210127
 diabetes	ICD10	M142	Diabetic athropathy	1	20210127
 diabetes	ICD10	N083	Glomerular disorders in diabetes mellitus	1	20210127
-diabetes	ICD10	O240	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, insulin-dependent	1	20210127
-diabetes	ICD10	O241	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, non-insulin-dependent	1	20210127
-diabetes	ICD10	O243	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, unspecified	1	20210127
+diabetes	ICD10	O240	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, insulin-dependent	0	20210127
+diabetes	ICD10	O241	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, non-insulin-dependent	0	20210127
+diabetes	ICD10	O243	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, unspecified	0	20210127
 """
 diabetes_icd_codelist, header = cell_csv_import(text_input, drop_header=True, delimiter="\t", format="tre_masterlist")
 # print(diabetes_icd_codelist)
@@ -87,34 +89,38 @@ diabetes_codelist.select(F.col("name")).distinct().show()
 # COMMAND ----------
 
 # Params
-param_yaml = """\
-phenotype: diabetes
-quality_control:
-  start_date_qc: "1900-01-01"  
-  end_date_qc: "2022-08-31"  # final_production date
-  check_birth_death_limits: yes # Todo
-gdppr:
-  table_tag: gdppr
+gdppr_diabetes_yaml = """\
+phenotype_name: diabetes
+table_tag: gdppr
+codelist_format: bhf_tre
+pheno_details:
+  evdt_pheno: gdppr_diabetes_evdt
   pheno_pattern: code_based_diagnosis # Todo
   terminology: SNOMED
   code_type:
-    - 0
-    - 1
-  limit_pheno_window: yes
-  pheno_window_start: '2020-06-12'
+    - 0 # Code for the history or a disease. Must be excluded downstream the pipeline for incident cohort.
+    - 1 # Code for onset of a disease.
+  limit_pheno_window: no # if set to yes, the following two optins must be set
+  pheno_window_start: '1900-06-12'
   pheno_window_end: '2021-06-12'
-  production_date_str: '2022-08-31'
+table_details:
+  table_tag: gdppr
   index_col: NHS_NUMBER_DEID
   evdt_col_raw: DATE
   evdt_col_list:
     - DATE
     - RECORD_DATE
   code_col: CODE
-  evdt_pheno: gdppr_diabetes_evdt
-final_table:
-  table_tag: diabetes_phenotype
-  index_col: NHS_NUMBER_DEID
-  evdt_pheno: diabetes_evdt
+  production_date_str: '2022-08-31'
+quality_control:
+  # Time window for event date quality check. Any dates before or after this window
+  # must be excluded for quality assurance.
+  start_date_qc: "1900-01-01" # time window for event date quality check.
+  end_date_qc: "2022-08-31"  # final_production date
+  # valid table tag: gdppr, hes_apc, sgss, chess, pillar2
+  # valid pheno_pattern: code_based_diagnosis, date_based
+  # valid phenotype_codelist_format: bhf_tre, hdruk
+  # valid data type: yyyy-mm-dd
 optional_settings:
   full_report: yes
   spark_cache_midway: yes
@@ -124,35 +130,68 @@ optional_settings:
   drop_remaining_null_dates: yes
   drop_remaining_invalid_dates: yes
 """
-pyaml = yaml.load(param_yaml, Loader=yaml.SafeLoader)
+gdppr_diabetes_settings = yaml.load(gdppr_diabetes_yaml, Loader=yaml.SafeLoader)
 # COMMAND ----------
-# start_date_str = pyaml.get("quality_control").get("start_date_qc")
-# end_date_str = pyaml.get("quality_control").get("end_date_qc")
+'''
+diabetes_set_1 = make_code_based_pheno(df_raw=gdppr_df,
+                                       param_yaml=gdppr_diabetes_yaml,
+                                       codelist_df=diabetes_codelist)
 
-# start_date = str_to_date(start_date_str)
-# end_date = str_to_date(end_date_str)
+display(diabetes_set_1.df_pheno_alpha)
+display(diabetes_set_1.df_pheno_beta)
+
+display(diabetes_set_1.first_eventdate_pheno())
+display(diabetes_set_1.last_eventdate_pheno())
+display(diabetes_set_1.last_eventdate_pheno(show_code=False, show_isin_flag=True))
+display(diabetes_set_1.all_eventdates_pheno())
+'''
 # COMMAND ----------
-# Add GDPPR
-# display(gdppr_df)
 
-# Todo qc of code type hit
+# Params
+hes_apc_diabetes_yaml = """\
+phenotype_name: diabetes
+table_tag: hes_apc
+codelist_format: bhf_tre
+pheno_details:
+  evdt_pheno: hes_diabetes_evdt
+  pheno_pattern: code_based_diagnosis # Todo
+  terminology: ICD10
+  code_type:
+    - 0 # Code for the history or a disease. Must be excluded downstream the pipeline for incident cohort.
+    - 1 # Code for onset of a disease.
+  primary_diagnosis_only: no
+  limit_pheno_window: no # if set to yes, the following two optins must be set
+  pheno_window_start: '1900-06-12'
+  pheno_window_end: '2021-06-12'
+table_details:
+  table_tag: hes_apc
+  index_col: PERSON_ID_DEID
+  evdt_col_raw: EPISTART
+  evdt_col_list:
+    - EPISTART
+    - EPIEND
+    - ADMIDATE
+  code_col: DIAG_4_CONCAT
+  production_date_str: '2022-08-31'
+quality_control:
+  # Time window for event date quality check. Any dates before or after this window must be excluded for quality assurance.
+  start_date_qc: "1900-01-01" # time window for event date quality check.
+  end_date_qc: "2022-08-31"  # final_production date
+optional_settings:
+  full_report: yes
+  spark_cache_midway: yes
+  impute_multi_col_null_dates: yes
+  impute_multi_col_invalid_dates: yes
+  drop_null_ids: yes
+  drop_remaining_null_dates: yes
+  drop_remaining_invalid_dates: yes
+"""
+# hes_apc_diabetes_settings = yaml.load(hes_apc_diabetes_yaml, Loader=yaml.SafeLoader)
+diabetes_set_2 = make_code_based_pheno(df_raw=hes_apc_df,
+                                       param_yaml=hes_apc_diabetes_yaml,
+                                       codelist_df=diabetes_codelist, list_extra_cols_to_keep=["details"])
+display(diabetes_set_2.df_pheno_flag)
+display(diabetes_set_2.df_pheno_alpha)
+display(diabetes_set_2.df_pheno_beta)
 
-# DFS, PS = make_dfset(gdppr_df, param_yaml, table_tag="gdppr")
-
-diabetes_set = make_code_based_pheno(df_raw=gdppr_df,
-                                     param_yaml=param_yaml,
-                                     table_tag="gdppr",
-                                     code_list=diabetes_codelist,
-                                     terminology="SNOMED",
-                                     code_type=[0, 1],
-                                     pheno_window_start=datetime.datetime(2020, 6, 12),
-                                     pheno_window_end=datetime.datetime(2022, 8, 31),
-                                     limit_pheno_window=False)
-
-display(diabetes_set.df_pheno_alpha)
-display(diabetes_set.df_pheno_beta)
-
-display(diabetes_set.first_eventdate_pheno())
-display(diabetes_set.last_eventdate_pheno())
-display(diabetes_set.last_eventdate_pheno(show_code=False, show_isin_flag=True))
-display(diabetes_set.all_eventdates_pheno())
+# COMMAND ----------

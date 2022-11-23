@@ -18,8 +18,9 @@ from pheno_package.report_generator_package.PhenoReportGenerator import ReportGe
 # COMMAND ----------
 class DataFrameSet:
 
-    def __init__(self, df_raw, parameter_object):
-        self.ps = parameter_object
+    def __init__(self, df_raw: DataFrame, param_yaml: dict):
+        self.ps = ParameterSet(param_yaml)
+
         self.RG = ReportGenerator(self.ps, self)
         self.production_date = self.ps.production_date_str
         self.__df_raw = df_raw
@@ -150,7 +151,7 @@ class DataFrameSet:
         df_out = df_out.filter((F.col(new_evdt_col) >= start_date) & (F.col(new_evdt_col) <= end_date))
         return df_out, report_list
 
-    def cleaning_and_report(self):
+    def cleaning_and_report(self, list_extra_cols_to_keep=[]):
 
         self.RG.dataframe_set_initialisation()
         self.RG.initial_report()
@@ -178,7 +179,9 @@ class DataFrameSet:
         code_col_list = []
         if self.ps.code_col is not None:
             code_col_list.append(self.ps.code_col)
-        self.df_sel = self.df_sel.select([self.ps.index_col] + self.ps.evdt_col_list + code_col_list)
+
+        self.df_sel = self.df_sel.select(
+            list(set([self.ps.index_col] + self.ps.evdt_col_list + code_col_list + list_extra_cols_to_keep)))
 
         # Todo more reports
         print("Making df_impute: Initial imputation of null IDs and null event dates")
@@ -244,12 +247,12 @@ class DataFrameSet:
         return self, self.ps
 
     def display_tables(self):
-        pass
+        print("df_raw")
 
 
 class PhenoTableSet(DataFrameSet):
-    def __init__(self, df_raw: DataFrame, parameter_object: ParameterSet):
-        super().__init__(df_raw, parameter_object)
+    def __init__(self, df_raw: DataFrame, param_yaml: dict):
+        super().__init__(df_raw, param_yaml)
         # pheno DFs
         self.df_pheno_mixed = None
         self.df_pheno_flag = None
@@ -284,20 +287,18 @@ class PhenoTableSet(DataFrameSet):
     def pheno_df_json(self, saved_json_df):
         self.__pheno_df_json = saved_json_df
 
-    def code_based_pheno(self, code_list: list, terminology: str, code_type: list,
-                         pheno_window_start: datetime.datetime,
-                         pheno_window_end: datetime.datetime, limit_pheno_window: bool):
+    def gdppr_code_based_pheno(self, codelist_df: DataFrame, list_extra_cols_to_keep: list):
         # Todo generalise to non-BHF code-list structures
         # Todo test: check if the type of the pheno_pattern is code_based_diagnosis. also that code_column
-        temp_codelist = code_list.filter(F.lower(F.col("terminology")) == str(terminology).lower()). \
-            filter(F.col("code_type").isin(code_type))
+        temp_codelist = codelist_df.filter(F.lower(F.col("terminology")) == str(self.ps.terminology).lower()). \
+            filter(F.col("code_type").isin(self.ps.code_type))
         # keep only rows with the codes in the codelist. also make a column indicating this
         codelist_pandas = temp_codelist.select(F.col("code")).toPandas()["code"]
         codelist_list = list(map(lambda x: str(x), codelist_pandas))
 
         print("Making df_pheno_mixed: df_final plust with code and code_type columns from the codelist ")
         self.df_pheno_mixed = self.df_final.join(
-            code_list.select("code", "code_type").withColumnRenamed("code", self.ps.code_col),
+            codelist_df.select("code", "code_type").withColumnRenamed("code", self.ps.code_col),
             on=[self.ps.code_col],
             how="left")
 
@@ -310,19 +311,105 @@ class PhenoTableSet(DataFrameSet):
                                                                 F.lit(0)))
         self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit",
                                                            F.when(F.col("code_type").cast("string").isin(
-                                                               list(map(str, code_type))),
+                                                               list(map(str, self.ps.code_type))),
                                                                F.lit(1)).otherwise(F.lit(0)))
         print(
             "Making df_pheno_alpha: The dataframe with time window applied. If limit_pheno_window = True, the event dates will be limited to a time window from (and including) pheno_window_start to (and including) pheno_window_end ")
 
         self.df_pheno_alpha = self.df_pheno_flag.filter(F.col("code_hit") == 1).filter(F.col("code_type_hit") == 1)
-        if limit_pheno_window:
+        if self.ps.limit_pheno_window:
             self.df_pheno_alpha = self.df_pheno_alpha.filter(
-                (F.col(self.ps.evdt_pheno) >= pheno_window_start) & (F.col(self.ps.evdt_pheno) <= pheno_window_end))
+                (F.col(self.ps.evdt_pheno) >= self.ps.pheno_window_start) & (
+                        F.col(self.ps.evdt_pheno) <= self.ps.pheno_window_end))
         print(
             "making df_pheno_beta: The dataframe with code_hit and code_type_hit applied and only with  index_col, code, eventdate, and isin_flag")
         self.df_pheno_beta = self.df_pheno_alpha.filter(F.col("code_hit") == 1).filter(F.col("code_type_hit") == 1)
-        self.df_pheno_beta = self.df_pheno_beta.select([self.ps.index_col, self.ps.evdt_pheno, self.ps.code_col])
+        self.df_pheno_beta = self.df_pheno_beta.select(
+            [self.ps.index_col, self.ps.evdt_pheno, self.ps.code_col] + list_extra_cols_to_keep)
+        self.df_pheno_beta = self.df_pheno_beta.withColumn(self.isin_flag_col, F.lit(1))
+
+    def hes_apc_code_based_pheno(self, codelist_df: DataFrame, list_extra_cols_to_keep: list):
+        # Todo generalise to non-BHF code-list structures
+        # Todo test: check if the type of the pheno_pattern is code_based_diagnosis. also that code_column
+
+        # Todo for HES APC: handle code type in multiple diagnosis situation
+        temp_codelist = codelist_df.filter(F.lower(F.col("terminology")) == str(self.ps.terminology).lower()). \
+            filter(F.col("code_type").isin(self.ps.code_type))
+
+        codelist_pandas = temp_codelist.select(F.col("code")).toPandas()["code"]
+        # Hes apc specific Drop . form ICD10 codes
+        codelist_with_dot = list(map(lambda x: str(x), codelist_pandas))
+        codelist_list = list(map(lambda x: str(x).replace('.', ''), codelist_with_dot))
+
+        print("Making df_pheno_mixed: df_final plus code and code_type columns from the codelist")
+        self.df_pheno_mixed = self.df_final.join(
+            codelist_df.select("code", "code_type").withColumnRenamed("code", self.ps.code_col),
+            on=[self.ps.code_col],
+            how="left")
+
+        print(
+            "Making df_pheno_flag: New flags are added: code_hit indicates the row is a candidate phenotype. code_type indicates the rows with the same values in code_type parameter. For HES APC, any '.' character in DIAG_4_CONCAT is removed ")
+        self.df_pheno_flag = self.df_pheno_mixed
+        self.df_pheno_flag = self.df_pheno_flag.withColumn(self.ps.code_col,
+                                                           F.regexp_replace(F.col(self.ps.code_col), "\\.", ""))
+        # HeS APC specific: make an array of codes
+        temp_col = "temp_col"
+        list_hit_col = "list_hit"
+        temp_type_col = "temp_type_col"
+        temp_map_col = "temp_map_col"
+        if self.ps.primary_diagnosis_only:
+            self.df_pheno_flag = self.df_pheno_flag.withColumn(list_hit_col,
+                                                               F.array(F.split(F.col(self.ps.code_col), ",")[0]))
+        else:
+            self.df_pheno_flag = self.df_pheno_flag.withColumn(list_hit_col, F.split(F.col(self.ps.code_col), ","))
+
+        self.df_pheno_flag = self.df_pheno_flag.withColumn(temp_col, F.array([F.lit(x) for x in codelist_list]))
+        self.df_pheno_flag = self.df_pheno_flag.withColumn("code_hit",
+                                                           F.when(F.size(F.array_intersect(F.col(list_hit_col),
+                                                                                           F.col(temp_col))) > 0,
+                                                                  F.lit(1)).otherwise(F.lit(0)))
+        #   F.when(F.col(self.ps.code_col).cast("string").isin(
+        #      codelist_list),
+        #     F.lit(1)).otherwise(
+        #   F.lit(0)))
+
+        # For code_type management in mu
+        code_type_pandas = temp_codelist.select(F.col("code_type")).toPandas()["code_type"]
+        code_type_list = list(map(lambda x: str(x), code_type_pandas))
+
+        self.df_pheno_flag = self.df_pheno_flag.withColumn(temp_type_col, F.array([F.lit(x) for x in code_type_list]))
+        self.df_pheno_flag = self.df_pheno_flag.withColumn(temp_map_col,
+                                                           F.map_from_arrays(F.col(temp_col), F.col(temp_type_col)))
+        self.df_pheno_flag = self.df_pheno_flag.withColumn("map_code_and_type",
+                                                           F.map_filter(F.col(temp_map_col),
+                                                                        lambda k, v: F.array_contains(
+                                                                            F.col(list_hit_col),
+                                                                            k))).withColumn("list_all_code_types",
+                                                                                            F.map_values(F.col(
+                                                                                                "map_code_and_type")))
+        self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit",
+                                                           F.when(
+                                                               F.forall(F.col("list_all_code_types"), lambda x: x == 1),
+                                                               F.lit(1)).otherwise(F.lit(0)))
+        # .drop(temp_col).drop(temp_type_col)
+        print(
+            "Making df_pheno_alpha: The dataframe with time window applied. If limit_pheno_window = True, the event dates will be limited to a time window from (and including) pheno_window_start to (and including) pheno_window_end ")
+
+        # Todo for HES_APC: handle code_type_hit for multiple diagnosis first
+        self.df_pheno_alpha = self.df_pheno_flag.filter(F.col("code_hit") == 1).filter(F.col("code_type_hit") == 1)
+        if self.ps.limit_pheno_window:
+            self.df_pheno_alpha = self.df_pheno_alpha.filter(
+                (F.col(self.ps.evdt_pheno) >= self.ps.pheno_window_start) & (
+                        F.col(self.ps.evdt_pheno) <= self.ps.pheno_window_end))
+        print(
+            "making df_pheno_beta: The dataframe with code_hit and code_type_hit applied and only with  index_col, code, eventdate, and isin_flag")
+        self.df_pheno_beta = self.df_pheno_alpha.filter(F.col("code_hit") == 1).filter(F.col("code_type_hit") == 1)
+        columns_to_keep = [self.ps.index_col, self.ps.evdt_pheno, self.ps.code_col,
+                           list_hit_col] + list_extra_cols_to_keep
+        if True:  # for test
+            columns_to_keep = columns_to_keep + [temp_col, temp_type_col, temp_map_col, "map_code_and_type",
+                                                 "list_all_code_types"]
+        self.df_pheno_beta = self.df_pheno_beta.select(columns_to_keep)
         self.df_pheno_beta = self.df_pheno_beta.withColumn(self.isin_flag_col, F.lit(1))
 
     @staticmethod
@@ -350,25 +437,6 @@ class PhenoTableSet(DataFrameSet):
         return df_out
 
     # COMMAND ----------
-
-
-def make_dfset(df_raw, param_yaml, table_tag):
-    pset = ParameterSet(param_yaml, table_tag)
-    tset = PhenoTableSet(df_raw, pset)
-    tset.cleaning_and_report()
-
-    return tset
-
-
-def make_code_based_pheno(df_raw, param_yaml, table_tag, code_list: list, terminology: str, code_type: list,
-                          pheno_window_start: datetime.datetime,
-                          pheno_window_end: datetime.datetime, limit_pheno_window: bool) -> PhenoTableSet:
-    tset = make_dfset(df_raw, param_yaml, table_tag)
-    tset.code_based_pheno(code_list, terminology, code_type,
-                          pheno_window_start,
-                          pheno_window_end, limit_pheno_window)
-
-    return tset
 
 
 # COMMAND ----------
@@ -490,4 +558,22 @@ def make_all_qc_eventdate_pheno(dfset, add_isin_flag=True):
     else:
         return None
 
+
 # COMMAND ----------
+
+def make_dfset(df_raw, param_yaml, list_extra_cols_to_keep):
+    tset = PhenoTableSet(df_raw, param_yaml)
+    tset.cleaning_and_report(list_extra_cols_to_keep)
+
+    return tset
+
+
+def make_code_based_pheno(df_raw, param_yaml, codelist_df: DataFrame, list_extra_cols_to_keep: list
+                          ) -> PhenoTableSet:
+    tset = make_dfset(df_raw, param_yaml, list_extra_cols_to_keep)
+    if tset.ps.table_tag == "gdppr":
+        tset.gdppr_code_based_pheno(codelist_df, list_extra_cols_to_keep)
+    else:  # if table_tag =="hes_apc"
+        tset.hes_apc_code_based_pheno(codelist_df, list_extra_cols_to_keep)
+
+    return tset
