@@ -1,4 +1,4 @@
-﻿NHS_NUMBER_DEID,DATE,RECORD_DATE,CODE,Details
+﻿NHS_NUMBER_DEID,DATE,RECORD_DATE,CODE,details
 cat_1,2020-06-12,2018-08-09,11530004,brittle diabetes-DATE larger than RECORD_DATE
 cat_4,2018-09-11,2019-08-11,421750000,Ketoacidosis in diabetes-DATE smaller than RECORD_DATE
 cat_1,2021-07-11,2022-01-01,170747006,Diabetic on insulin-RECORD_DATE larger than DATE

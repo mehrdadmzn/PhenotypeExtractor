@@ -1,4 +1,4 @@
-﻿PERSON_ID_DEID,Specimen_Date,Details,Lab_Report_Date
+﻿PERSON_ID_DEID,Specimen_Date,details,Lab_Report_Date
 cat_1,2020-06-12,Both dates are valid,2020-07-11
 cat_1,2022-02-03,Second infections,2022-01-04
 cat_2,2019-03-11,secondary date is invalid,1980-01-01

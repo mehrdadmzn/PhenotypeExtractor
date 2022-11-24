@@ -11,7 +11,7 @@ import yaml
 from pyspark.sql import SparkSession
 
 from pheno_package.input_output_package.CsvFileLoader import import_csv, cell_csv_import, list_to_pyspark_df
-from pheno_package.nhsd_docker_pyspark_package.DataFrameSet import make_code_based_pheno
+from pheno_package.nhsd_docker_pyspark_package.FacadeFunctions import make_code_base_pheno
 from pheno_package.pyspark_databricks_interface.DockerPysparkToDatabricks import display
 
 # COMMAND ----------
@@ -97,9 +97,8 @@ pheno_details:
   evdt_pheno: gdppr_diabetes_evdt
   pheno_pattern: code_based_diagnosis # Todo
   terminology: SNOMED
-  code_type:
-    - 0 # Code for the history or a disease. Must be excluded downstream the pipeline for incident cohort.
-    - 1 # Code for onset of a disease.
+  check_code_type: yes
+  code_type: both
   limit_pheno_window: no # if set to yes, the following two optins must be set
   pheno_window_start: '1900-06-12'
   pheno_window_end: '2021-06-12'
@@ -132,10 +131,14 @@ optional_settings:
 """
 gdppr_diabetes_settings = yaml.load(gdppr_diabetes_yaml, Loader=yaml.SafeLoader)
 # COMMAND ----------
+
+diabetes_set_1 = make_code_base_pheno(df_raw=gdppr_df, table_tag="gdppr",
+                                      param_yaml=gdppr_diabetes_yaml,
+                                      codelist_df=diabetes_codelist, list_extra_cols_to_keep=["details"])
 '''
-diabetes_set_1 = make_code_based_pheno(df_raw=gdppr_df,
-                                       param_yaml=gdppr_diabetes_yaml,
-                                       codelist_df=diabetes_codelist)
+display(diabetes_set_1.df_sel)
+
+display(diabetes_set_1.df_final)
 
 display(diabetes_set_1.df_pheno_alpha)
 display(diabetes_set_1.df_pheno_beta)
@@ -145,6 +148,7 @@ display(diabetes_set_1.last_eventdate_pheno())
 display(diabetes_set_1.last_eventdate_pheno(show_code=False, show_isin_flag=True))
 display(diabetes_set_1.all_eventdates_pheno())
 '''
+
 # COMMAND ----------
 
 # Params
@@ -156,9 +160,8 @@ pheno_details:
   evdt_pheno: hes_diabetes_evdt
   pheno_pattern: code_based_diagnosis # Todo
   terminology: ICD10
-  code_type:
-    - 0 # Code for the history or a disease. Must be excluded downstream the pipeline for incident cohort.
-    - 1 # Code for onset of a disease.
+  check_code_type: no # if ture, set the code_type
+  code_type: 1 # option: "1" or "incident", "0" or "historical", "both" for 1 and 0, "none" to dismiss 
   primary_diagnosis_only: no
   limit_pheno_window: no # if set to yes, the following two optins must be set
   pheno_window_start: '1900-06-12'
@@ -187,11 +190,14 @@ optional_settings:
   drop_remaining_invalid_dates: yes
 """
 # hes_apc_diabetes_settings = yaml.load(hes_apc_diabetes_yaml, Loader=yaml.SafeLoader)
-diabetes_set_2 = make_code_based_pheno(df_raw=hes_apc_df,
-                                       param_yaml=hes_apc_diabetes_yaml,
-                                       codelist_df=diabetes_codelist, list_extra_cols_to_keep=["details"])
+'''
+diabetes_set_2 = make_code_base_pheno(df_raw=hes_apc_df, table_tag="hes_apc",
+                                      param_yaml=hes_apc_diabetes_yaml,
+                                      codelist_df=diabetes_codelist, list_extra_cols_to_keep=["details"])
+display(diabetes_set_2.df_final)
+
 display(diabetes_set_2.df_pheno_flag)
 display(diabetes_set_2.df_pheno_alpha)
 display(diabetes_set_2.df_pheno_beta)
-
+'''
 # COMMAND ----------

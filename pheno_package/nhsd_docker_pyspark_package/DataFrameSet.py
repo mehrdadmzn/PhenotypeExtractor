@@ -6,6 +6,7 @@ import datetime
 # COMMAND ----------
 from pyspark.sql import DataFrame
 import pyspark.sql.functions as F
+import pyspark.sql.types as T
 from pyspark.sql import Window
 
 from pheno_package.parametrisation_package.NHSD_pheno_parametrisation import ParameterSet
@@ -67,6 +68,120 @@ class DataFrameSet:
     @df_impute.setter
     def df_impute(self, df_impute):
         self.__df_impute = df_impute
+
+    def cleaning_and_report(self, list_extra_cols_to_keep=[]):
+        """
+
+        Args:
+            list_extra_cols_to_keep: For test purposes in simulation environment
+
+        Returns:
+            df_final: (always use this name)
+
+        """
+
+        self.RG.dataframe_set_initialisation()
+        self.RG.initial_report()
+        self.RG.report_counts_df_raw()
+
+        print(f'''#### counting null IDs''')
+        self.count_df_raw_null_id, self.temp_df_raw_null_id = self.RG.count_null(self.df_raw, self.ps.index_col)
+
+        self.RG.report_null_col(self.df_raw, self.str_df_raw, self.ps.index_col, self.count_df_raw_null_id)
+        ######
+        # print("df_raw")
+        # self.df_raw.show()
+        #####
+        self.df_linkable = self.df_raw
+        if self.ps.drop_null_ids:
+            if self.count_df_raw_null_id > 0:
+                self.RG.report_drops(self.count_df_raw_null_id, self.str_df_linkable, self.ps.index_col)
+                self.df_linkable = self.df_raw.filter(F.col(self.ps.index_col).isNotNull())
+
+
+            else:
+                print(f'''no null {self.ps.index_col} is found''')
+        self.RG.report_counts(self.df_linkable, self.str_df_linkable, self.ps.index_col)
+
+        # Todo add more reports
+        ######
+        # print("df_linkable")
+        # self.df_linkable.show()
+        #####
+        self.df_sel = self.df_linkable
+        code_col_list = []
+        if self.ps.code_col is not None:
+            code_col_list.append(self.ps.code_col)
+
+        self.df_sel = self.df_sel.select(
+            list(set([self.ps.index_col] + self.ps.evdt_col_list + code_col_list + list_extra_cols_to_keep)))
+
+        # Todo more reports
+        print("Making df_impute: Initial imputation of null IDs and null event dates")
+        self.df_impute = self.df_sel.withColumn(self.ps.evdt_pheno, F.col(self.ps.evdt_col_raw))
+        self.count_df_impute_null_id, self.temp_df_impute_null_id = self.RG.count_null(self.df_impute,
+                                                                                       self.ps.index_col)
+        if self.ps.impute_multi_col_null_dates:
+            self.df_impute, report_list = self.multi_event_date_null_handling(self.df_impute, self.ps.evdt_col_list,
+                                                                              self.ps.evdt_pheno,
+                                                                              full_report=self.ps.full_report)
+            print(*report_list, sep="\n")
+
+        print(f'''### Final null check''')
+        self.RG.report_null_col(self.df_impute, self.str_df_impute, self.ps.evdt_pheno, self.count_df_impute_null_id)
+        print("Making df_min_null: The dataframe with minimum number of remained null event dates")
+        self.df_min_null = self.df_impute
+        report_list = []
+        if self.ps.drop_remaining_null_dates:
+            self.df_min_null, report_list = self.drop_remaining_null_dates(self.df_impute, self.ps.index_col,
+                                                                           self.ps.evdt_pheno,
+                                                                           self.ps.full_report)
+        print(*report_list, sep="\n")
+        print(
+            f'''\n###### check dates that are less than {self.ps.start_date_qc} and larget than {self.ps.end_date_qc}''')
+        self.RG.report_invalid_dates(self.df_min_null, self.str_df_min_null, self.ps.evdt_pheno, self.ps.start_date_qc,
+                                     self.ps.end_date_qc)
+
+        # Cache
+        if self.ps.spark_cache_midway:
+            print(f'''\n Chaching df_min_null''')
+            self.df_min_null.cache()
+
+        # df valid
+        # Todo more report
+        print(
+            "Making df_valid: A dataframe with invalid event dates replaced with valid valus from alternative date columns")
+        self.df_valid = self.df_min_null
+        if self.ps.impute_multi_col_invalid_dates:
+            print(f'''#### out-of-range dates are being corrected''')
+            self.df_valid, report_list, self.temp_df_datediff, self.temp_df_datediff_col_list = \
+                self.multi_event_date_endpoint_correction(
+                    self.df_valid, self.ps.evdt_col_list, self.ps.evdt_pheno, self.ps.start_date_qc,
+                    self.ps.end_date_qc,
+                    full_report=self.ps.full_report)
+
+            print(*report_list, sep="\n")
+
+        # Todo box plot report
+        print(f'''final check on invalid dates''')
+        self.RG.report_invalid_dates(self.df_valid, self.str_df_valid, self.ps.evdt_pheno, self.ps.start_date_qc,
+                                     self.ps.end_date_qc)
+        print(f'''Making df_final: The final clean table ''')
+        report_list = []
+        ######
+        # print("df_valid")
+        # self.df_valid.show()
+        #####
+        self.df_final = self.df_valid
+        if self.ps.drop_remaining_invalid_dates:
+            print(f''''### Invalid dates will be dropped ''')
+            self.df_final, report_list = self.drop_remaining_invalid_dates(self.df_final, self.ps.index_col,
+                                                                           self.ps.evdt_pheno,
+                                                                           self.ps.start_date_qc, self.ps.end_date_qc,
+                                                                           full_report=self.ps.full_report)
+        print(*report_list, sep="\n")
+        print("Initialisation done!")
+        return self, self.ps
 
     @staticmethod
     def multi_event_date_null_handling(df, evdt_col_list, new_col_name, full_report=True):
@@ -151,101 +266,6 @@ class DataFrameSet:
         df_out = df_out.filter((F.col(new_evdt_col) >= start_date) & (F.col(new_evdt_col) <= end_date))
         return df_out, report_list
 
-    def cleaning_and_report(self, list_extra_cols_to_keep=[]):
-
-        self.RG.dataframe_set_initialisation()
-        self.RG.initial_report()
-        self.RG.report_counts_df_raw()
-
-        print(f'''#### counting null IDs''')
-        self.count_df_raw_null_id, self.temp_df_raw_null_id = self.RG.count_null(self.df_raw, self.ps.index_col)
-
-        self.RG.report_null_col(self.df_raw, self.str_df_raw, self.ps.index_col, self.count_df_raw_null_id)
-
-        self.df_linkable = self.df_raw
-        if self.ps.drop_null_ids:
-            if self.count_df_raw_null_id > 0:
-                self.RG.report_drops(self.count_df_raw_null_id, self.str_df_linkable, self.ps.index_col)
-                self.df_linkable = self.df_raw.filter(F.col(self.ps.index_col).isNotNull())
-
-
-            else:
-                print(f'''no null {self.ps.index_col} is found''')
-        self.RG.report_counts(self.df_linkable, self.str_df_linkable, self.ps.index_col)
-
-        # Todo add more reports
-
-        self.df_sel = self.df_linkable
-        code_col_list = []
-        if self.ps.code_col is not None:
-            code_col_list.append(self.ps.code_col)
-
-        self.df_sel = self.df_sel.select(
-            list(set([self.ps.index_col] + self.ps.evdt_col_list + code_col_list + list_extra_cols_to_keep)))
-
-        # Todo more reports
-        print("Making df_impute: Initial imputation of null IDs and null event dates")
-        self.df_impute = self.df_sel.withColumn(self.ps.evdt_pheno, F.col(self.ps.evdt_col_raw))
-        self.count_df_impute_null_id, self.temp_df_impute_null_id = self.RG.count_null(self.df_impute,
-                                                                                       self.ps.index_col)
-        if self.ps.impute_multi_col_null_dates:
-            self.df_impute, report_list = self.multi_event_date_null_handling(self.df_impute, self.ps.evdt_col_list,
-                                                                              self.ps.evdt_pheno,
-                                                                              full_report=self.ps.full_report)
-            print(*report_list, sep="\n")
-
-        print(f'''### Final null check''')
-        self.RG.report_null_col(self.df_impute, self.str_df_impute, self.ps.evdt_pheno, self.count_df_impute_null_id)
-        print("Making df_min_null: The dataframe with minimum number of remained null event dates")
-        self.df_min_null = self.df_impute
-        report_list = []
-        if self.ps.drop_remaining_null_dates:
-            self.df_min_null, report_list = self.drop_remaining_null_dates(self.df_impute, self.ps.index_col,
-                                                                           self.ps.evdt_pheno,
-                                                                           self.ps.full_report)
-        print(*report_list, sep="\n")
-        print(
-            f'''\n###### check dates that are less than {self.ps.start_date_qc} and larget than {self.ps.end_date_qc}''')
-        self.RG.report_invalid_dates(self.df_min_null, self.str_df_min_null, self.ps.evdt_pheno, self.ps.start_date_qc,
-                                     self.ps.end_date_qc)
-
-        # Cache
-        if self.ps.spark_cache_midway:
-            print(f'''\n Chaching df_min_null''')
-            self.df_min_null.cache()
-
-        # df valid
-        # Todo more report
-        print(
-            "Making df_valid: A dataframe with invalid event dates replaced with valid valus from alternative date columns")
-        self.df_valid = self.df_min_null
-        if self.ps.impute_multi_col_invalid_dates:
-            print(f'''#### out-of-range dates are being corrected''')
-            self.df_valid, report_list, self.temp_df_datediff, self.temp_df_datediff_col_list = \
-                self.multi_event_date_endpoint_correction(
-                    self.df_valid, self.ps.evdt_col_list, self.ps.evdt_pheno, self.ps.start_date_qc,
-                    self.ps.end_date_qc,
-                    full_report=self.ps.full_report)
-
-            print(*report_list, sep="\n")
-
-        # Todo box plot report
-        print(f'''final check on invalid dates''')
-        self.RG.report_invalid_dates(self.df_valid, self.str_df_valid, self.ps.evdt_pheno, self.ps.start_date_qc,
-                                     self.ps.end_date_qc)
-        print(f'''Making df_final: The final clean table ''')
-        report_list = []
-        self.df_final = self.df_valid
-        if self.ps.drop_remaining_invalid_dates:
-            print(f''''### Invalid dates will be dropped ''')
-            self.df_final, report_list = self.drop_remaining_invalid_dates(self.df_final, self.ps.index_col,
-                                                                           self.ps.evdt_pheno,
-                                                                           self.ps.start_date_qc, self.ps.end_date_qc,
-                                                                           full_report=self.ps.full_report)
-        print(*report_list, sep="\n")
-        print("Initialisation done!")
-        return self, self.ps
-
     def display_tables(self):
         print("df_raw")
 
@@ -287,32 +307,111 @@ class PhenoTableSet(DataFrameSet):
     def pheno_df_json(self, saved_json_df):
         self.__pheno_df_json = saved_json_df
 
-    def gdppr_code_based_pheno(self, codelist_df: DataFrame, list_extra_cols_to_keep: list):
+    @staticmethod
+    def handle_code_and_isin_flag(df_in, show_code, show_isin_flag, code_col, isin_flag_col):
+        df_out = df_in
+        if not show_code:
+            df_out = df_out.drop(code_col)
+        if not show_isin_flag:
+            df_out = df_out.drop(isin_flag_col)
+        return df_out
+
+    def first_eventdate_pheno(self, show_code=True, show_isin_flag=True) -> DataFrame:
+        df = first_eventdate_extractor(self.df_pheno_beta, self.ps.index_col, self.ps.evdt_pheno)
+        df_out = self.handle_code_and_isin_flag(df, show_code, show_isin_flag, self.ps.code_col, self.isin_flag_col)
+        return df_out
+
+    def last_eventdate_pheno(self, show_code=True, show_isin_flag=True) -> DataFrame:
+        df = last_eventdate_extractor(self.df_pheno_beta, self.ps.index_col, self.ps.evdt_pheno)
+        df_out = self.handle_code_and_isin_flag(df, show_code, show_isin_flag, self.ps.code_col, self.isin_flag_col)
+        return df_out
+
+    def all_eventdates_pheno(self, show_code=True, show_isin_flag=True) -> DataFrame:
+        df = self.df_pheno_beta
+        df_out = self.handle_code_and_isin_flag(df, show_code, show_isin_flag, self.ps.code_col, self.isin_flag_col)
+        return df_out
+
+
+# COMMAND ----------
+class PhenoTableClassDataBased(PhenoTableSet):
+    def __init__(self, df_raw: DataFrame, param_yaml: dict):
+        super().__init__(df_raw, param_yaml)
+
+        def cleaning_and_report(self, list_extra_cols_to_keep=[]):
+            super().cleaning_and_report(list_extra_cols_to_keep)
+
+    def extract_full_pheno_df(self):
+        self.df_pheno_alpha = concat_nonnull_eventdate_extractor(
+            self.df_final.select([self.ps.index_col, self.ps.evdt_pheno]), index_col=self.ps.index_col,
+            date_col=self.ps.evdt_pheno)
+        # self.df_pheno_alpha = concat_nonnull_eventdate_extractor(
+        #    self.df_final.select([self.ps.index_col, self.ps.evdt_pheno]), index_col=self.ps.index_col,
+        #    date_col=self.ps.evdt_pheno)
+        # self.df_pheno_alpha = make_all_qc_eventdate_pheno(self.df_final, add_isin_flag=True)
+        # self.df_pheno_beta = make_distinct_eventdate_pheno(self.df_final, add_isin_flag=True)
+
+    def make_distinct_eventdate_pheno(self, add_isin_flag=True):
+        if self.df_pheno_alpha is not None:
+            df_temp = self.df_pheno_alpha.select(self.ps.index_col, F.explode(F.col("list_distinct")).alias(
+                f'''{self.ps.evdt_pheno}_distinct'''))
+            if add_isin_flag:
+                df_temp = df_temp.withColumn(self.isin_flag_col, F.lit(1))
+            df_out = df_temp
+        else:
+            df_out = None
+        self.df_pheno_beta = df_out
+        return df_out
+
+
+# COMMAND ----------
+class PhenoTableSetGdppr(PhenoTableSet):
+    def __init__(self, df_raw: DataFrame, param_yaml: dict):
+        super().__init__(df_raw, param_yaml)
+
+    def cleaning_and_report(self, list_extra_cols_to_keep=[]):
+        super().cleaning_and_report(list_extra_cols_to_keep)
+        # Todo make the text constant based
+        if self.ps.pheno_pattern == "code_based_diagnosis":
+            print(
+                f'''Replacing the event_date with the larger value of RECORD_DATE or DATE where RECORD_DATE < DATE for diagnostic phenotypes''')
+
+    def extract_code_based_pheno(self, codelist_df: DataFrame, list_extra_cols_to_keep: list):
         # Todo generalise to non-BHF code-list structures
         # Todo test: check if the type of the pheno_pattern is code_based_diagnosis. also that code_column
-        temp_codelist = codelist_df.filter(F.lower(F.col("terminology")) == str(self.ps.terminology).lower()). \
-            filter(F.col("code_type").isin(self.ps.code_type))
+
+        temp_codelist = codelist_df.filter(F.lower(F.col("terminology")) == str(self.ps.terminology).lower())
+        if (self.ps.check_code_type):
+            if len(self.ps.code_type_list) > 0:
+                temp_codelist = temp_codelist.filter(
+                    F.col("code_type").cast(T.StringType()).isin(list(map(str, self.ps.code_type_list))))
+
         # keep only rows with the codes in the codelist. also make a column indicating this
         codelist_pandas = temp_codelist.select(F.col("code")).toPandas()["code"]
         codelist_list = list(map(lambda x: str(x), codelist_pandas))
 
-        print("Making df_pheno_mixed: df_final plust with code and code_type columns from the codelist ")
+        print(
+            f'''Making df_pheno_mixed: df_final with code column {"and code_type column" if self.ps.check_code_type else ""} from the codelist''')
         self.df_pheno_mixed = self.df_final.join(
             codelist_df.select("code", "code_type").withColumnRenamed("code", self.ps.code_col),
             on=[self.ps.code_col],
             how="left")
 
         print(
-            "Making df_pheno_flag: New flags are added: code_hit indicates the row is a candidate phenotype. code_type indicates the rows with the same values in code_type parameter  ")
+            "Making df_pheno_flag: New flags are added: code_hit indicates the row is a candidate phenotype.")
         self.df_pheno_flag = self.df_pheno_mixed.withColumn("code_hit",
                                                             F.when(F.col(self.ps.code_col).cast("string").isin(
                                                                 codelist_list),
                                                                 F.lit(1)).otherwise(
                                                                 F.lit(0)))
-        self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit",
-                                                           F.when(F.col("code_type").cast("string").isin(
-                                                               list(map(str, self.ps.code_type))),
-                                                               F.lit(1)).otherwise(F.lit(0)))
+        print(
+            " code_type indicates the rows with the same values in code_type parameter. If check_code_type is set to False, all values in code_type_hit will be 1. ")
+        self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit", F.lit(1))
+        if self.ps.check_code_type:
+            if len(self.ps.code_type_list) > 0:
+                self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit",
+                                                                   F.when(F.col("code_type").cast(T.StringType()).isin(
+                                                                       list(map(str, self.ps.code_type_list))),
+                                                                       F.lit(1)).otherwise(F.lit(0)))
         print(
             "Making df_pheno_alpha: The dataframe with time window applied. If limit_pheno_window = True, the event dates will be limited to a time window from (and including) pheno_window_start to (and including) pheno_window_end ")
 
@@ -328,13 +427,28 @@ class PhenoTableSet(DataFrameSet):
             [self.ps.index_col, self.ps.evdt_pheno, self.ps.code_col] + list_extra_cols_to_keep)
         self.df_pheno_beta = self.df_pheno_beta.withColumn(self.isin_flag_col, F.lit(1))
 
-    def hes_apc_code_based_pheno(self, codelist_df: DataFrame, list_extra_cols_to_keep: list):
+
+# COMMAND ----------
+class PhenoTableSetHesApc(PhenoTableSet):
+    def __init__(self, df_raw: DataFrame, param_yaml: dict):
+        super().__init__(df_raw, param_yaml)
+
+    def cleaning_and_report(self, list_extra_cols_to_keep=[]):
+        super().cleaning_and_report(list_extra_cols_to_keep)
+        # Todo make the text constant based
+        if self.ps.pheno_pattern == "code_based_diagnosis":
+            print('')
+
+    def extract_code_base_pheno(self, codelist_df: DataFrame, list_extra_cols_to_keep: list):
         # Todo generalise to non-BHF code-list structures
         # Todo test: check if the type of the pheno_pattern is code_based_diagnosis. also that code_column
 
         # Todo for HES APC: handle code type in multiple diagnosis situation
-        temp_codelist = codelist_df.filter(F.lower(F.col("terminology")) == str(self.ps.terminology).lower()). \
-            filter(F.col("code_type").isin(self.ps.code_type))
+        temp_codelist = codelist_df.filter(F.lower(F.col("terminology")) == str(self.ps.terminology).lower())
+        if (self.ps.check_code_type):
+            if len(self.ps.code_type_list) > 0:
+                temp_codelist = temp_codelist.filter(
+                    F.col("code_type").cast(T.StringType()).isin(list(map(str, self.ps.code_type_list))))
 
         codelist_pandas = temp_codelist.select(F.col("code")).toPandas()["code"]
         # Hes apc specific Drop . form ICD10 codes
@@ -357,17 +471,23 @@ class PhenoTableSet(DataFrameSet):
         list_hit_col = "list_hit"
         temp_type_col = "temp_type_col"
         temp_map_col = "temp_map_col"
-        if self.ps.primary_diagnosis_only:
-            self.df_pheno_flag = self.df_pheno_flag.withColumn(list_hit_col,
-                                                               F.array(F.split(F.col(self.ps.code_col), ",")[0]))
-        else:
-            self.df_pheno_flag = self.df_pheno_flag.withColumn(list_hit_col, F.split(F.col(self.ps.code_col), ","))
+        if self.ps.check_code_type:
+            if len(self.ps.code_type_list) > 0:
 
-        self.df_pheno_flag = self.df_pheno_flag.withColumn(temp_col, F.array([F.lit(x) for x in codelist_list]))
-        self.df_pheno_flag = self.df_pheno_flag.withColumn("code_hit",
-                                                           F.when(F.size(F.array_intersect(F.col(list_hit_col),
-                                                                                           F.col(temp_col))) > 0,
-                                                                  F.lit(1)).otherwise(F.lit(0)))
+                if self.ps.primary_diagnosis_only:
+                    self.df_pheno_flag = self.df_pheno_flag.withColumn(list_hit_col,
+                                                                       F.array(
+                                                                           F.split(F.col(self.ps.code_col), ",")[0]))
+                else:
+                    self.df_pheno_flag = self.df_pheno_flag.withColumn(list_hit_col,
+                                                                       F.split(F.col(self.ps.code_col), ","))
+
+                self.df_pheno_flag = self.df_pheno_flag.withColumn(temp_col, F.array([F.lit(x) for x in codelist_list]))
+                self.df_pheno_flag = self.df_pheno_flag.withColumn("code_hit",
+                                                                   F.when(F.size(F.array_intersect(F.col(list_hit_col),
+                                                                                                   F.col(
+                                                                                                       temp_col))) > 0,
+                                                                          F.lit(1)).otherwise(F.lit(0)))
         #   F.when(F.col(self.ps.code_col).cast("string").isin(
         #      codelist_list),
         #     F.lit(1)).otherwise(
@@ -411,32 +531,6 @@ class PhenoTableSet(DataFrameSet):
                                                  "list_all_code_types"]
         self.df_pheno_beta = self.df_pheno_beta.select(columns_to_keep)
         self.df_pheno_beta = self.df_pheno_beta.withColumn(self.isin_flag_col, F.lit(1))
-
-    @staticmethod
-    def handle_code_and_isin_flag(df_in, show_code, show_isin_flag, code_col, isin_flag_col):
-        df_out = df_in
-        if not show_code:
-            df_out = df_out.drop(code_col)
-        if not show_isin_flag:
-            df_out = df_out.drop(isin_flag_col)
-        return df_out
-
-    def first_eventdate_pheno(self, show_code=True, show_isin_flag=True) -> DataFrame:
-        df = first_eventdate_extractor(self.df_pheno_beta, self.ps.index_col, self.ps.evdt_pheno)
-        df_out = self.handle_code_and_isin_flag(df, show_code, show_isin_flag, self.ps.code_col, self.isin_flag_col)
-        return df_out
-
-    def last_eventdate_pheno(self, show_code=True, show_isin_flag=True) -> DataFrame:
-        df = last_eventdate_extractor(self.df_pheno_beta, self.ps.index_col, self.ps.evdt_pheno)
-        df_out = self.handle_code_and_isin_flag(df, show_code, show_isin_flag, self.ps.code_col, self.isin_flag_col)
-        return df_out
-
-    def all_eventdates_pheno(self, show_code=True, show_isin_flag=True) -> DataFrame:
-        df = self.df_pheno_beta
-        df_out = self.handle_code_and_isin_flag(df, show_code, show_isin_flag, self.ps.code_col, self.isin_flag_col)
-        return df_out
-
-    # COMMAND ----------
 
 
 # COMMAND ----------
@@ -487,8 +581,8 @@ def extract_basic_pheno_df(ptClass: PhenoTableSet, add_isin_flag=True):
         index_col=ptClass.ps.index_col, date_col=ptClass.ps.evdt_pheno)
 
 
-def extract_full_pheno_df(ptClass: PhenoTableSet):
-    ptClass.pheno_df_full = concat_nonnull_eventdate_extractor(
+def __old_extract_full_pheno_df(ptClass: PhenoTableSet):
+    ptClass.pheno_df_alpha = concat_nonnull_eventdate_extractor(
         ptClass.df_final.select([ptClass.ps.index_col, ptClass.ps.evdt_pheno]), index_col=ptClass.ps.index_col,
         date_col=ptClass.ps.evdt_pheno)
 
@@ -537,20 +631,9 @@ def make_last_eventdate_pheno(dfset, add_isin_flag=True):
         return None
 
 
-def make_distinct_eventdate_pheno(dfset, add_isin_flag=True):
-    if dfset.pheno_df_full is not None:
-        df_out = dfset.pheno_df_full.select(dfset.ps.index_col, F.explode(F.col("list_distinct")).alias(
-            f'''{dfset.ps.evdt_pheno}_distinct'''))
-        if add_isin_flag:
-            df_out = df_out.withColumn(dfset.isin_flag_col, F.lit(1))
-        return df_out
-    else:
-        return None
-
-
 def make_all_qc_eventdate_pheno(dfset, add_isin_flag=True):
-    if dfset.pheno_df_full is not None:
-        df_out = dfset.pheno_df_full.select(dfset.ps.index_col, F.explode(F.col("list_all")).alias(
+    if dfset.df_final is not None:
+        df_out = dfset.df_final.select(dfset.ps.index_col, F.explode(F.col("list_all")).alias(
             f'''{dfset.ps.evdt_pheno}_all'''))
         if add_isin_flag:
             df_out = df_out.withColumn(dfset.isin_flag_col, F.lit(1))
@@ -558,22 +641,4 @@ def make_all_qc_eventdate_pheno(dfset, add_isin_flag=True):
     else:
         return None
 
-
 # COMMAND ----------
-
-def make_dfset(df_raw, param_yaml, list_extra_cols_to_keep):
-    tset = PhenoTableSet(df_raw, param_yaml)
-    tset.cleaning_and_report(list_extra_cols_to_keep)
-
-    return tset
-
-
-def make_code_based_pheno(df_raw, param_yaml, codelist_df: DataFrame, list_extra_cols_to_keep: list
-                          ) -> PhenoTableSet:
-    tset = make_dfset(df_raw, param_yaml, list_extra_cols_to_keep)
-    if tset.ps.table_tag == "gdppr":
-        tset.gdppr_code_based_pheno(codelist_df, list_extra_cols_to_keep)
-    else:  # if table_tag =="hes_apc"
-        tset.hes_apc_code_based_pheno(codelist_df, list_extra_cols_to_keep)
-
-    return tset
