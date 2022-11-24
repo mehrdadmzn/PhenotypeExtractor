@@ -89,3 +89,6 @@ sgss_set = make_date_base_pheno(df_raw=sgss_df, table_tag="sgss",
                                 param_yaml=sgss_yaml,
                                 list_extra_cols_to_keep=["details"])
 display(sgss_set.df_pheno_beta)
+display(sgss_set.first_eventdate_pheno(show_isin_flag=True))
+display(sgss_set.last_eventdate_pheno(show_isin_flag=True))
+display(sgss_set.all_eventdates_pheno(show_isin_flag=False))

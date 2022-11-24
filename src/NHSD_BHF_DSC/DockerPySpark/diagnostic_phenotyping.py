@@ -111,6 +111,8 @@ table_details:
     - RECORD_DATE
   code_col: CODE
   production_date_str: '2022-08-31'
+gdppr_specific:
+  swap_date_larger_than_record_date: no # Todo 
 quality_control:
   # Time window for event date quality check. Any dates before or after this window
   # must be excluded for quality assurance.
@@ -122,7 +124,7 @@ quality_control:
   # valid data type: yyyy-mm-dd
 optional_settings:
   full_report: yes
-  spark_cache_midway: yes
+  spark_cache_midway: no
   impute_multi_col_null_dates: yes
   impute_multi_col_invalid_dates: yes
   drop_null_ids: yes
@@ -133,9 +135,9 @@ gdppr_diabetes_settings = yaml.load(gdppr_diabetes_yaml, Loader=yaml.SafeLoader)
 # COMMAND ----------
 
 diabetes_set_1 = make_code_base_pheno(df_raw=gdppr_df, table_tag="gdppr",
-                                      param_yaml=gdppr_diabetes_yaml,
-                                      codelist_df=diabetes_codelist, list_extra_cols_to_keep=["details"])
-'''
+                                      param_yaml=gdppr_diabetes_yaml, codelist_df=diabetes_codelist,
+                                      list_extra_cols_to_keep=["details"])
+
 display(diabetes_set_1.df_sel)
 
 display(diabetes_set_1.df_final)
@@ -147,7 +149,6 @@ display(diabetes_set_1.first_eventdate_pheno())
 display(diabetes_set_1.last_eventdate_pheno())
 display(diabetes_set_1.last_eventdate_pheno(show_code=False, show_isin_flag=True))
 display(diabetes_set_1.all_eventdates_pheno())
-'''
 
 # COMMAND ----------
 

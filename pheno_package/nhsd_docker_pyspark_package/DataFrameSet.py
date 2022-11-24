@@ -307,9 +307,54 @@ class PhenoTableSet(DataFrameSet):
     def pheno_df_json(self, saved_json_df):
         self.__pheno_df_json = saved_json_df
 
-    @staticmethod
-    def handle_code_and_isin_flag(df_in, show_code, show_isin_flag, code_col, isin_flag_col):
+
+# COMMAND ----------
+class PhenoTableSetDateBased(PhenoTableSet):
+    def __init__(self, df_raw: DataFrame, param_yaml: dict):
+        super().__init__(df_raw, param_yaml)
+
+        def cleaning_and_report(self, list_extra_cols_to_keep=[]):
+            super().cleaning_and_report(list_extra_cols_to_keep)
+
+    def extract_pheno_tables(self, list_extra_cols_to_keep: list):
+        self.df_pheno_alpha = concat_nonnull_eventdate_extractor(
+            self.df_final.select([self.ps.index_col, self.ps.evdt_pheno]), index_col=self.ps.index_col,
+            date_col=self.ps.evdt_pheno)
+        if self.df_pheno_alpha is not None:
+            self.df_pheno_beta = self.df_pheno_alpha.select(self.ps.index_col, F.explode(F.col("list_distinct")).alias(
+                self.ps.evdt_pheno)).withColumn(self.isin_flag_col, F.lit(1))
+
+    def handle_flags(self, df_in, show_isin_flag, isin_flag_col) -> DataFrame:
         df_out = df_in
+
+        if not show_isin_flag:
+            df_out = df_out.drop(isin_flag_col)
+        return df_out
+
+    def first_eventdate_pheno(self, show_isin_flag=True) -> DataFrame:
+        df_out = first_eventdate_extractor(self.df_pheno_beta, self.ps.index_col, self.ps.evdt_pheno)
+        df_out = self.handle_flags(df_out, show_isin_flag, self.isin_flag_col)
+        return df_out
+
+    def last_eventdate_pheno(self, show_isin_flag=True) -> DataFrame:
+        df_out = last_eventdate_extractor(self.df_pheno_beta, self.ps.index_col, self.ps.evdt_pheno)
+        df_out = self.handle_flags(df_out, show_isin_flag, self.isin_flag_col)
+        return df_out
+
+    def all_eventdates_pheno(self, show_isin_flag=True) -> DataFrame:
+        df_out = self.df_pheno_beta
+        df_out = self.handle_flags(df_out, show_isin_flag, self.isin_flag_col)
+        return df_out
+
+
+class PhenoTableCodeBased(PhenoTableSet):
+    def __init__(self, df_raw: DataFrame, param_yaml: dict):
+        super().__init__(df_raw, param_yaml)
+
+    def handle_flags(self, df_in, show_code, show_isin_flag, code_col, isin_flag_col):
+        df_out = df_in
+        # Todo check the typeof the object and if code_col is null
+
         if not show_code:
             df_out = df_out.drop(code_col)
         if not show_isin_flag:
@@ -317,54 +362,26 @@ class PhenoTableSet(DataFrameSet):
         return df_out
 
     def first_eventdate_pheno(self, show_code=True, show_isin_flag=True) -> DataFrame:
-        df = first_eventdate_extractor(self.df_pheno_beta, self.ps.index_col, self.ps.evdt_pheno)
-        df_out = self.handle_code_and_isin_flag(df, show_code, show_isin_flag, self.ps.code_col, self.isin_flag_col)
+        df_out = first_eventdate_extractor(self.df_pheno_beta, self.ps.index_col, self.ps.evdt_pheno)
+        df_out = self.handle_flags(df_out, show_code, show_isin_flag, self.ps.code_col,
+                                   self.isin_flag_col)
         return df_out
 
     def last_eventdate_pheno(self, show_code=True, show_isin_flag=True) -> DataFrame:
-        df = last_eventdate_extractor(self.df_pheno_beta, self.ps.index_col, self.ps.evdt_pheno)
-        df_out = self.handle_code_and_isin_flag(df, show_code, show_isin_flag, self.ps.code_col, self.isin_flag_col)
+        df_out = last_eventdate_extractor(self.df_pheno_beta, self.ps.index_col, self.ps.evdt_pheno)
+        df_out = self.handle_flags(df_out, show_code, show_isin_flag, self.ps.code_col,
+                                   self.isin_flag_col)
         return df_out
 
     def all_eventdates_pheno(self, show_code=True, show_isin_flag=True) -> DataFrame:
-        df = self.df_pheno_beta
-        df_out = self.handle_code_and_isin_flag(df, show_code, show_isin_flag, self.ps.code_col, self.isin_flag_col)
+        df_out = self.df_pheno_beta
+        df_out = self.handle_flags(df_out, show_code, show_isin_flag, self.ps.code_col,
+                                   self.isin_flag_col)
         return df_out
 
 
 # COMMAND ----------
-class PhenoTableClassDataBased(PhenoTableSet):
-    def __init__(self, df_raw: DataFrame, param_yaml: dict):
-        super().__init__(df_raw, param_yaml)
-
-        def cleaning_and_report(self, list_extra_cols_to_keep=[]):
-            super().cleaning_and_report(list_extra_cols_to_keep)
-
-    def extract_full_pheno_df(self):
-        self.df_pheno_alpha = concat_nonnull_eventdate_extractor(
-            self.df_final.select([self.ps.index_col, self.ps.evdt_pheno]), index_col=self.ps.index_col,
-            date_col=self.ps.evdt_pheno)
-        # self.df_pheno_alpha = concat_nonnull_eventdate_extractor(
-        #    self.df_final.select([self.ps.index_col, self.ps.evdt_pheno]), index_col=self.ps.index_col,
-        #    date_col=self.ps.evdt_pheno)
-        # self.df_pheno_alpha = make_all_qc_eventdate_pheno(self.df_final, add_isin_flag=True)
-        # self.df_pheno_beta = make_distinct_eventdate_pheno(self.df_final, add_isin_flag=True)
-
-    def make_distinct_eventdate_pheno(self, add_isin_flag=True):
-        if self.df_pheno_alpha is not None:
-            df_temp = self.df_pheno_alpha.select(self.ps.index_col, F.explode(F.col("list_distinct")).alias(
-                f'''{self.ps.evdt_pheno}_distinct'''))
-            if add_isin_flag:
-                df_temp = df_temp.withColumn(self.isin_flag_col, F.lit(1))
-            df_out = df_temp
-        else:
-            df_out = None
-        self.df_pheno_beta = df_out
-        return df_out
-
-
-# COMMAND ----------
-class PhenoTableSetGdppr(PhenoTableSet):
+class PhenoTableSetGdppr(PhenoTableCodeBased):
     def __init__(self, df_raw: DataFrame, param_yaml: dict):
         super().__init__(df_raw, param_yaml)
 
@@ -375,7 +392,7 @@ class PhenoTableSetGdppr(PhenoTableSet):
             print(
                 f'''Replacing the event_date with the larger value of RECORD_DATE or DATE where RECORD_DATE < DATE for diagnostic phenotypes''')
 
-    def extract_code_based_pheno(self, codelist_df: DataFrame, list_extra_cols_to_keep: list):
+    def extract_pheno_tables(self, codelist_df: DataFrame, list_extra_cols_to_keep: list):
         # Todo generalise to non-BHF code-list structures
         # Todo test: check if the type of the pheno_pattern is code_based_diagnosis. also that code_column
 
@@ -429,7 +446,7 @@ class PhenoTableSetGdppr(PhenoTableSet):
 
 
 # COMMAND ----------
-class PhenoTableSetHesApc(PhenoTableSet):
+class PhenoTableSetHesApc(PhenoTableCodeBased):
     def __init__(self, df_raw: DataFrame, param_yaml: dict):
         super().__init__(df_raw, param_yaml)
 
@@ -439,7 +456,7 @@ class PhenoTableSetHesApc(PhenoTableSet):
         if self.ps.pheno_pattern == "code_based_diagnosis":
             print('')
 
-    def extract_code_base_pheno(self, codelist_df: DataFrame, list_extra_cols_to_keep: list):
+    def extract_pheno_tables(self, codelist_df: DataFrame, list_extra_cols_to_keep: list):
         # Todo generalise to non-BHF code-list structures
         # Todo test: check if the type of the pheno_pattern is code_based_diagnosis. also that code_column
 
@@ -536,21 +553,22 @@ class PhenoTableSetHesApc(PhenoTableSet):
 # COMMAND ----------
 # Previously in PhenoExtractionHelperfunction
 
-def first_eventdate_extractor(df: DataFrame, index_col, date_col):
+
+def first_eventdate_extractor(df: DataFrame, index_col, date_col) -> DataFrame:
     window_spec = Window.partitionBy(df[index_col]).orderBy(F.col(date_col).asc_nulls_last())
     df_rank = df.withColumn("rank_col", F.row_number().over(window_spec))
     df_out = df_rank.filter(F.col("rank_col") == 1).drop("rank_col")
     return df_out
 
 
-def last_eventdate_extractor(df: DataFrame, index_col, date_col):
+def last_eventdate_extractor(df: DataFrame, index_col, date_col) -> DataFrame:
     window_spec = Window.partitionBy(df[index_col]).orderBy(F.col(date_col).desc_nulls_last())
     df_rank = df.withColumn("rank_col", F.row_number().over(window_spec))
     df_out = df_rank.filter(F.col("rank_col") == 1).drop("rank_col")
     return df_out
 
 
-def concat_nonnull_eventdate_extractor(df: DataFrame, index_col, date_col):
+def concat_nonnull_eventdate_extractor(df: DataFrame, index_col, date_col) -> DataFrame:
     window_spec = Window.partitionBy(df[index_col]).orderBy(F.col(date_col).asc_nulls_last())
     df_out = df.withColumn("rank_col", F.row_number().over(window_spec))
     df_out = df_out.withColumn("list_all", F.collect_list(date_col).over(window_spec))
@@ -567,7 +585,7 @@ def concat_nonnull_eventdate_extractor(df: DataFrame, index_col, date_col):
     return df_out
 
 
-def full_long_wide_eventdate_extractor(df: DataFrame, index_col, date_col):
+def full_long_wide_eventdate_extractor(df: DataFrame, index_col, date_col) -> DataFrame:
     window_rank_asc = Window.partitionBy(df[index_col]).orderBy(F.col(date_col).asc_nulls_last())
     df_out = df.withColumn("rank_asc", F.row_number().over(window_rank_asc))
     window_rank_desc = Window.partitionBy(df[index_col]).orderBy(F.col(date_col).desc_nulls_last())

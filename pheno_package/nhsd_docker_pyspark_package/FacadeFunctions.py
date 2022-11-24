@@ -3,7 +3,7 @@
 from pyspark.sql import DataFrame
 
 from pheno_package.nhsd_docker_pyspark_package.DataFrameSet import DataFrameSet, PhenoTableSetGdppr, \
-    PhenoTableSetHesApc, PhenoTableSet, PhenoTableClassDataBased
+    PhenoTableSetHesApc, PhenoTableSet, PhenoTableSetDateBased
 
 
 # %%
@@ -40,12 +40,12 @@ def make_code_base_pheno(df_raw: DataFrame, table_tag: str, param_yaml: dict, co
     if table_tag == "gdppr":
         tset = PhenoTableSetGdppr(df_raw, param_yaml)
         tset.cleaning_and_report(list_extra_cols_to_keep)
-        tset.extract_code_based_pheno(codelist_df, list_extra_cols_to_keep)
+        tset.extract_pheno_tables(codelist_df, list_extra_cols_to_keep)
 
     elif table_tag == "hes_apc":
         tset = PhenoTableSetHesApc(df_raw, param_yaml)
         tset.cleaning_and_report(list_extra_cols_to_keep)
-        tset.extract_code_base_pheno(codelist_df, list_extra_cols_to_keep)
+        tset.extract_pheno_tables(codelist_df, list_extra_cols_to_keep)
     else:
 
         tset = None
@@ -55,11 +55,13 @@ def make_code_base_pheno(df_raw: DataFrame, table_tag: str, param_yaml: dict, co
 
 def make_date_base_pheno(df_raw: DataFrame, table_tag: str, param_yaml: dict,
                          list_extra_cols_to_keep: list = []
-                         ) -> PhenoTableSet:
-    tset = PhenoTableClassDataBased(df_raw, param_yaml)
+                         ) -> PhenoTableSetDateBased:
+    tset = PhenoTableSetDateBased(df_raw, param_yaml)
     tset.cleaning_and_report(list_extra_cols_to_keep)
-    tset.extract_full_pheno_df()
-    tset.make_distinct_eventdate_pheno(add_isin_flag=True)
+    tset.extract_pheno_tables(list_extra_cols_to_keep=["details"])
+
+    # tset.extract_full_pheno_df()
+    # tset.make_distinct_eventdate_pheno(add_isin_flag=True)
     return tset
 
 
