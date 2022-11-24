@@ -22,8 +22,8 @@ class ParameterSet:
         self.code_type = pheno_details_node.get("code_type")
         self.code_type_list = []
         self.set_code_type_list()
-        if "primary_diagnosis_only" in list(pheno_details_node.keys()):
-            self.primary_diagnosis_only = pheno_details_node.get("primary_diagnosis_only")
+        if "hes_apc_specific" in list(self.pyaml.keys()):
+            self.primary_diagnosis_only = self.pyaml.get("hes_apc_specific").get("primary_diagnosis_only")
         else:
             self.primary_diagnosis_only = None
         self.limit_pheno_window = pheno_details_node.get("limit_pheno_window")

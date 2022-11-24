@@ -460,7 +460,8 @@ class PhenoTableSetHesApc(PhenoTableCodeBased):
         # Todo generalise to non-BHF code-list structures
         # Todo test: check if the type of the pheno_pattern is code_based_diagnosis. also that code_column
 
-        # Todo for HES APC: handle code type in multiple diagnosis situation
+        # In Hes APC, for simplicity, unwanted  codes (based on code_type) will be removed from the codelist
+
         temp_codelist = codelist_df.filter(F.lower(F.col("terminology")) == str(self.ps.terminology).lower())
         if (self.ps.check_code_type):
             if len(self.ps.code_type_list) > 0:
@@ -473,10 +474,11 @@ class PhenoTableSetHesApc(PhenoTableCodeBased):
         codelist_list = list(map(lambda x: str(x).replace('.', ''), codelist_with_dot))
 
         print("Making df_pheno_mixed: df_final plus code and code_type columns from the codelist")
-        self.df_pheno_mixed = self.df_final.join(
-            codelist_df.select("code", "code_type").withColumnRenamed("code", self.ps.code_col),
-            on=[self.ps.code_col],
-            how="left")
+        # self.df_pheno_mixed = self.df_final.join(
+        #  codelist_df.select("code", "code_type").withColumnRenamed("code", self.ps.code_col),
+        #    on=[self.ps.code_col],
+        #    how="left")
+        self.df_pheno_mixed = self.df_final
 
         print(
             "Making df_pheno_flag: New flags are added: code_hit indicates the row is a candidate phenotype. code_type indicates the rows with the same values in code_type parameter. For HES APC, any '.' character in DIAG_4_CONCAT is removed ")
@@ -484,68 +486,65 @@ class PhenoTableSetHesApc(PhenoTableCodeBased):
         self.df_pheno_flag = self.df_pheno_flag.withColumn(self.ps.code_col,
                                                            F.regexp_replace(F.col(self.ps.code_col), "\\.", ""))
         # HeS APC specific: make an array of codes
-        temp_col = "temp_col"
-        list_hit_col = "list_hit"
-        temp_type_col = "temp_type_col"
-        temp_map_col = "temp_map_col"
-        if self.ps.check_code_type:
-            if len(self.ps.code_type_list) > 0:
+        # temp_col = "temp_col"
+        # list_hit_col = "list_hit"
+        # temp_type_col = "temp_type_col"
+        # temp_map_col = "temp_map_col"
 
-                if self.ps.primary_diagnosis_only:
-                    self.df_pheno_flag = self.df_pheno_flag.withColumn(list_hit_col,
-                                                                       F.array(
-                                                                           F.split(F.col(self.ps.code_col), ",")[0]))
-                else:
-                    self.df_pheno_flag = self.df_pheno_flag.withColumn(list_hit_col,
-                                                                       F.split(F.col(self.ps.code_col), ","))
+        # If primary diagnosis only
+        if self.ps.primary_diagnosis_only:
+            self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit",
+                                                               F.array(
+                                                                   F.split(F.col(self.ps.code_col), ",")[0]))
+        else:
+            self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit",
+                                                               F.split(F.col(self.ps.code_col), ","))
 
-                self.df_pheno_flag = self.df_pheno_flag.withColumn(temp_col, F.array([F.lit(x) for x in codelist_list]))
-                self.df_pheno_flag = self.df_pheno_flag.withColumn("code_hit",
-                                                                   F.when(F.size(F.array_intersect(F.col(list_hit_col),
-                                                                                                   F.col(
-                                                                                                       temp_col))) > 0,
-                                                                          F.lit(1)).otherwise(F.lit(0)))
+        # Temp_col hols a list of all codelists that match the code_type
+        self.df_pheno_flag = self.df_pheno_flag.withColumn("temp_col",
+                                                           F.array([F.lit(x) for x in codelist_list]))
+        self.df_pheno_flag = self.df_pheno_flag.withColumn("codeNtype_hit",
+                                                           F.when(F.size(F.array_intersect(F.col("list_hit"),
+                                                                                           F.col("temp_col"))) > 0,
+                                                                  F.lit(1)).otherwise(F.lit(0)))
         #   F.when(F.col(self.ps.code_col).cast("string").isin(
         #      codelist_list),
         #     F.lit(1)).otherwise(
         #   F.lit(0)))
 
         # For code_type management in mu
-        code_type_pandas = temp_codelist.select(F.col("code_type")).toPandas()["code_type"]
-        code_type_list = list(map(lambda x: str(x), code_type_pandas))
+        #   code_type_pandas = temp_codelist.select(F.col("code_type")).toPandas()["code_type"]
+        #   code_type_list = list(map(lambda x: str(x), code_type_pandas))
 
-        self.df_pheno_flag = self.df_pheno_flag.withColumn(temp_type_col, F.array([F.lit(x) for x in code_type_list]))
-        self.df_pheno_flag = self.df_pheno_flag.withColumn(temp_map_col,
-                                                           F.map_from_arrays(F.col(temp_col), F.col(temp_type_col)))
-        self.df_pheno_flag = self.df_pheno_flag.withColumn("map_code_and_type",
-                                                           F.map_filter(F.col(temp_map_col),
-                                                                        lambda k, v: F.array_contains(
-                                                                            F.col(list_hit_col),
-                                                                            k))).withColumn("list_all_code_types",
-                                                                                            F.map_values(F.col(
-                                                                                                "map_code_and_type")))
-        self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit",
-                                                           F.when(
-                                                               F.forall(F.col("list_all_code_types"), lambda x: x == 1),
-                                                               F.lit(1)).otherwise(F.lit(0)))
+        #  self.df_pheno_flag = self.df_pheno_flag.withColumn(temp_type_col, F.array([F.lit(x) for x in code_type_list]))
+        #  self.df_pheno_flag = self.df_pheno_flag.withColumn(temp_map_col,
+        #                                             F.map_from_arrays(F.col("temp_col"), F.col(temp_type_col)))
+        #  self.df_pheno_flag = self.df_pheno_flag.withColumn("map_code_and_type",
+        #                                                    F.map_filter(F.col(temp_map_col),
+        #                                                                lambda k, v: F.array_contains(
+        #                                                                   F.col("list_hit"),
+        #                                                                 k))).withColumn("list_all_code_types",
+        #                                                                                F.map_values(F.col(
+        #                                                                                 "map_code_and_type")))
+        # self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit",
+        #                                       F.when(
+        #                                           F.forall(F.col("list_all_code_types"), lambda x: x == 1),
+        #                                        F.lit(1)).otherwise(F.lit(0)))
         # .drop(temp_col).drop(temp_type_col)
         print(
             "Making df_pheno_alpha: The dataframe with time window applied. If limit_pheno_window = True, the event dates will be limited to a time window from (and including) pheno_window_start to (and including) pheno_window_end ")
 
-        # Todo for HES_APC: handle code_type_hit for multiple diagnosis first
-        self.df_pheno_alpha = self.df_pheno_flag.filter(F.col("code_hit") == 1).filter(F.col("code_type_hit") == 1)
+        self.df_pheno_alpha = self.df_pheno_flag.filter(F.col("codeNtype_hit") == 1)
         if self.ps.limit_pheno_window:
             self.df_pheno_alpha = self.df_pheno_alpha.filter(
                 (F.col(self.ps.evdt_pheno) >= self.ps.pheno_window_start) & (
                         F.col(self.ps.evdt_pheno) <= self.ps.pheno_window_end))
         print(
             "making df_pheno_beta: The dataframe with code_hit and code_type_hit applied and only with  index_col, code, eventdate, and isin_flag")
-        self.df_pheno_beta = self.df_pheno_alpha.filter(F.col("code_hit") == 1).filter(F.col("code_type_hit") == 1)
+        self.df_pheno_beta = self.df_pheno_alpha.filter(F.col("codeNtype_hit") == 1)
         columns_to_keep = [self.ps.index_col, self.ps.evdt_pheno, self.ps.code_col,
-                           list_hit_col] + list_extra_cols_to_keep
-        if True:  # for test
-            columns_to_keep = columns_to_keep + [temp_col, temp_type_col, temp_map_col, "map_code_and_type",
-                                                 "list_all_code_types"]
+                           "list_hit"] + list_extra_cols_to_keep
+
         self.df_pheno_beta = self.df_pheno_beta.select(columns_to_keep)
         self.df_pheno_beta = self.df_pheno_beta.withColumn(self.isin_flag_col, F.lit(1))
 
