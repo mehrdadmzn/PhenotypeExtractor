@@ -38,23 +38,23 @@ hes_apc_df = import_csv(spark_session=spark_pyspark, table_name="hes_apc.csv", p
 
 masterdf = import_csv(spark_session=spark_pyspark, table_name="master_codelist.csv", path="../../../codelists/v_01",
                       databricks_import=False)
-display(masterdf)
+# display(masterdf)
 # masterdf.show(n=30)
 # COMMAND ----------
 
-display(masterdf.select(F.col("name")).distinct().orderBy("name"))
+# display(masterdf.select(F.col("name")).distinct().orderBy("name"))
 # COMMAND ----------
 
-masterdf.filter(F.col("name") == "HF").select(F.col("terminology")).distinct().show()
+# masterdf.filter(F.col("name") == "HF").select(F.col("terminology")).distinct().show()
 # COMMAND ----------
 
-masterdf.filter(F.col("name") == "diabetes").select(F.col("terminology")).distinct().show()
+# masterdf.filter(F.col("name") == "diabetes").select(F.col("terminology")).distinct().show()
 
 # COMMAND ----------
-display(masterdf.filter(F.col("name") == "diabetes").filter(F.col("code_type") == 0))
+# display(masterdf.filter(F.col("name") == "diabetes").filter(F.col("code_type") == 0))
 
 # COMMAND ----------
-masterdf.select(F.col("code_type")).distinct().show()
+# masterdf.select(F.col("code_type")).distinct().show()
 
 # COMMAND ---------- Diabetes Import ICD-10 only codes using copy and paste (open the csv in Visual Studio Code)
 # Note: we need tab delimited file. Open the csv file in Excel, select the cells with data only, paste in a new .txt
@@ -81,12 +81,12 @@ diabetes_icd_codelist, header = cell_csv_import(text_input, drop_header=True, de
 # print(diabetes_icd_codelist)
 # print(header)
 diabetes_icd_codelist_df = list_to_pyspark_df(spark_pyspark, diabetes_icd_codelist, header)
-display(diabetes_icd_codelist_df)
+# display(diabetes_icd_codelist_df)
 
 diabetes_codelist = masterdf.filter(F.col("name") == "diabetes")
 diabetes_codelist = diabetes_codelist.union(diabetes_icd_codelist_df)
-diabetes_codelist.groupBy(F.col("terminology")).count().show()
-diabetes_codelist.select(F.col("name")).distinct().show()
+# diabetes_codelist.groupBy(F.col("terminology")).count().show()
+# diabetes_codelist.select(F.col("name")).distinct().show()
 
 # COMMAND ----------
 
@@ -99,7 +99,7 @@ pheno_details:
   evdt_pheno: gdppr_diabetes_evdt
   pheno_pattern: code_based_diagnosis # Todo
   terminology: SNOMED
-  check_code_type: yes
+  check_code_type: no
   code_type: both
   limit_pheno_window: no # if set to yes, the following two optins must be set
   pheno_window_start: '1900-06-12'
@@ -152,82 +152,24 @@ gdppr_diabetes_settings = yaml.load(gdppr_diabetes_yaml, Loader=yaml.SafeLoader)
 # display(diabetes_set_1.last_eventdate_pheno(show_code=False, show_isin_flag=True))
 # display(diabetes_set_1.all_eventdates_pheno())
 # Test of saving, loadig,and phenotyping
-print("try saving and loading")
+# print("try saving and loading")
 # df_pandas = diabetes_set_1.df_final.toPandas()
 # df_pandas.to_csv("df_pandas.csv", index=False)
 df_pandas_loaded = import_csv(spark_session=spark_pyspark, table_name="df_pandas.csv",
                               path="../../../fake_data/NHSD_BHF_DSC",
                               databricks_import=False)
-tset_2 = PhenoTableSetGdppr(None, gdppr_diabetes_yaml)
-tset_2.df_final = df_pandas_loaded
-tset_2.extract_pheno_tables(diabetes_codelist, list_extra_cols_to_keep=["details"])
-display(tset_2.last_eventdate_pheno(show_isin_flag=True))
-display(tset_2.first_eventdate_pheno(show_isin_flag=True))
-display(tset_2.all_eventdates_pheno(show_isin_flag=True))
 
-# COMMAND ----------
+diabetes_set_1 = make_code_base_pheno(df_in=df_pandas_loaded, table_tag="gdppr",
+                                      param_yaml=gdppr_diabetes_yaml, codelist_df=diabetes_codelist,
+                                      list_extra_cols_to_keep=["details"], pre_cleaned=True)
+# display(diabetes_set_1.df_sel)
 
-# Params
-hes_apc_diabetes_yaml = """\
-phenotype_name: diabetes
-table_tag: hes_apc
-codelist_format: bhf_tre
-pheno_details:
-  evdt_pheno: hes_diabetes_evdt
-  pheno_pattern: code_based_diagnosis # Todo
-  terminology: ICD10
-  check_code_type: no # if ture, set the code_type
-  code_type: 1 # option: "1" or "incident", "0" or "historical", "both" for 1 and 0, "none" to dismiss 
-  limit_pheno_window: no # if set to yes, the following two optins must be set
-  pheno_window_start: '1900-06-12'
-  pheno_window_end: '2021-06-12'
-table_details:
-  table_tag: hes_apc
-  index_col: PERSON_ID_DEID
-  evdt_col_raw: EPISTART
-  evdt_col_list:
-    - EPISTART
-    - EPIEND
-    - ADMIDATE
-  code_col: DIAG_4_CONCAT
-  production_date_str: '2022-08-31'
-hes_apc_specific:
-  primary_diagnosis_only: yes
-quality_control:
-  # Time window for event date quality check. Any dates before or after this window must be excluded for quality assurance.
-  start_date_qc: "1900-01-01" # time window for event date quality check.
-  end_date_qc: "2022-08-31"  # final_production date
-optional_settings:
-  full_report: yes
-  spark_cache_midway: yes
-  impute_multi_col_null_dates: yes
-  impute_multi_col_invalid_dates: yes
-  drop_null_ids: yes
-  drop_remaining_null_dates: yes
-  drop_remaining_invalid_dates: yes
-"""
-# hes_apc_diabetes_settings = yaml.load(hes_apc_diabetes_yaml, Loader=yaml.SafeLoader)
+display(diabetes_set_1.df_final)
 
-diabetes_set_2 = make_code_base_pheno(df_raw=hes_apc_df, table_tag="hes_apc",
-                                      param_yaml=hes_apc_diabetes_yaml,
-                                      codelist_df=diabetes_codelist, list_extra_cols_to_keep=["details"])
-display(diabetes_set_2.df_pheno_alpha)
+display(diabetes_set_1.df_pheno_alpha)
+display(diabetes_set_1.df_pheno_beta)
 
-display(diabetes_set_2.first_eventdate_pheno())
-display(diabetes_set_2.last_eventdate_pheno())
-display(diabetes_set_2.last_eventdate_pheno(show_code=False, show_isin_flag=True))
-display(diabetes_set_2.all_eventdates_pheno())
-df_pandas_hes = diabetes_set_2.df_final.toPandas()
-df_pandas_hes.to_csv("df_pandas_hes.csv", index=False)
-
-'''
-df_pandas_loaded = import_csv(spark_session=spark_pyspark, table_name="df_pandas.csv",
-                              path="../../../fake_data/NHSD_BHF_DSC",
-                              databricks_import=False)
-tset_2 = PhenoTableSetHesApc(None, hes_apc_diabetes_yaml)
-tset_2.df_final = df_pandas_loaded
-tset_2.extract_pheno_tables(list_extra_cols_to_keep=["details"])
-display(tset_2.last_eventdate_pheno(show_isin_flag=True))
-display(tset_2.first_eventdate_pheno(show_isin_flag=True))
-display(tset_2.all_eventdates_pheno(show_isin_flag=True))
-'''
+display(diabetes_set_1.first_eventdate_pheno())
+display(diabetes_set_1.last_eventdate_pheno())
+display(diabetes_set_1.last_eventdate_pheno(show_code=False, show_isin_flag=True))
+display(diabetes_set_1.all_eventdates_pheno())

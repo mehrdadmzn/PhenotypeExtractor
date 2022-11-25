@@ -34,17 +34,25 @@ def show_dfset_dfs(dfset):
     dfset.df_final.show()
 
 
-def make_code_base_pheno(df_raw: DataFrame, table_tag: str, param_yaml: dict, codelist_df: DataFrame,
-                         list_extra_cols_to_keep: list = []
+def make_code_base_pheno(df_in: DataFrame, table_tag: str, param_yaml: dict, codelist_df: DataFrame,
+                         list_extra_cols_to_keep: list = [], pre_cleaned=False
                          ) -> PhenoTableSet:
     if table_tag == "gdppr":
-        tset = PhenoTableSetGdppr(df_raw, param_yaml)
-        tset.cleaning_and_report(list_extra_cols_to_keep)
+        if pre_cleaned:
+            tset = PhenoTableSetGdppr(None, param_yaml=param_yaml)
+            tset.df_final = df_in
+        else:
+            tset = PhenoTableSetGdppr(df_in, param_yaml=param_yaml)
+            tset.cleaning_and_report(list_extra_cols_to_keep)
         tset.extract_pheno_tables(codelist_df, list_extra_cols_to_keep)
 
     elif table_tag == "hes_apc":
-        tset = PhenoTableSetHesApc(df_raw, param_yaml)
-        tset.cleaning_and_report(list_extra_cols_to_keep)
+        if pre_cleaned:
+            tset = PhenoTableSetHesApc(None, param_yaml=param_yaml)
+            tset.df_final = df_in
+        else:
+            tset = PhenoTableSetHesApc(df_in, param_yaml=param_yaml)
+            tset.cleaning_and_report(list_extra_cols_to_keep)
         tset.extract_pheno_tables(codelist_df, list_extra_cols_to_keep)
     else:
 
@@ -53,12 +61,17 @@ def make_code_base_pheno(df_raw: DataFrame, table_tag: str, param_yaml: dict, co
     return tset
 
 
-def make_date_base_pheno(df_raw: DataFrame, table_tag: str, param_yaml: dict,
-                         list_extra_cols_to_keep: list = []
+def make_date_base_pheno(df_in: DataFrame, table_tag: str, param_yaml: dict,
+                         list_extra_cols_to_keep: list = [], pre_cleaned=False
                          ) -> PhenoTableSetDateBased:
-    tset = PhenoTableSetDateBased(df_raw, param_yaml)
-    tset.cleaning_and_report(list_extra_cols_to_keep)
-    tset.extract_pheno_tables(list_extra_cols_to_keep=["details"])
+    if pre_cleaned:
+        tset = PhenoTableSetDateBased(None, param_yaml=param_yaml)
+        tset.df_final = df_in
+    else:
+        tset = PhenoTableSetDateBased(df_in, param_yaml)
+        tset.cleaning_and_report(list_extra_cols_to_keep)
+
+    tset.extract_pheno_tables(list_extra_cols_to_keep)
 
     # tset.extract_full_pheno_df()
     # tset.make_distinct_eventdate_pheno(add_isin_flag=True)

@@ -87,10 +87,10 @@ optional_settings:
 """
 sgss_set = make_date_base_pheno(df_in=sgss_df, table_tag="sgss",
                                 param_yaml=sgss_yaml,
-                                list_extra_cols_to_keep=["details"], pre_cleaned=False)
+                                list_extra_cols_to_keep=["details"], pre_cleaned=True)
 display(sgss_set.df_pheno_beta)
 display(sgss_set.first_eventdate_pheno(show_isin_flag=True))
 display(sgss_set.last_eventdate_pheno(show_isin_flag=True))
 display(sgss_set.all_eventdates_pheno(show_isin_flag=False))
-# df_pandas = sgss_set.df_final.toPandas()
-# df_pandas.to_csv("../../../fake_data/NHSD_BHF_DSC/df_pandas_sgss.csv", index=False)
+df_pandas = sgss_set.df_final.toPandas()
+df_pandas.to_csv("df_pandas_sgss.csv", index=False)
