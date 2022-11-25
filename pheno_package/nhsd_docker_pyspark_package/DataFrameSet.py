@@ -493,19 +493,21 @@ class PhenoTableSetHesApc(PhenoTableCodeBased):
 
         # If primary diagnosis only
         if self.ps.primary_diagnosis_only:
-            self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit",
+            self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_any",
                                                                F.array(
                                                                    F.split(F.col(self.ps.code_col), ",")[0]))
         else:
-            self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit",
+            self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_any",
                                                                F.split(F.col(self.ps.code_col), ","))
 
         # Temp_col hols a list of all codelists that match the code_type
         self.df_pheno_flag = self.df_pheno_flag.withColumn("temp_col",
                                                            F.array([F.lit(x) for x in codelist_list]))
+        self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_pheno",
+                                                           F.array_intersect(F.col("list_hit_any"),
+                                                                             F.col("temp_col")))
         self.df_pheno_flag = self.df_pheno_flag.withColumn("codeNtype_hit",
-                                                           F.when(F.size(F.array_intersect(F.col("list_hit"),
-                                                                                           F.col("temp_col"))) > 0,
+                                                           F.when(F.size(F.col("list_hit_pheno")) > 0,
                                                                   F.lit(1)).otherwise(F.lit(0)))
         #   F.when(F.col(self.ps.code_col).cast("string").isin(
         #      codelist_list),
@@ -543,7 +545,7 @@ class PhenoTableSetHesApc(PhenoTableCodeBased):
             "making df_pheno_beta: The dataframe with code_hit and code_type_hit applied and only with  index_col, code, eventdate, and isin_flag")
         self.df_pheno_beta = self.df_pheno_alpha.filter(F.col("codeNtype_hit") == 1)
         columns_to_keep = [self.ps.index_col, self.ps.evdt_pheno, self.ps.code_col,
-                           "list_hit"] + list_extra_cols_to_keep
+                           "list_hit_pheno"] + list_extra_cols_to_keep
 
         self.df_pheno_beta = self.df_pheno_beta.select(columns_to_keep)
         self.df_pheno_beta = self.df_pheno_beta.withColumn(self.isin_flag_col, F.lit(1))
