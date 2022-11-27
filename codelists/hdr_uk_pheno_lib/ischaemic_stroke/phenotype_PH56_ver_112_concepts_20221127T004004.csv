@@ -1,0 +1,64 @@
+code,description,coding_system,concept_id,concept_version_id,concept_name,phenotype_id,phenotype_version_id,phenotype_name
+G63..11,Infarction - precerebral,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G63y000,Cerebral infarct due to thrombosis of precerebral arteries,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G63y100,Cerebral infarction due to embolism of precerebral arteries,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64..00,Cerebral arterial occlusion,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64..11,CVA - cerebral artery occlusion,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64..12,Infarction - cerebral,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64..13,Stroke due to cerebral arterial occlusion,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G640.00,Cerebral thrombosis,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G640000,Cerebral infarction due to thrombosis of cerebral arteries,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G641.00,Cerebral embolism,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G641.11,Cerebral embolus,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G641000,Cerebral infarction due to embolism of cerebral arteries,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64z.00,Cerebral infarction NOS,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64z.11,Brainstem infarction NOS,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64z.12,Cerebellar infarction,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64z000,Brainstem infarction,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64z100,Wallenberg syndrome,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64z111,Lateral medullary syndrome,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64z200,Left sided cerebral infarction,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64z300,Right sided cerebral infarction,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G64z400,Infarction of basal ganglia,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G683.00,Sequelae of cerebral infarction,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G6W..00,Cereb infarct due unsp occlus/stenos precerebr arteries,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+G6X..00,Cerebrl infarctn due/unspcf occlusn or sten/cerebrl artrs,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+Gyu6300,[X]Cerebrl infarctn due/unspcf occlusn or sten/cerebrl artrs,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+Gyu6400,[X]Other cerebral infarction,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+Gyu6G00,[X]Cereb infarct due unsp occlus/stenos precerebr arteries,Read codes v2,C837,2813,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+10504.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+15019.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+15252.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+16517.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+23671.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+24446.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+25615.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+26424.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+27975.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+3149.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+33543.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+34758.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+36717.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+39403.0,History of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+40758.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+47642.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+5185.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+5363.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+53745.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+5602.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+569.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+57495.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+6155.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+8837.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+91627.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+94482.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+9985.0,Diagnosis of Ischaemic stroke,Med codes,C838,2815,Ischaemic stroke - Primary care,PH56,112,Ischaemic stroke
+I63.0,Cerebral infarction due to thrombosis of precerebral arteries,ICD10 codes,C839,2817,Ischaemic stroke - Secondary care - Diagnoses,PH56,112,Ischaemic stroke
+I63.1,Cerebral infarction due to embolism of precerebral arteries,ICD10 codes,C839,2817,Ischaemic stroke - Secondary care - Diagnoses,PH56,112,Ischaemic stroke
+I63.2,Cerebral infarction due to unspecified occlusion or stenosis of precerebral arteries,ICD10 codes,C839,2817,Ischaemic stroke - Secondary care - Diagnoses,PH56,112,Ischaemic stroke
+I63.3,Cerebral infarction due to thrombosis of cerebral arteries,ICD10 codes,C839,2817,Ischaemic stroke - Secondary care - Diagnoses,PH56,112,Ischaemic stroke
+I63.4,Cerebral infarction due to embolism of cerebral arteries,ICD10 codes,C839,2817,Ischaemic stroke - Secondary care - Diagnoses,PH56,112,Ischaemic stroke
+I63.5,Cerebral infarction due to unspecified occlusion or stenosis of cerebral arteries,ICD10 codes,C839,2817,Ischaemic stroke - Secondary care - Diagnoses,PH56,112,Ischaemic stroke
+I63.8,Other cerebral infarction,ICD10 codes,C839,2817,Ischaemic stroke - Secondary care - Diagnoses,PH56,112,Ischaemic stroke
+I63.9,"Cerebral infarction, unspecified",ICD10 codes,C839,2817,Ischaemic stroke - Secondary care - Diagnoses,PH56,112,Ischaemic stroke
+I69.3,Sequelae of cerebral infarction,ICD10 codes,C839,2817,Ischaemic stroke - Secondary care - Diagnoses,PH56,112,Ischaemic stroke

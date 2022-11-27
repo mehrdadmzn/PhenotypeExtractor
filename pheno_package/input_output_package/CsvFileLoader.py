@@ -109,7 +109,7 @@ def cell_csv_import(imported_text: str, drop_header: bool = True, delimiter: str
         # Todo: check/test order and format
         header = line_list.pop(0)
     if format == "tre_masterlist":
-        header = ['name', 'terminology', 'code', 'term', 'code_tyep', 'RecordDate']
+        header = ['name', 'terminology', 'code', 'term', 'code_type', 'RecordDate']
     codelist = []
     for line in line_list:
         # list of tuples
@@ -131,4 +131,3 @@ def list_to_pyspark_df(spark_session: SparkSession, vals_list_of_tuples: list, m
 
     new_codes = spark_session.createDataFrame(vals_list_of_tuples, mastercodelist_cols)
     return new_codes
-

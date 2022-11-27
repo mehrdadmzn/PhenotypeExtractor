@@ -73,7 +73,7 @@ def make_date_base_pheno(df_in: DataFrame, table_tag: str, param_yaml: dict,
 
     tset.extract_pheno_tables(list_extra_cols_to_keep)
 
-    # tset.extract_full_pheno_df()
+    # tseract_full_pheno_df()
     # tset.make_distinct_eventdate_pheno(add_isin_flag=True)
     return tset
 
