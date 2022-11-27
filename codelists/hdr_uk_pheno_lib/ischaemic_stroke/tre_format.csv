@@ -1,0 +1,10 @@
+name	terminology	code	description	code_type	RecordDate
+stroke_IS	ICD10	I63.0	Cerebral infarction due to thrombosis of precerebral arteries	1	20190520
+stroke_IS	ICD10	I63.1	Cerebral infarction due to embolism of precerebral arteries	1	20190520
+stroke_IS	ICD10	I63.2	Cerebral infarction due to unspecified occlusion or stenosis of precerebral arteries	1	20190520
+stroke_IS	ICD10	I63.3	Cerebral infarction due to thrombosis of cerebral arteries	1	20190520
+stroke_IS	ICD10	I63.4	Cerebral infarction due to embolism of cerebral arteries	1	20190520
+stroke_IS	ICD10	I63.5	Cerebral infarction due to unspecified occlusion or stenosis of cerebral arteries	1	20190520
+stroke_IS	ICD10	I63.8	Other cerebral infarction	1	20190520
+stroke_IS	ICD10	I63.9	Cerebral infarction, unspecified	1	20190520
+stroke_IS	ICD10	I69.3	Sequelae of cerebral infarction	1	20190520

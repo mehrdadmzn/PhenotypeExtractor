@@ -24,6 +24,10 @@ class ParameterSet:
         self.set_code_type_list()
         if "hes_apc_specific" in list(self.pyaml.keys()):
             self.primary_diagnosis_only = self.pyaml.get("hes_apc_specific").get("primary_diagnosis_only")
+            self.code_col_3 = self.pyaml.get("hes_apc_specific").get("code_col_3")
+            self.code_col_4 = self.pyaml.get("hes_apc_specific").get("code_col_4")
+
+
         else:
             self.primary_diagnosis_only = None
         self.limit_pheno_window = pheno_details_node.get("limit_pheno_window")

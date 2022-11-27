@@ -1,0 +1,402 @@
+name	terminology	code	description	code_type	RecordDate
+AF	ICD10	I48	Atrial fibrillation and flutter	1	19000101
+AF	ICD10	I801	Phlebitis and thrombophlebitis of femoral vein	1	19000101
+AF	ICD10	I802	Phlebitis and thrombophlebitis of other deep vessels of lower extremities	1	19000101
+AF	ICD10	I803	Phlebitis and thrombophlebitis of lower extremities, unspecified	1	19000101
+AF	ICD10	I26	Pulmonary embolism	1	19000101
+AF	OPCS4	K521	Open ablation of atrioventricular node	1	19000101
+AF	OPCS4	K571	Percutaneous transluminal ablation of atrioventricular node	1	19000101
+AF	OPCS4	K575	Percutaneous transluminal ablation of atrial wall NEC	1	19000101
+AF	OPCS4	K62	Therapeutic transluminal operations on heart	1	19000101
+AF	OPCS4	K621	Percutaneous transluminal ablation of pulmonary vein to left atrium conducting system	1	19000101
+AF	OPCS4	K622	Percutaneous transluminal ablation of atrial wall for atrial flutter	1	19000101
+AF	OPCS4	K623	Percutaneous transluminal ablation of conducting system of heart for atrial flutter NEC	1	19000101
+AF	OPCS4	K624	Percutaneous transluminal internal cardioversion NEC	1	19000101
+AF	OPCS4	X501	Direct current cardioversion	1	19000101
+AF	OPCS4	X502	External cardioversion NEC	1	19000101
+AF	OPCS4	X504	External ventricular defibrillation	1	19000101
+AF	OPCS4	K01	Transplantation of heart and lung	1	19000101
+AF	OPCS4	K011	Allotransplantation of heart and lung	1	19000101
+AF	OPCS4	K012	Revision of transplantation of heart and lung	1	19000101
+AF	OPCS4	K018	Other specified transplantation of heart and lung	1	19000101
+AF	OPCS4	K019	Unspecified transplantation of heart and lung	1	19000101
+AF	OPCS4	K02	Other transplantation of heart	1	19000101
+AF	OPCS4	K021	Allotransplantation of heart NEC	1	19000101
+AF	OPCS4	K022	Xenotransplantation of heart	1	19000101
+AF	OPCS4	K023	Implantation of prosthetic heart	1	19000101
+AF	OPCS4	K024	Piggyback transplantation of heart	1	19000101
+AF	OPCS4	K025	Revision of implantation of prosthetic heart	1	19000101
+AF	OPCS4	K026	Revision of transplantation of heart NEC	1	19000101
+AF	OPCS4	K028	Other specified other transplantation of heart	1	19000101
+AF	OPCS4	K029	Unspecified other transplantation of heart	1	19000101
+AF	OPCS4	K04	Repair of tetralogy of Fallot	1	19000101
+AF	OPCS4	K041	Repair of tetralogy of Fallot using valved right ventricular outflow conduit	1	19000101
+AF	OPCS4	K042	Repair of tetralogy of Fallot using right ventricular outflow conduit NEC	1	19000101
+AF	OPCS4	K043	Repair of tetralogy of Fallot using transannular patch	1	19000101
+AF	OPCS4	K044	Revision of repair of tetralogy of Fallot	1	19000101
+AF	OPCS4	K045	Repair of tetralogy of Fallot with absent pulmonary valve	1	19000101
+AF	OPCS4	K046	Repair of Fallot-type pulmonary atresia with aortopulmonary collaterals	1	19000101
+AF	OPCS4	K048	Other specified repair of tetralogy of Fallot	1	19000101
+AF	OPCS4	K049	Unspecified repair of tetralogy of Fallot	1	19000101
+AF	OPCS4	K05	Atrial inversion operations for transposition of great arteries	1	19000101
+AF	OPCS4	K051	Reconstruction of atrium using atrial patch for transposition of great arteries	1	19000101
+AF	OPCS4	K052	Reconstruction of atrium using atrial wall for transposition of great arteries	1	19000101
+AF	OPCS4	K058	Other specified atrial inversion operations for transposition of great arteries	1	19000101
+AF	OPCS4	K059	Unspecified atrial inversion operations for transposition of great arteries	1	19000101
+AF	OPCS4	K06	Other repair of transposition of great arteries	1	19000101
+AF	OPCS4	K061	Repositioning of transposed great arteries	1	19000101
+AF	OPCS4	K062	Left ventricle to aorta tunnel with right ventricle to pulmonary trunk direct anastomosis	1	19000101
+AF	OPCS4	K063	Left ventricle to aorta tunnel with right ventricle to pulmonary artery valved conduit	1	19000101
+AF	OPCS4	K064	Atrial inversion and repositioning of transposed great artery	1	19000101
+AF	OPCS4	K068	Other specified other repair of transposition of great arteries	1	19000101
+AF	OPCS4	K069	Unspecified other repair of transposition of great arteries	1	19000101
+AF	OPCS4	K07	Correction of total anomalous pulmonary venous connection	1	19000101
+AF	OPCS4	K071	Correction of total anomalous pulmonary venous connection to supracardiac vessel	1	19000101
+AF	OPCS4	K072	Correction of total anomalous pulmonary venous connection to coronary sinus	1	19000101
+AF	OPCS4	K073	Correction of total anomalous pulmonary venous connection to infradiaphragmatic vessel	1	19000101
+AF	OPCS4	K078	Other specified correction of total anomalous pulmonary venous connection	1	19000101
+AF	OPCS4	K079	Unspecified correction of total anomalous pulmonary venous connection	1	19000101
+AF	OPCS4	K08	Repair of double outlet ventricle	1	19000101
+AF	OPCS4	K081	Repair of double outlet right ventricle with intraventricular tunnel	1	19000101
+AF	OPCS4	K082	Repair of Fallot-type double outlet right ventricle	1	19000101
+AF	OPCS4	K083	Repair of double outlet right ventricle	1	19000101
+AF	OPCS4	K084	Repair of double outlet left ventricle	1	19000101
+AF	OPCS4	K088	Other specified repair of double outlet ventricle	1	19000101
+AF	OPCS4	K089	Unspecified repair of double outlet ventricle	1	19000101
+AF	OPCS4	K09	Repair of defect of atrioventricular septum	1	19000101
+AF	OPCS4	K091	Repair of defect of atrioventricular septum using dual prosthetic patches	1	19000101
+AF	OPCS4	K092	Repair of defect of atrioventricular septum using prosthetic patch NEC	1	19000101
+AF	OPCS4	K093	Repair of defect of atrioventricular septum using tissue graft	1	19000101
+AF	OPCS4	K094	Repair of persistent ostium primum	1	19000101
+AF	OPCS4	K095	Primary repair of defect of atrioventricular septum NEC	1	19000101
+AF	OPCS4	K096	Revision of repair of defect of atrioventricular septum	1	19000101
+AF	OPCS4	K098	Other specified repair of defect of atrioventricular septum	1	19000101
+AF	OPCS4	K099	Unspecified repair of defect of atrioventricular septum	1	19000101
+AF	OPCS4	K10	Repair of defect of interatrial septum	1	19000101
+AF	OPCS4	K101	Repair of defect of interatrial septum using prosthetic patch	1	19000101
+AF	OPCS4	K102	Repair of defect of interatrial septum using pericardial patch	1	19000101
+AF	OPCS4	K103	Repair of defect of interatrial septum using tissue graft NEC	1	19000101
+AF	OPCS4	K104	Primary repair of defect of interatrial septum NEC	1	19000101
+AF	OPCS4	K105	Revision of repair of defect of interatrial septum	1	19000101
+AF	OPCS4	K108	Other specified repair of defect of interatrial septum	1	19000101
+AF	OPCS4	K109	Unspecified repair of defect of interatrial septum	1	19000101
+AF	OPCS4	K11	Repair of defect of interventricular septum	1	19000101
+AF	OPCS4	K111	Repair of defect of interventricular septum using prosthetic patch	1	19000101
+AF	OPCS4	K112	Repair of defect of interventricular septum using pericardial patch	1	19000101
+AF	OPCS4	K113	Repair of defect of interventricular septum using tissue graft NEC	1	19000101
+AF	OPCS4	K114	Primary repair of defect of interventricular septum NEC	1	19000101
+AF	OPCS4	K115	Revision of repair of defect of interventricular septum	1	19000101
+AF	OPCS4	K116	Repair of multiple interventricular septal defects	1	19000101
+AF	OPCS4	K117	Repair of interventricular septal defect using intraoperative transluminal prosthesis	1	19000101
+AF	OPCS4	K118	Other specified repair of defect of interventricular septum	1	19000101
+AF	OPCS4	K119	Unspecified repair of defect of interventricular septum	1	19000101
+AF	OPCS4	K12	Repair of defect of unspecified septum of heart	1	19000101
+AF	OPCS4	K121	Repair of defect of septum of heart using prosthetic patch NEC	1	19000101
+AF	OPCS4	K122	Repair of defect of septum of heart using pericardial patch NEC	1	19000101
+AF	OPCS4	K123	Repair of defect of septum of heart using tissue graft NEC	1	19000101
+AF	OPCS4	K124	Primary repair of defect of septum of heart NEC	1	19000101
+AF	OPCS4	K125	Revision of repair of septum of heart NEC	1	19000101
+AF	OPCS4	K128	Other specified repair of defect of unspecified septum of heart	1	19000101
+AF	OPCS4	K129	Unspecified repair of defect of unspecified septum of heart	1	19000101
+AF	OPCS4	K14	Other open operations on septum of heart	1	19000101
+AF	OPCS4	K141	Open enlargement of defect of atrial septum	1	19000101
+AF	OPCS4	K142	Open atrial septostomy	1	19000101
+AF	OPCS4	K143	Atrial septectomy	1	19000101
+AF	OPCS4	K144	Surgical atrial septation	1	19000101
+AF	OPCS4	K145	Open enlargement of defect of interventricular septum	1	19000101
+AF	OPCS4	K148	Other specified other open operations on septum of heart	1	19000101
+AF	OPCS4	K149	Unspecified other open operations on septum of heart	1	19000101
+AF	OPCS4	K15	Closed operations on septum of heart	1	19000101
+AF	OPCS4	K151	Closed enlargement of defect of atrial septum	1	19000101
+AF	OPCS4	K152	Closed atrial septostomy	1	19000101
+AF	OPCS4	K158	Other specified closed operations on septum of heart	1	19000101
+AF	OPCS4	K159	Unspecified closed operations on septum of heart	1	19000101
+AF	OPCS4	K17	Repair of univentricular heart	1	19000101
+AF	OPCS4	K171	Total cavopulmonary connection with extracardiac inferior caval vein to pulmonary artery conduit	1	19000101
+AF	OPCS4	K172	Total cavopulmonary connection with lateral atrial tunnel	1	19000101
+AF	OPCS4	K173	Aortopulmonary reconstruction with systemic to pulmonary arterial shunt	1	19000101
+AF	OPCS4	K174	Aortopulmonary reconstruction with right ventricle to pulmonary arterial valveless conduit	1	19000101
+AF	OPCS4	K175	Biventricular repair of hypoplastic left heart syndrome	1	19000101
+AF	OPCS4	K176	Takedown of total cavopulmonary connection	1	19000101
+AF	OPCS4	K177	Conversion of atrial pulmonary anastomosis to total pulmonary connection	1	19000101
+AF	OPCS4	K178	Other specified repair of univentricular heart	1	19000101
+AF	OPCS4	K179	Unspecified repair of univentricular heart	1	19000101
+AF	OPCS4	K18	Creation of valved cardiac conduit	1	19000101
+AF	OPCS4	K181	Creation of valved conduit between atrium and ventricle of heart	1	19000101
+AF	OPCS4	K182	Creation of valved conduit between right atrium and pulmonary artery	1	19000101
+AF	OPCS4	K183	Creation of valved conduit between right ventricle of heart and pulmonary artery	1	19000101
+AF	OPCS4	K184	Creation of valved conduit between left ventricle of heart and aorta	1	19000101
+AF	OPCS4	K185	Revision of valved cardiac conduit	1	19000101
+AF	OPCS4	K186	Creation of valved conduit between left ventricle of heart and pulmonary artery	1	19000101
+AF	OPCS4	K187	Replacement of valved cardiac conduit	1	19000101
+AF	OPCS4	K188	Other specified creation of valved cardiac conduit	1	19000101
+AF	OPCS4	K189	Unspecified creation of valved cardiac conduit	1	19000101
+AF	OPCS4	K19	Creation of other cardiac conduit	1	19000101
+AF	OPCS4	K191	Creation of conduit between atrium and ventricle of heart NEC	1	19000101
+AF	OPCS4	K192	Creation of conduit between right atrium and pulmonary artery NEC	1	19000101
+AF	OPCS4	K193	Creation of conduit between right ventricle of heart and pulmonary artery NEC	1	19000101
+AF	OPCS4	K194	Creation of conduit between right ventricle of heart and vena cava	1	19000101
+AF	OPCS4	K195	Creation of conduit between left ventricle of heart and aorta NEC	1	19000101
+AF	OPCS4	K196	Revision of cardiac conduit NEC	1	19000101
+AF	OPCS4	K198	Other specified creation of other cardiac conduit	1	19000101
+AF	OPCS4	K199	Unspecified creation of other cardiac conduit	1	19000101
+AF	OPCS4	K20	Refashioning of atrium	1	19000101
+AF	OPCS4	K201	Correction of persistent sinus venosus	1	19000101
+AF	OPCS4	K202	Correction of partial anomalous pulmonary venous drainage	1	19000101
+AF	OPCS4	K203	Repair of cor triatriatum	1	19000101
+AF	OPCS4	K204	Repair of coronary sinus abnormality	1	19000101
+AF	OPCS4	K208	Other specified refashioning of atrium	1	19000101
+AF	OPCS4	K209	Unspecified refashioning of atrium	1	19000101
+AF	OPCS4	K22	Other operations on wall of atrium	1	19000101
+AF	OPCS4	K221	Excision of lesion of atrium	1	19000101
+AF	OPCS4	K222	Repair of atrium NEC	1	19000101
+AF	OPCS4	K228	Other specified other operations on wall of atrium	1	19000101
+AF	OPCS4	K229	Unspecified other operations on wall of atrium	1	19000101
+AF	OPCS4	K23	Other operations of wall of heart	1	19000101
+AF	OPCS4	K231	Excision of lesion of wall of heart NEC	1	19000101
+AF	OPCS4	K232	Biopsy of lesion of wall of heart	1	19000101
+AF	OPCS4	K233	Repair of wall of heart NEC	1	19000101
+AF	OPCS4	K234	Revascularisation of wall of heart	1	19000101
+AF	OPCS4	K235	Partial left ventriculectomy	1	19000101
+AF	OPCS4	K236	Cardiomyoplasty	1	19000101
+AF	OPCS4	K238	Other specified other operations of wall of heart	1	19000101
+AF	OPCS4	K239	Unspecified other operations of wall of heart	1	19000101
+AF	OPCS4	K24	Other operations on ventricles of heart	1	19000101
+AF	OPCS4	K241	Relief of right ventricular outflow tract obstruction	1	19000101
+AF	OPCS4	K242	Repair of double chambered right ventricle	1	19000101
+AF	OPCS4	K243	Repair of right ventricular aneurysm	1	19000101
+AF	OPCS4	K244	Repair of left ventricular aneurysm	1	19000101
+AF	OPCS4	K245	Relief of left ventricular outflow tract obstruction	1	19000101
+AF	OPCS4	K246	Myectomy of left ventricular outflow tract	1	19000101
+AF	OPCS4	K247	Myotomy of left ventricular outflow tract	1	19000101
+AF	OPCS4	K248	Other specified other operations on ventricles of heart	1	19000101
+AF	OPCS4	K249	Unspecified other operations on ventricles of heart	1	19000101
+AF	OPCS4	K25	Plastic repair of mitral valve	1	19000101
+AF	OPCS4	K251	Allograft replacement of mitral valve	1	19000101
+AF	OPCS4	K252	Xenograft replacement of mitral valve	1	19000101
+AF	OPCS4	K253	Prosthetic replacement of mitral valve	1	19000101
+AF	OPCS4	K254	Replacement of mitral valve NEC	1	19000101
+AF	OPCS4	K255	Mitral valve repair NEC	1	19000101
+AF	OPCS4	K258	Other specified plastic repair of mitral valve	1	19000101
+AF	OPCS4	K259	Unspecified plastic repair of mitral valve	1	19000101
+AF	OPCS4	K26	Plastic repair of aortic valve	1	19000101
+AF	OPCS4	K261	Allograft replacement of aortic valve	1	19000101
+AF	OPCS4	K262	Xenograft replacement of aortic valve	1	19000101
+AF	OPCS4	K263	Prosthetic replacement of aortic valve	1	19000101
+AF	OPCS4	K264	Replacement of aortic valve NEC	1	19000101
+AF	OPCS4	K265	Aortic valve repair NEC	1	19000101
+AF	OPCS4	K268	Other specified plastic repair of aortic valve	1	19000101
+AF	OPCS4	K269	Unspecified plastic repair of aortic valve	1	19000101
+AF	OPCS4	K27	Plastic repair of tricuspid valve	1	19000101
+AF	OPCS4	K271	Allograft replacement of tricuspid valve	1	19000101
+AF	OPCS4	K272	Xenograft replacement of tricuspid valve	1	19000101
+AF	OPCS4	K273	Prosthetic replacement of tricuspid valve	1	19000101
+AF	OPCS4	K274	Replacement of tricuspid valve NEC	1	19000101
+AF	OPCS4	K275	Repositioning of tricuspid valve	1	19000101
+AF	OPCS4	K276	Tricuspid valve repair NEC	1	19000101
+AF	OPCS4	K278	Other specified plastic repair of tricuspid valve	1	19000101
+AF	OPCS4	K279	Unspecified plastic repair of tricuspid valve	1	19000101
+AF	OPCS4	K28	Plastic repair of pulmonary valve	1	19000101
+AF	OPCS4	K281	Allograft replacement of pulmonary valve	1	19000101
+AF	OPCS4	K282	Xenograft replacement of pulmonary valve	1	19000101
+AF	OPCS4	K283	Prosthetic replacement of pulmonary valve	1	19000101
+AF	OPCS4	K284	Replacement of pulmonary valve NEC	1	19000101
+AF	OPCS4	K285	Pulmonary valve repair NEC	1	19000101
+AF	OPCS4	K288	Other specified plastic repair of pulmonary valve	1	19000101
+AF	OPCS4	K289	Unspecified plastic repair of pulmonary valve	1	19000101
+AF	OPCS4	K29	Plastic repair of unspecified valve of heart	1	19000101
+AF	OPCS4	K291	Allograft replacement of valve of heart NEC	1	19000101
+AF	OPCS4	K292	Xenograft replacement of valve of heart NEC	1	19000101
+AF	OPCS4	K293	Prosthetic replacement of valve of heart NEC	1	19000101
+AF	OPCS4	K294	Replacement of valve of heart NEC	1	19000101
+AF	OPCS4	K295	Repair of valve of heart NEC	1	19000101
+AF	OPCS4	K296	Truncal valve repair	1	19000101
+AF	OPCS4	K297	Replacement of truncal valve	1	19000101
+AF	OPCS4	K298	Other specified plastic repair of unspecified valve of heart	1	19000101
+AF	OPCS4	K299	Unspecified plastic repair of unspecified valve of heart	1	19000101
+AF	OPCS4	K30	Revision of plastic repair of valve of heart	1	19000101
+AF	OPCS4	K301	Revision of plastic repair of mitral valve	1	19000101
+AF	OPCS4	K302	Revision of plastic repair of aortic valve	1	19000101
+AF	OPCS4	K303	Revision of plastic repair of tricuspid valve	1	19000101
+AF	OPCS4	K304	Revision of plastic repair of pulmonary valve	1	19000101
+AF	OPCS4	K305	Revision of plastic repair of truncal valve	1	19000101
+AF	OPCS4	K308	Other specified revision of plastic repair of valve of heart	1	19000101
+AF	OPCS4	K309	Unspecified revision of plastic repair of valve of heart	1	19000101
+AF	OPCS4	K31	Open incision of valve of heart	1	19000101
+AF	OPCS4	K311	Open mitral valvotomy	1	19000101
+AF	OPCS4	K312	Open aortic valvotomy	1	19000101
+AF	OPCS4	K313	Open tricuspid valvotomy	1	19000101
+AF	OPCS4	K314	Open pulmonary valvotomy	1	19000101
+AF	OPCS4	K315	Open truncal valvotomy	1	19000101
+AF	OPCS4	K318	Other specified open incision of valve of heart	1	19000101
+AF	OPCS4	K319	Unspecified open incision of valve of heart	1	19000101
+AF	OPCS4	K32	Closed incision of valve of heart	1	19000101
+AF	OPCS4	K321	Closed mitral valvotomy	1	19000101
+AF	OPCS4	K322	Closed aortic valvotomy	1	19000101
+AF	OPCS4	K323	Closed tricuspid valvotomy	1	19000101
+AF	OPCS4	K324	Closed pulmonary valvotomy	1	19000101
+AF	OPCS4	K328	Other specified closed incision of valve of heart	1	19000101
+AF	OPCS4	K329	Unspecified closed incision of valve of heart	1	19000101
+AF	OPCS4	K33	Operations on aortic root	1	19000101
+AF	OPCS4	K331	Aortic root replacement using pulmonary valve autograft with right ventricle to pulmonary artery valved conduit	1	19000101
+AF	OPCS4	K332	Aortic root replacement using pulmonary valve autograft with right ventricle to pulmonary artery valved conduit and aortoventriculoplasty	1	19000101
+AF	OPCS4	K333	Aortic root replacement using homograft	1	19000101
+AF	OPCS4	K334	Aortic root replacement using mechanical prosthesis	1	19000101
+AF	OPCS4	K335	Aortic root replacement NEC	1	19000101
+AF	OPCS4	K336	Aortoventriculoplasty with pulmonary valve autograft	1	19000101
+AF	OPCS4	K338	Other specified operations on aortic root	1	19000101
+AF	OPCS4	K339	Unspecified operations on aortic root	1	19000101
+AF	OPCS4	K34	Other open operations on valve of heart	1	19000101
+AF	OPCS4	K341	Annuloplasty of mitral valve	1	19000101
+AF	OPCS4	K342	Annuloplasty of tricuspid valve	1	19000101
+AF	OPCS4	K343	Annuloplasty of valve of heart NEC	1	19000101
+AF	OPCS4	K344	Excision of vegetations of valve of heart	1	19000101
+AF	OPCS4	K345	Closure of tricuspid valve	1	19000101
+AF	OPCS4	K346	Closure of pulmonary valve	1	19000101
+AF	OPCS4	K348	Other specified other open operations on valve of heart	1	19000101
+AF	OPCS4	K349	Unspecified other open operations on valve of heart	1	19000101
+AF	OPCS4	K36	Excision of valve of heart	1	19000101
+AF	OPCS4	K361	Tricuspid valvectomy	1	19000101
+AF	OPCS4	K362	Pulmonary valvectomy	1	19000101
+AF	OPCS4	K368	Other specified excision of valve of heart	1	19000101
+AF	OPCS4	K369	Unspecified excision of valve of heart	1	19000101
+AF	OPCS4	K37	Removal of obstruction from structure adjacent to valve of heart	1	19000101
+AF	OPCS4	K371	Infundibulectomy of heart using patch	1	19000101
+AF	OPCS4	K372	Infundibulectomy of heart NEC	1	19000101
+AF	OPCS4	K373	Repair of subaortic stenosis	1	19000101
+AF	OPCS4	K374	Repair of supra-aortic stenosis	1	19000101
+AF	OPCS4	K375	Excision of supramitral ring	1	19000101
+AF	OPCS4	K376	Aortoventriculoplasty	1	19000101
+AF	OPCS4	K378	Other specified removal of obstruction from structure adjacent to valve of heart	1	19000101
+AF	OPCS4	K379	Unspecified removal of obstruction from structure adjacent to valve of heart	1	19000101
+AF	OPCS4	K38	Other operations on structure adjacent to valve of heart	1	19000101
+AF	OPCS4	K381	Operations on papillary muscle	1	19000101
+AF	OPCS4	K382	Operations on chordae tendineae	1	19000101
+AF	OPCS4	K383	Operations on mitral subvalvar apparatus	1	19000101
+AF	OPCS4	K384	Closure of aorto-left ventricular tunnel	1	19000101
+AF	OPCS4	K385	Closure of aortic sinus of Valsalva fistula	1	19000101
+AF	OPCS4	K386	Repair of aortic sinus of Valsalva aneurysm	1	19000101
+AF	OPCS4	K388	Other specified other operations on structure adjacent to valve of heart	1	19000101
+AF	OPCS4	K389	Unspecified other operations on structure adjacent to valve of heart	1	19000101
+AF	OPCS4	K40	Saphenous vein graft replacement of coronary artery	1	19000101
+AF	OPCS4	K401	Saphenous vein graft replacement of one coronary artery	1	19000101
+AF	OPCS4	K402	Saphenous vein graft replacement of two coronary arteries	1	19000101
+AF	OPCS4	K403	Saphenous vein graft replacement of three coronary arteries	1	19000101
+AF	OPCS4	K404	Saphenous vein graft replacement of four or more coronary arteries	1	19000101
+AF	OPCS4	K408	Other specified saphenous vein graft replacement of coronary artery	1	19000101
+AF	OPCS4	K409	Unspecified saphenous vein graft replacement of coronary artery	1	19000101
+AF	OPCS4	K41	Other autograft replacement of coronary artery	1	19000101
+AF	OPCS4	K411	Autograft replacement of one coronary artery NEC	1	19000101
+AF	OPCS4	K412	Autograft replacement of two coronary arteries NEC	1	19000101
+AF	OPCS4	K413	Autograft replacement of three coronary arteries NEC	1	19000101
+AF	OPCS4	K414	Autograft replacement of four or more coronary arteries NEC	1	19000101
+AF	OPCS4	K418	Other specified other autograft replacement of coronary artery	1	19000101
+AF	OPCS4	K419	Unspecified other autograft replacement of coronary artery	1	19000101
+AF	OPCS4	K42	Allograft replacement of coronary artery	1	19000101
+AF	OPCS4	K421	Allograft replacement of one coronary artery	1	19000101
+AF	OPCS4	K422	Allograft replacement of two coronary arteries	1	19000101
+AF	OPCS4	K423	Allograft replacement of three coronary arteries	1	19000101
+AF	OPCS4	K424	Allograft replacement of four or more coronary arteries	1	19000101
+AF	OPCS4	K428	Other specified allograft replacement of coronary artery	1	19000101
+AF	OPCS4	K429	Unspecified allograft replacement of coronary artery	1	19000101
+AF	OPCS4	K43	Prosthetic replacement of coronary artery	1	19000101
+AF	OPCS4	K431	Prosthetic replacement of one coronary artery	1	19000101
+AF	OPCS4	K432	Prosthetic replacement of two coronary arteries	1	19000101
+AF	OPCS4	K433	Prosthetic replacement of three coronary arteries	1	19000101
+AF	OPCS4	K434	Prosthetic replacement of four or more coronary arteries	1	19000101
+AF	OPCS4	K438	Other specified prosthetic replacement of coronary artery	1	19000101
+AF	OPCS4	K439	Unspecified prosthetic replacement of coronary artery	1	19000101
+AF	OPCS4	K44	Other replacement of coronary artery	1	19000101
+AF	OPCS4	K441	Replacement of coronary arteries using multiple methods	1	19000101
+AF	OPCS4	K442	Revision of replacement of coronary artery	1	19000101
+AF	OPCS4	K448	Other specified other replacement of coronary artery	1	19000101
+AF	OPCS4	K449	Unspecified other replacement of coronary artery	1	19000101
+AF	OPCS4	K45	Connection of thoracic artery to coronary artery	1	19000101
+AF	OPCS4	K451	Double anastomosis of mammary arteries to coronary arteries	1	19000101
+AF	OPCS4	K452	Double anastomosis of thoracic arteries to coronary arteries NEC	1	19000101
+AF	OPCS4	K453	Anastomosis of mammary artery to left anterior descending coronary artery	1	19000101
+AF	OPCS4	K454	Anastomosis of mammary artery to coronary artery NEC	1	19000101
+AF	OPCS4	K455	Anastomosis of thoracic artery to coronary artery NEC	1	19000101
+AF	OPCS4	K456	Revision of connection of thoracic artery to coronary artery	1	19000101
+AF	OPCS4	K458	Other specified connection of thoracic artery to coronary artery	1	19000101
+AF	OPCS4	K459	Unspecified connection of thoracic artery to coronary artery	1	19000101
+AF	OPCS4	K46	Other bypass of coronary artery	1	19000101
+AF	OPCS4	K461	Double implantation of mammary arteries into heart	1	19000101
+AF	OPCS4	K462	Double implantation of thoracic arteries into heart NEC	1	19000101
+AF	OPCS4	K463	Implantation of mammary artery into heart NEC	1	19000101
+AF	OPCS4	K464	Implantation of thoracic artery into heart NEC	1	19000101
+AF	OPCS4	K465	Revision of implantation of thoracic artery into heart	1	19000101
+AF	OPCS4	K468	Other specified other bypass of coronary artery	1	19000101
+AF	OPCS4	K469	Unspecified other bypass of coronary artery	1	19000101
+AF	OPCS4	K47	Repair of coronary artery	1	19000101
+AF	OPCS4	K471	Endarterectomy of coronary artery	1	19000101
+AF	OPCS4	K472	Repair of arteriovenous fistula of coronary artery	1	19000101
+AF	OPCS4	K473	Repair of aneurysm of coronary artery	1	19000101
+AF	OPCS4	K474	Repair of rupture of coronary artery	1	19000101
+AF	OPCS4	K475	Repair of arteriovenous malformation of coronary artery	1	19000101
+AF	OPCS4	K478	Other specified repair of coronary artery	1	19000101
+AF	OPCS4	K479	Unspecified repair of coronary artery	1	19000101
+AF	OPCS4	K48	Other open operations on coronary artery	1	19000101
+AF	OPCS4	K481	Transection of muscle bridge of coronary artery	1	19000101
+AF	OPCS4	K482	Transposition of coronary artery NEC	1	19000101
+AF	OPCS4	K483	Open angioplasty of coronary artery	1	19000101
+AF	OPCS4	K484	Exploration of coronary artery	1	19000101
+AF	OPCS4	K488	Other specified other open operations on coronary artery	1	19000101
+AF	OPCS4	K489	Unspecified other open operations on coronary artery	1	19000101
+AF	OPCS4	K52	Open operations on conducting system of heart	1	19000101
+AF	OPCS4	K521	Open ablation of atrioventricular node	1	19000101
+AF	OPCS4	K522	Epicardial excision of rhythmogenic focus	1	19000101
+AF	OPCS4	K523	Endocardial excision of rhythmogenic focus	1	19000101
+AF	OPCS4	K524	Open division of accessory pathway within heart	1	19000101
+AF	OPCS4	K525	Open division of conducting system of heart NEC	1	19000101
+AF	OPCS4	K526	Incision of tissue in atria	1	19000101
+AF	OPCS4	K528	Other specified open operations on conducting system of heart	1	19000101
+AF	OPCS4	K529	Unspecified open operations on conducting system of heart	1	19000101
+AF	OPCS4	K53	Other incision of heart	1	19000101
+AF	OPCS4	K531	Inspection of valve of heart	1	19000101
+AF	OPCS4	K532	Exploration of heart NEC	1	19000101
+AF	OPCS4	K538	Other specified other incision of heart	1	19000101
+AF	OPCS4	K539	Unspecified other incision of heart	1	19000101
+AF	OPCS4	K54	Open heart assist operations	1	19000101
+AF	OPCS4	K541	Open implantation of ventricular assist device	1	19000101
+AF	OPCS4	K542	Open removal of ventricular assist device	1	19000101
+AF	OPCS4	K548	Other specified open heart assist operations	1	19000101
+AF	OPCS4	K549	Unspecified open heart assist operations	1	19000101
+AF	OPCS4	K55	Other open operations on heart	1	19000101
+AF	OPCS4	K551	Ligation of sinus of Valsalva	1	19000101
+AF	OPCS4	K552	Open chest massage of heart	1	19000101
+AF	OPCS4	K553	Open removal of cardiac thrombus	1	19000101
+AF	OPCS4	K554	Open removal of cardiac vegetations NEC	1	19000101
+AF	OPCS4	K555	Resection of heart tumour	1	19000101
+AF	OPCS4	K556	Repair of traumatic injury of heart	1	19000101
+AF	OPCS4	K558	Other specified other open operations on heart	1	19000101
+AF	OPCS4	K559	Unspecified other open operations on heart	1	19000101
+AF	OPCS4	K56	Transluminal heart assist operations	1	19000101
+AF	OPCS4	K561	Transluminal insertion of pulsation balloon into aorta	1	19000101
+AF	OPCS4	K562	Transluminal insertion of heart assist system NEC	1	19000101
+AF	OPCS4	K563	Transluminal maintenance of heart assist system	1	19000101
+AF	OPCS4	K564	Transluminal removal of heart assist system	1	19000101
+AF	OPCS4	K568	Other specified transluminal heart assist operations	1	19000101
+AF	OPCS4	K569	Unspecified transluminal heart assist operations	1	19000101
+AF	OPCS4	K57	Other therapeutic transluminal operations on heart	1	19000101
+AF	OPCS4	K571	Percutaneous transluminal ablation of atrioventricular node	1	19000101
+AF	OPCS4	K572	Percutaneous transluminal ablation of conducting system of heart NEC	1	19000101
+AF	OPCS4	K573	Percutaneous transluminal removal of foreign body from heart	1	19000101
+AF	OPCS4	K574	Percutaneous transluminal ablation of accessory pathway	1	19000101
+AF	OPCS4	K575	Percutaneous transluminal ablation of atrial wall NEC	1	19000101
+AF	OPCS4	K576	Percutaneous transluminal ablation of ventricular wall	1	19000101
+AF	OPCS4	K577	Percutaneous transluminal ablation for congenital heart malformation	1	19000101
+AF	OPCS4	K578	Other specified other therapeutic transluminal operations on heart	1	19000101
+AF	OPCS4	K579	Unspecified other therapeutic transluminal operations on heart	1	19000101
+AF	OPCS4	K66	Other operations on heart	1	19000101
+AF	OPCS4	K661	Cardiotachygraphy	1	19000101
+AF	OPCS4	K668	Other specified other operations on heart	1	19000101
+AF	OPCS4	K669	Unspecified other operations on heart	1	19000101
+AF	OPCS4	K67	Excision of pericardium	1	19000101
+AF	OPCS4	K671	Excision of lesion of pericardium	1	19000101
+AF	OPCS4	K678	Other specified excision of pericardium	1	19000101
+AF	OPCS4	K679	Unspecified excision of pericardium	1	19000101
+AF	OPCS4	K76	Transluminal operations on cardiac conduit	1	19000101
+AF	OPCS4	K761	Percutaneous transluminal balloon dilation of cardiac conduit	1	19000101
+AF	OPCS4	K768	Other specified transluminal operations on cardiac conduit	1	19000101
+AF	OPCS4	K769	Unspecified transluminal operations on cardiac conduit	1	19000101

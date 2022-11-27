@@ -28,8 +28,8 @@ skinny_df = import_csv(spark_session=spark_pyspark, table_name="skinny.csv", pat
 gdppr_df = import_csv(spark_session=spark_pyspark, table_name="GDPPR.csv", path="../../../fake_data/NHSD_BHF_DSC",
                       databricks_import=False)
 # Load gdppr
-hes_apc_df = import_csv(spark_session=spark_pyspark, table_name="hes_apc.csv", path="../../../fake_data/NHSD_BHF_DSC",
-                        databricks_import=False)
+# hes_apc_df = import_csv(spark_session=spark_pyspark, table_name="hes_apc.csv", path="../../../fake_data/NHSD_BHF_DSC",
+#                     databricks_import=False)
 # COMMAND ----------
 # Check master code list
 # this is similar to the master codelist in TRE
@@ -62,6 +62,8 @@ masterdf = import_csv(spark_session=spark_pyspark, table_name="master_codelist.c
 text_input = """
 name	terminology	code	term	code_type	RecordDate
 diabetes	ICD10	E10	Insulin-dependent diabetes mellitus	1	20210127
+diabetes	ICD10	E10X	Insulin-dependent diabetes mellitus	1	20210127
+diabetes	ICD10	E10Y	Insulin-dependent diabetes mellitus	1	20210127
 diabetes	ICD10	E11	Non-insulin-dependent diabetes mellitus	1	20210127
 diabetes	ICD10	E12	Malnutrition-related diabetes mellitus	1	20210127
 diabetes	ICD10	O242	Diabetes mellitus in pregnancy: Pre-existing malnutrition-related diabetes mellitus	1	20210127
@@ -92,15 +94,15 @@ diabetes_codelist = diabetes_codelist.union(diabetes_icd_codelist_df)
 
 # Params
 hes_apc_diabetes_yaml = """\
-phenotype_name: diabetes
+phenotype_name: DIABETES
 table_tag: hes_apc
 codelist_format: bhf_tre
 pheno_details:
-  evdt_pheno: hes_diabetes_evdt
+  evdt_pheno: hesapc_evdt
   pheno_pattern: code_based_diagnosis # Todo
   terminology: ICD10
   check_code_type: no # if ture, set the code_type
-  code_type: 1 # option: "1" or "incident", "0" or "historical", "both" for 1 and 0, "none" to dismiss 
+  code_type: incident # option: "1" or "incident", "0" or "historical", "both" for 1 and 0, "none" to dismiss 
   limit_pheno_window: no # if set to yes, the following two optins must be set
   pheno_window_start: '1900-06-12'
   pheno_window_end: '2021-06-12'
@@ -116,6 +118,8 @@ table_details:
   production_date_str: '2022-08-31'
 hes_apc_specific:
   primary_diagnosis_only: no
+  code_col_3: DIAG_3_CONCAT
+  code_col_4: DIAG_4_CONCAT
 quality_control:
   # Time window for event date quality check. Any dates before or after this window must be excluded for quality assurance.
   start_date_qc: "1900-01-01" # time window for event date quality check.
@@ -157,11 +161,22 @@ df_pandas_loaded = import_csv(spark_session=spark_pyspark, table_name="df_pandas
 diabetes_set_2 = make_code_base_pheno(df_in=df_pandas_loaded, table_tag="hes_apc",
                                       param_yaml=hes_apc_diabetes_yaml, codelist_df=diabetes_codelist,
                                       list_extra_cols_to_keep=["details"], pre_cleaned=True)
-display(diabetes_set_2.df_final)
+# display(diabetes_set_2.df_final)
 
-display(diabetes_set_2.df_pheno_alpha)
+# display(diabetes_set_2.df_pheno_alpha)
 
-display(diabetes_set_2.first_eventdate_pheno())
-display(diabetes_set_2.last_eventdate_pheno())
-display(diabetes_set_2.last_eventdate_pheno(show_code=False, show_isin_flag=True))
-display(diabetes_set_2.all_eventdates_pheno())
+# display(diabetes_set_2.first_eventdate_pheno())
+# display(diabetes_set_2.last_eventdate_pheno())
+# display(diabetes_set_2.last_eventdate_pheno(show_code=True, show_isin_flag=True))
+display(diabetes_set_2.all_eventdates_pheno(show_code=True, show_isin_flag=True))
+
+# Test of code existance in df
+# display(diabetes_codelist.filter(F.col("terminology") == "ICD10"))
+
+# temp_codelist = diabetes_codelist.filter(F.lower(F.col("terminology")) == str("ICD10").lower())
+# temp_codelist = temp_codelist.withColumn("exists", F.lit(0))
+
+# codelist_pandas = temp_codelist.select(F.col("code")).toPandas()["code"]
+# Hes apc specific Drop . form ICD10 codes
+# codelist_with_dot = list(map(lambda x: str(x), codelist_pandas))
+# codelist_list = list(map(lambda x: str(x).replace('.', ''), codelist_with_dot))

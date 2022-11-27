@@ -1,0 +1,988 @@
+code,description,coding_system,concept_id,concept_version_id,concept_name,phenotype_id,phenotype_version_id,phenotype_name
+3272,ECG: atrial fibrillation,Read codes v2,C3175,8509,File - Atrial Fibrillation - Primary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+3273,ECG: atrial flutter,Read codes v2,C3175,8509,File - Atrial Fibrillation - Primary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+793M100,Perc transluminal ablation of atrial wall for atrial flutter,Read codes v2,C3175,8509,File - Atrial Fibrillation - Primary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+793M300,Perc translum ablat conduct sys heart for atrial flutter NEC,Read codes v2,C3175,8509,File - Atrial Fibrillation - Primary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+G573.00,Atrial fibrillation and flutter,Read codes v2,C3175,8509,File - Atrial Fibrillation - Primary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+G573000,Atrial fibrillation,Read codes v2,C3175,8509,File - Atrial Fibrillation - Primary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+G573100,Atrial flutter,Read codes v2,C3175,8509,File - Atrial Fibrillation - Primary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+G573200,Paroxysmal atrial fibrillation,Read codes v2,C3175,8509,File - Atrial Fibrillation - Primary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+G573300,Non-rheumatic atrial fibrillation,Read codes v2,C3175,8509,File - Atrial Fibrillation - Primary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+G573400,Permanent atrial fibrillation,Read codes v2,C3175,8509,File - Atrial Fibrillation - Primary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+G573500,Persistent atrial fibrillation,Read codes v2,C3175,8509,File - Atrial Fibrillation - Primary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+G573z00,Atrial fibrillation and flutter NOS,Read codes v2,C3175,8509,File - Atrial Fibrillation - Primary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+14S4.00,H/O: heart valve recipient,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+14T3.00,H/O: artificial heart valve,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+7914.11,Replacement of unspecified valve of heart,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+7914000,Allograft replacement of valve of heart NEC,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+7914100,Xenograft replacement of valve of heart NEC,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+7914200,Prosthetic replacement of valve of heart NEC,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+7914211,Edwards prosthetic replacement of valve of heart,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+7914212,Starr prosthetic replacement of valve of heart,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+7914300,Replacement of valve of heart NEC,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+SP00200,Mechanical complication of heart valve prosthesis,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+SyuK611,[X] Embolism from prosthetic heart valve,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+TB01200,"Implant of heart valve prosthesis + complication, no blame",Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+ZV42200,[V]Heart valve transplanted,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+ZV43300,[V]Has artificial heart valve,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+ZV45H00,[V]Presence of prosthetic heart valve,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+ZVu6e00,[X]Presence of other heart valve replacement,Read codes v2,C3176,8511,File - Atrial Fibrillation - Primary Care - Heart Valve Procedure,PH1025,2259,Atrial Fibrillation
+14A8100,H/O: Deep Vein Thrombosis,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+1JH..00,Suspected deep vein thrombosis,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+8HTm.00,Referral to deep vein thrombosis clinic,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+G801.00,Deep vein phlebitis and thrombophlebitis of the leg,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+G801.12,"Deep vein thrombosis, leg",Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+G801600,Thrombophlebitis of the femoral vein,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+G801700,Thrombophlebitis of the popliteal vein,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+G801B00,Deep vein thrombophlebitis of the leg unspecified,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+G801C00,Deep vein thrombosis of leg related to air travel,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+G801E00,Deep vein thrombosis of leg related to intravenous drug use,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+G801F00,Deep vein thrombosis of peroneal vein,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+G801z00,Deep vein phlebitis and thrombophlebitis of the leg NOS,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+ZV12800,[V] Personal history deep vein thrombosis,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+ZV12811,[V] Personal history DVT- deep vein thrombosis,Read codes v2,C3177,8513,File - Atrial Fibrillation - Primary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+14AC.00,H/O: pulmonary embolus,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+1JC..00,Suspected pulmonary embolism,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+7A09300,Open embolectomy of pulmonary artery,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+7A09311,Trendelenburg pulmonary embolectomy,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+7A0A100,Percutaneous transluminal embolectomy of pulmonary artery,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+G401.00,Pulmonary embolism,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+G401.12,Pulmonary embolus,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+G401000,Post operative pulmonary embolus,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+G401100,Recurrent pulmonary embolism,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+L096400,Pulmonary embolism following abortive pregnancy,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+L43..00,Obstetric pulmonary embolism,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+L43..11,Obstetric pulmonary embolus,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+L430.00,Obstetric air pulmonary embolism,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+L431.00,Amniotic fluid pulmonary embolism,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+L431100,Amniotic fluid pulmonary embolism - delivered,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+L432.00,Obstetric blood-clot pulmonary embolism,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+L43z.00,Obstetric pulmonary embolism NOS,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+L43z100,Obstetric pulmonary embolism NOS - delivered,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+L43z400,Obstetric pulmonary embolism NOS with postnatal complication,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+L43zz00,Obstetric pulmonary embolism NOS,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+ZV12900,[V] Personal history of pulmonary embolism,Read codes v2,C3178,8515,File - Atrial Fibrillation - Primary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+13348,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+16366,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+1781,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+17965,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+20844,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+20944,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+2302,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+23078,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+2511,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+25238,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+27523,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+29282,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+30202,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+30203,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+31511,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+3181,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+31937,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+3286,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+33080,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+33274,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+33612,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+33675,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+33711,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34017,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34019,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34023,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34024,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34086,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34087,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34088,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34095,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34299,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34327,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34328,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34416,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34417,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34418,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34517,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34519,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34526,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34576,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34691,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34758,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34864,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34918,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+34948,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+36,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+36099,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+3705,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+38041,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+38044,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+39866,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+40143,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+40245,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+45,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+61,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+6262,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+792,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+833,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+8466,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+8467,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+94,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+9522,,GPRD product codes,C3179,8517,File - Atrial Fibrillation - Primary Care - Medication,PH1025,2259,Atrial Fibrillation
+7930000,Open ablation of atrioventricular node,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7934000,Percutaneous transluminal ablation of atrioventricular node,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7934200,Transluminal radiofreq ablation heart conducting system NEC,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7934500,Percutaneous transluminal ablation of atrial wall,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7934800,Percutaneous transluminal ablation of atrial wall NEC,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7936900,Implantation of intravenous atrial overdrive pacemaker,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7936A00,Implant intravenous pacemaker for atrial fibrillation,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793M.00,Therapeutic transluminal operations on heart,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793M000,Perc translum ablat pulmon vein to lft atrium conduct system,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793M100,Perc transluminal ablation of atrial wall for atrial flutter,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793M200,Percutaneous transluminal internal cardioversion NEC,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793M300,Perc translum ablat conduct sys heart for atrial flutter NEC,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793Mz00,Therapeutic transluminal operations on heart NOS,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7L1H.11,Cardioversion and stimulation,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7L1H.12,Direct current cardiac shock,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7L1H.13,Defibrillation,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7L1H000,Direct current cardioversion,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7L1H100,External cardioversion NEC,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7L1H111,External electrode cardioversion,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7L1H200,Internal electrode cardioversion,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7L1H300,Electrical sinus rhythm conversion,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7L1H400,Electrical operative cardiac stimulation,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7L1H800,Chemical cardioversion,Read codes v2,C3180,8519,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+14N6.00,H/O: cardiac surgery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+14S4.00,H/O: heart valve recipient,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+14T3.00,H/O: artificial heart valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7.90E+02,Creation of conduit between heart atrium and ventricle NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7.90E+102,Creation of conduit between right atrium and pulm artery NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7.90E+113,Creation of Fontan conduit between right atrium & pulmon art,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7.90E+202,Creation conduit between right ventricle and pulm artery NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7.90E+213,Rastelli creation conduit between right ventricle/pulmon art,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7.93E+02,Cardiotachygraphy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+79...00,Heart operations,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+79...11,Cardiac operations,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790..00,"Heart wall, septum and chamber operations",Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7900,Transplantation of heart and lung,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7900000,Allotransplantation of heart and lung,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7900z00,Transplantation of heart and lung NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7901,Other transplantation of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7901000,Allotransplantation of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7901100,Xenotransplantation of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7901200,Implantation of prosthetic heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7901400,Revision of implantation of prosthetic heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7901500,Revision of transplantation of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7901y00,Other specified other transplantation of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7901z00,Other transplantation of heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7902,Correction of tetralogy of Fallot,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7902.11,Repair of tetralogy of Fallot,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7902000,Correct Fallot tetralogy- valved right ventr outflow conduit,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7902100,Correct Fallot tetralogy- right ventric outflow conduit NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7902300,Revision of correction of tetralogy of Fallot,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7902400,Repair of tetralogy of Fallot using transannular patch,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7902500,Repair of tetralogy of Fallot with absent pulmonary valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7902y00,Other specified correction of tetralogy of Fallot,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7902z00,Correction of tetralogy of Fallot NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7903,Atrial inversion ops for transposition of great vessels,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7903.11,Mustard interatrial tr venous return,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7903.12,Senning correction for transposition of great vessels,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7903.13,Atrial inversion operations for transposition of great art,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7903000,Atrium reconstruction atrial patch for transpos great vessel,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7903100,Atrium reconstruction atrial wall for transpos great vessels,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7903y00,Atrial inversion op for transposition of great vessels OS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7903z00,Atrial inversion op for transposition of great vessels NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7904,Other correction of transposition of great vessels,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7904000,Repositioning of transposed great vessels,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7904y00,Other correction of transposition of great vessels OS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7904z00,Other correction of transposition of great vessels NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7905,Correction of total anomalous pulmonary venous connection,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7905000,Correct total anomal pulm venous connect to supracard vessel,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7905100,Correct total anomal pulm venous connect to coronary sinus,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7905z00,Correction total anomalous pulmonary venous connection NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7906,Closure of defect of atrioventricular septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7906.11,Repair of defect of the atrioventricular septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7906000,Close defect atrioventric septum using dual prosthetic patch,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7906100,Close defect atrioventric septum using prosthetic patch NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7906111,Repair defect atrioventricular septum prosthetic patch NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7906200,Closure defect atrioventricular septum using tissue graft,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7906300,Closure of persistent ostium primum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7906400,Primary closure of defect of atrioventricular septum NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7906500,Revision of closure of defect of atrioventricular septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7906y00,Other specified closure of defect of atrioventricular septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7906z00,Closure of defect of atrioventricular septum NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7907,Closure of defect of interatrial septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7907.11,Repair of defect of interatrial septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7907000,Closure defect of interatrial septum using prosthetic patch,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7907011,Repair defect of interatrial septum using prosthetic patch,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7907100,Closure defect of interatrial septum using pericardial patch,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7907200,Closure defect of interatrial septum using tissue graft NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7907300,Primary closure of defect of interatrial septum NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7907400,Revision of closure of defect of interatrial septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7907y00,Other specified closure of defect of interatrial septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7907z00,Closure of defect of interatrial septum NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7908,Closure of defect of interventricular septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7908.11,Repair of defect of interventricular septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7908000,Close defect interventricular septum using prosthetic patch,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7908100,Close defect interventricular septum using pericardial patch,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7908111,Repair defect interventricular septum us pericardial patch,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7908200,Close defect interventricular septum using tissue graft NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7908300,Primary closure of defect of interventricular septum NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7908311,Primary repair of defect of interventricular septum NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7908511,Repair of multiple interventricular septal defects,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7908y00,Other specified closure of defect of interventricular septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7908z00,Closure of defect of interventricular septum NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7909,Closure of defect of unspecified septum of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7909.11,Repair of defect of unspecified septum of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7909000,Closure of defect of heart septum using prosthetic patch NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7909100,Closure defect of heart septum using pericardial patch NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7909300,Primary closure of defect of septum of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7909y00,Other specified closure of defect unspecified heart septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7909z00,Closure of defect of unspecified septum of heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790A.00,Other open operations on septum of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790A000,Open enlargement of defect of atrial septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790A100,Open atrial septostomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790A111,Atrial septostomy NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790A300,Atrial septectomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790A600,Surgical atrial septation,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790Ay00,Other specified other open operation on septum of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790Az00,Other open operation on septum of heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790B.00,Closed operations on septum of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790B000,Closed enlargement of defect of atrial septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790B011,Blalock creation of defect in atrial septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790B012,Hanlon creation of defect in atrial septum,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790B100,Closed atrial septostomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790By00,Other specified closed operation on septum of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790Bz00,Closed operation on septum of heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790D.00,Creation of valved cardiac conduit,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790D200,Creation of valved conduit between right ventr +pulm artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790D400,Revision of valved cardiac conduit,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790D700,Replacement of valved cardiac conduit,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790E.00,Creation of other cardiac conduit,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790E500,Revision of cardiac conduit NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790Ey00,Other specified creation of other cardiac conduit,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790Ez00,Creation of other cardiac conduit NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790F.00,Refashioning of atrium,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790F000,Correction of persistent sinus venosus,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790F100,Correction of partial anomalous pulmonary venous drainage,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790G.00,Other operations on wall of atrium,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790G000,Excision of lesion of atrium,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790G100,Repair of atrium NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790Gy00,Other specified operation on wall of atrium,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790H000,Excision of lesion of wall of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790H100,Biopsy of lesion of wall of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790H200,Repair of wall of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790H300,Revascularisation of wall of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790H400,Partial left ventriculectomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790H500,Cardiomyoplasty,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790Hy00,Other specified operation on wall of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790Hz00,Operation on wall of heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790J.00,Other repair of transposition of great arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790J000,Repositioning of transposed great arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790K.00,Repair of double outlet ventricle,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790K200,Repair of double outlet right ventricle,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790M.00,Repair of univentricular heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790M100,Total cavopulmonary connection with lateral atrial tunnel,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790M400,Biventricular repair of hypoplastic left heart syndrome,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790M500,Takedown of total cavopulmonary connection,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790My00,Other specified repair of univentricular heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790N.00,Other operations on ventricles of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790N000,Relief of right ventricular outflow tract obstruction,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790N200,Repair of right ventricular aneurysm,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790N300,Repair of left ventricular aneurysm,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790N400,Relief of left ventricular outflow tract obstruction,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790N500,Myectomy of left ventricular outflow tract,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+790Ny00,Other specified other operations on ventricles of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791..00,Valves of heart and adjacent structures operations,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910,Plastic repair of mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910.11,Mitral valvuloplasty,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910.12,Replacement of mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910000,Allograft replacement of mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910100,Xenograft replacement of mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910200,Prosthetic replacement of mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910211,Bjork-Shiley prosthetic replacement of mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910212,Bjork-Shiley prosthetic replacement of mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910213,Carpentier prosthetic replacement of mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910214,Edwards prosthetic replacement of mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910300,Replacement of mitral valve NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910400,Mitral valvuloplasty NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910411,Mitral valve repair NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910y00,Other specified plastic repair of mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7910z00,Plastic repair of mitral valve NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7911,Plastic repair of aortic valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7911.11,Aortic valvuloplasty,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7911.12,Replacement of aortic valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7911000,Allograft replacement of aortic valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7911100,Xenograft replacement of aortic valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7911200,Prosthetic replacement of aortic valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7911300,Replacement of aortic valve NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7911400,Aortic valvuloplasty NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7911411,Aortic valve repair NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7911y00,Other specified plastic repair of aortic valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7911z00,Plastic repair of aortic valve NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7912,Plastic repair of tricuspid valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7912.11,Replacement of tricuspid valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7912.12,Tricuspid valvuloplasty,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7912000,Allograft replacement of tricuspid valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7912100,Xenograft replacement of tricuspid valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7912200,Prosthetic replacement of tricuspid valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7912300,Replacement of tricuspid valve NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7912511,Tricuspid valve repair NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7912y00,Other specified plastic repair of tricuspid valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7912z00,Plastic repair of tricuspid valve NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7913,Plastic repair of pulmonary valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7913.11,Pulmonary valvuloplasty,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7913.12,Replacement of pulmonary valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7913000,Allograft replacement of pulmonary valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7913100,Xenograft replacement of pulmonary valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7913200,Prosthetic replacement of pulmonary valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7913300,Replacement of pulmonary valve NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7913400,Pulmonary valvuloplasty NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7913411,Pulmonary valve repair NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7913y00,Other specified plastic repair of pulmonary valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7913z00,Plastic repair of pulmonary valve NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914,Plastic repair of unspecified valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914.11,Replacement of unspecified valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914000,Allograft replacement of valve of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914100,Xenograft replacement of valve of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914200,Prosthetic replacement of valve of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914211,Edwards prosthetic replacement of valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914212,Starr prosthetic replacement of valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914300,Replacement of valve of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914400,Valvuloplasty of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914500,Truncal valve repair,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914y00,Other specified plastic repair of unspecified valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914z00,Plastic repair of unspecified valve of heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7915,Revision of plastic repair of valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7915000,Revision of plastic repair of mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7915100,Revision of plastic repair of aortic valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7915200,Revision of plastic repair of tricuspid valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7915300,Revision of plastic repair of pulmonary valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7915y00,Other specified revision of plastic repair of valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7916,Open incision of heart valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7916.11,Open heart valvotomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7916000,Open mitral valvotomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7916100,Open aortic valvotomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7916200,Open tricuspid valvotomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7916300,Open pulmonary valvotomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7916y00,Other specified open specified incision of valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7916z00,Open incision of valve of heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7916z11,Heart valvotomy NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7917,Closed incision of heart valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7917.11,Closed heart valvotomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7917000,Closed mitral valvotomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7917100,Closed aortic valvotomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7917300,Closed pulmonary valvotomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7917311,Brock pulmonary valvulotomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7917z00,Closed incision of valve of heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7918,Other open operations on valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7918000,Annuloplasty of mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7918100,Annuloplasty of tricuspid valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7918111,De Vega tricuspid annuloplasty,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7918200,Annuloplasty of valve of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7918300,Excision of vegetations of valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7918400,Closure of tricuspid valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7918500,Closure of pulmonary valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7918y00,Other specified other open operation on valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7918z00,Other open operation on valve of heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791A.00,Remove obstruction from structure adjacent to valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791A000,Infundibulectomy of heart using patch,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791A100,Infundibulectomy of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791A200,Repair of subaortic stenosis,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791A300,Repair of supraaortic stenosis,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791B.00,Other operations on structure adjacent to valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791B000,Operation on papillary muscle,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791B100,Operation on chordae tendineae,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791B200,Operations on mitral subvalvar apparatus,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791B400,Closure of aortic sinus of Valsalva fistula,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791B500,Repair of aortic sinus of Valsalva aneurysm,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791By00,Operation on structure adjacent to heart valve OS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791Bz00,Operation on structure adjacent to valve of heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791C.00,Operations on aortic root,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791C200,Aortic root replacement using homograft,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791C300,Aortic root replacement using mechanical prosthesis,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791C400,Aortic root replacement,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791C500,Aortoventriculoplasty with pulmonary valve autograft,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791Cy00,Other specified operations on aortic root,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791D.00,Excision of valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791D000,Tricuspid valvectomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791D100,Pulmonary valvectomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791y.00,Heart valve or adjacent structures operations OS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+791z.00,Heart valve and adjacent structures operations NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792..00,Coronary artery operations,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792..11,Coronary artery bypass graft operations,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7920,Saphenous vein graft replacement of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7920.11,Saphenous vein graft bypass of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7920000,Saphenous vein graft replacement of one coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7920100,Saphenous vein graft replacement of two coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7920200,Saphenous vein graft replacement of three coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7920300,Saphenous vein graft replacement of four+ coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7920y00,Saphenous vein graft replacement of coronary artery OS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7920z00,Saphenous vein graft replacement coronary artery NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7921,Other autograft replacement of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7921.11,Other autograft bypass of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7921000,Autograft replacement of one coronary artery NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7921100,Autograft replacement of two coronary arteries NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7921200,Autograft replacement of three coronary arteries NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7921300,Autograft replacement of four of more coronary arteries NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7921y00,Other autograft replacement of coronary artery OS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7921z00,Other autograft replacement of coronary artery NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7922,Allograft replacement of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7922.11,Allograft bypass of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7922000,Allograft replacement of one coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7922100,Allograft replacement of two coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7922200,Allograft replacement of three coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7922300,Allograft replacement of four or more coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7922y00,Other specified allograft replacement of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7922z00,Allograft replacement of coronary artery NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7923,Prosthetic replacement of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7923.11,Prosthetic bypass of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7923000,Prosthetic replacement of one coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7923100,Prosthetic replacement of two coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7923200,Prosthetic replacement of three coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7923300,Prosthetic replacement of four or more coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7923z00,Prosthetic replacement of coronary artery NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7924,Revision of bypass for coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7924000,Revision of bypass for one coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7924100,Revision of bypass for two coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7924200,Revision of bypass for three coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7924500,Revision of implantation of thoracic artery into heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7924y00,Other specified revision of bypass for coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7924z00,Revision of bypass for coronary artery NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7925,Connection of mammary artery to coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7925.11,Creation of bypass from mammary artery to coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7925000,Double anastomosis of mammary arteries to coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7925011,LIMA sequential anastomosis,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7925012,RIMA sequential anastomosis,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7925100,Double implant of mammary arteries into coronary arteries,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7925200,Single anast mammary art to left ant descend coronary art,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7925400,Single implantation of mammary artery into coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7925y00,Connection of mammary artery to coronary artery OS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7925z00,Connection of mammary artery to coronary artery NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7926,Connection of other thoracic artery to coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7926000,Double anastom thoracic arteries to coronary arteries NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7926200,Single anastomosis of thoracic artery to coronary artery NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7926300,Single implantation thoracic artery into coronary artery NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7926z00,Connection of other thoracic artery to coronary artery NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7927,Other open operations on coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7927000,Repair of arteriovenous fistula of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7927100,Repair of aneurysm of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7927200,Transection of muscle bridge of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7927300,Transposition of coronary artery NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7927400,Exploration of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7927500,Open angioplasty of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7927y00,Other specified other open operation on coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7927z00,Other open operation on coronary artery NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792B.00,Repair of coronary artery NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792B000,Endarterectomy of coronary artery NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792B100,Repair of rupture of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792B200,Repair of arteriovenous malformation of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792By00,Other specified repair of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792Bz00,Repair of coronary artery NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792C.00,Other replacement of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792C000,Replacement of coronary arteries using multiple methods,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792Cy00,Other specified replacement of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792Cz00,Replacement of coronary artery NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792D.00,Other bypass of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792Dy00,Other specified other bypass of coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792Dz00,Other bypass of coronary artery NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792y.00,Other specified operations on coronary artery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+792z.00,Coronary artery operations NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7930,Open operations on conducting system of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7930000,Open ablation of atrioventricular node,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7930100,Epicardial excision of rhythmogenic focus,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7930200,Endocardial excision of rhythmogenic focus,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7930300,Open division of accessory pathway within heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7930400,Open division of conducting system of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7930y00,Other specified open operation on conducting system of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7930z00,Open operation on conducting system of heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7931,Other incision of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7931000,Inspection of valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7931100,Exploration of heart NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7931200,Cardiotomy NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7932,Other open operations on heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7932000,Ligation of sinus of Valsalva,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7932100,Open chest massage of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7932111,Cardiac massage - open,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7932200,Open removal of cardiac thrombus,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7932400,Resection of heart tumour,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7932500,Repair of traumatic injury of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7932z00,Open operation on heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7933,Transluminal heart assist operations,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7933000,Transluminal insertion of pulsation balloon into aorta,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7933300,Transluminal removal of heart assist system,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7933z00,Transluminal heart assist operation NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7934,Other therapeutic transluminal operations on heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7934000,Percutaneous transluminal ablation of atrioventricular node,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7934100,Percut transluminal ablation of heart conducting system NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7934400,Percutaneous transluminal ablation of accessory pathway,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7934600,Percutaneous transluminal ablation of ventricular wall,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7934800,Percutaneous transluminal ablation of atrial wall NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7934y00,Other therapeutic transluminal operation on heart OS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7934z00,Other therapeutic transluminal operation on heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793A.00,Excision of pericardium,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793A.11,Pericardiectomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793A000,Excision of lesion of pericardium,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793A100,Delorme pericardiectomy,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793Az00,Excision of pericardium NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793E.00,Other operations on heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793Ey00,Other specified other operation on heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793Ez00,Other operation on heart NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793H.00,Transluminal operations on cardiac conduit,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793Hy00,Other specified transluminal operations on cardiac conduit,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793L.00,Open heart assist operations,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793L000,Open implantation of ventricular assist device,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793L100,Open removal of ventricular assist device,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+793M100,Perc transluminal ablation of atrial wall for atrial flutter,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+79y..00,Other specified operations on heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+79z..00,Heart operations NOS,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7L1H200,Internal electrode cardioversion,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7M36000,Cardiopulmonary bypass,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7N4..00,"[SO]Heart, arteries and veins",Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7N40.00,[SO]Valve of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7N40000,[SO]Mitral valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7N40100,[SO]Aortic valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7N40200,[SO]Tricuspid valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7N40300,[SO]Pulmonary valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7N41400,[SO]Pericardium,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7N41500,[SO]Atrium of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7N41600,[SO]Ventricle of heart,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+8735,Operative resuscitation NEC,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+8H2O.00,Admit cardiothoracic emergency,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+9b8B.00,Cardiothoracic surgery,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+P512.00,Corrected great vessel transposition,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZV15100,[V]Personal history of heart or great vessel operation,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZV42100,[V]Heart transplanted,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZV42200,[V]Heart valve transplanted,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZV43300,[V]Has artificial heart valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZV45800,[V]Presence of coronary angioplasty implant and graft,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZV45H00,[V]Presence of prosthetic heart valve,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZV45K00,[V]Presence of coronary artery bypass graft,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZV45K11,[V]Presence of coronary artery bypass graft - CABG,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZV59600,[V]Heart and lungs transplant status,Read codes v2,C3181,8521,File - Atrial Fibrillation - Primary Care - Procedure,PH1025,2259,Atrial Fibrillation
+14AN.00,H/O: atrial fibrillation,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+14AR.00,History of atrial flutter,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+212R.00,Atrial fibrillation resolved,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+662S.00,Atrial fibrillation monitoring,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+6A9..00,Atrial fibrillation annual review,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+9Os..00,Atrial fibrillation monitoring administration,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+9Os0.00,Atrial fibrillation monitoring first letter,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+9Os1.00,Atrial fibrillation monitoring second letter,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+9Os2.00,Atrial fibrillation monitoring third letter,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+9Os3.00,Atrial fibrillation monitoring verbal invite,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+9Os4.00,Atrial fibrillation monitoring telephone invite,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+9hF..00,Exception reporting: atrial fibrillation quality indicators,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+9hF1.00,Excepted from atrial fibrillation qual indic: Inform dissent,Read codes v2,C3182,8523,File - Atrial Fibrillation - Primary Care - Prevalent Diagnoses or Possible Diagnoses,PH1025,2259,Atrial Fibrillation
+I48,Atrial fibrillation and flutter,ICD10 codes,C3183,8525,File - Atrial Fibrillation - Secondary Care - Diagnosis,PH1025,2259,Atrial Fibrillation
+I801,Phlebitis and thrombophlebitis of femoral vein,ICD10 codes,C3184,8527,File - Atrial Fibrillation - Secondary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+I802,Phlebitis and thrombophlebitis of other deep vessels of lower extremities,ICD10 codes,C3184,8527,File - Atrial Fibrillation - Secondary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+I803,"Phlebitis and thrombophlebitis of lower extremities, unspecified",ICD10 codes,C3184,8527,File - Atrial Fibrillation - Secondary Care - Deep Vein Thrombosis,PH1025,2259,Atrial Fibrillation
+I26,Pulmonary embolism,ICD10 codes,C3185,8529,File - Atrial Fibrillation - Secondary Care - Pulmonary Embolism,PH1025,2259,Atrial Fibrillation
+14S4.00,H/O: heart valve recipient,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+14T3.00,H/O: artificial heart valve,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914.11,Replacement of unspecified valve of heart,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914000,Allograft replacement of valve of heart NEC,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914100,Xenograft replacement of valve of heart NEC,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914200,Prosthetic replacement of valve of heart NEC,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914211,Edwards prosthetic replacement of valve of heart,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914212,Starr prosthetic replacement of valve of heart,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+7914300,Replacement of valve of heart NEC,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+SP00200,Mechanical complication of heart valve prosthesis,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+SyuK611,[X] Embolism from prosthetic heart valve,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+TB01200,"Implant of heart valve prosthesis + complication, no blame",Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZV42200,[V]Heart valve transplanted,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZV43300,[V]Has artificial heart valve,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZV45H00,[V]Presence of prosthetic heart valve,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+ZVu6e00,[X]Presence of other heart valve replacement,Read codes v2,C3186,8531,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K521,Open ablation of atrioventricular node,OPCS4 codes,C3187,8533,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K571,Percutaneous transluminal ablation of atrioventricular node,OPCS4 codes,C3187,8533,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K575,Percutaneous transluminal ablation of atrial wall NEC,OPCS4 codes,C3187,8533,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K62,Therapeutic transluminal operations on heart,OPCS4 codes,C3187,8533,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K621,Percutaneous transluminal ablation of pulmonary vein to left atrium conducting system,OPCS4 codes,C3187,8533,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K622,Percutaneous transluminal ablation of atrial wall for atrial flutter,OPCS4 codes,C3187,8533,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K623,Percutaneous transluminal ablation of conducting system of heart for atrial flutter NEC,OPCS4 codes,C3187,8533,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K624,Percutaneous transluminal internal cardioversion NEC,OPCS4 codes,C3187,8533,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+X501,Direct current cardioversion,OPCS4 codes,C3187,8533,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+X502,External cardioversion NEC,OPCS4 codes,C3187,8533,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+X504,External ventricular defibrillation,OPCS4 codes,C3187,8533,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K01,Transplantation of heart and lung,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K011,Allotransplantation of heart and lung,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K012,Revision of transplantation of heart and lung,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K018,Other specified transplantation of heart and lung,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K019,Unspecified transplantation of heart and lung,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K02,Other transplantation of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K021,Allotransplantation of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K022,Xenotransplantation of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K023,Implantation of prosthetic heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K024,Piggyback transplantation of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K025,Revision of implantation of prosthetic heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K026,Revision of transplantation of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K028,Other specified other transplantation of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K029,Unspecified other transplantation of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K04,Repair of tetralogy of Fallot,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K041,Repair of tetralogy of Fallot using valved right ventricular outflow conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K042,Repair of tetralogy of Fallot using right ventricular outflow conduit NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K043,Repair of tetralogy of Fallot using transannular patch,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K044,Revision of repair of tetralogy of Fallot,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K045,Repair of tetralogy of Fallot with absent pulmonary valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K046,Repair of Fallot-type pulmonary atresia with aortopulmonary collaterals,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K048,Other specified repair of tetralogy of Fallot,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K049,Unspecified repair of tetralogy of Fallot,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K05,Atrial inversion operations for transposition of great arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K051,Reconstruction of atrium using atrial patch for transposition of great arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K052,Reconstruction of atrium using atrial wall for transposition of great arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K058,Other specified atrial inversion operations for transposition of great arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K059,Unspecified atrial inversion operations for transposition of great arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K06,Other repair of transposition of great arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K061,Repositioning of transposed great arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K062,Left ventricle to aorta tunnel with right ventricle to pulmonary trunk direct anastomosis,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K063,Left ventricle to aorta tunnel with right ventricle to pulmonary artery valved conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K064,Atrial inversion and repositioning of transposed great artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K068,Other specified other repair of transposition of great arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K069,Unspecified other repair of transposition of great arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K07,Correction of total anomalous pulmonary venous connection,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K071,Correction of total anomalous pulmonary venous connection to supracardiac vessel,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K072,Correction of total anomalous pulmonary venous connection to coronary sinus,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K073,Correction of total anomalous pulmonary venous connection to infradiaphragmatic vessel,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K078,Other specified correction of total anomalous pulmonary venous connection,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K079,Unspecified correction of total anomalous pulmonary venous connection,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K08,Repair of double outlet ventricle,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K081,Repair of double outlet right ventricle with intraventricular tunnel,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K082,Repair of Fallot-type double outlet right ventricle,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K083,Repair of double outlet right ventricle,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K084,Repair of double outlet left ventricle,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K088,Other specified repair of double outlet ventricle,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K089,Unspecified repair of double outlet ventricle,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K09,Repair of defect of atrioventricular septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K091,Repair of defect of atrioventricular septum using dual prosthetic patches,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K092,Repair of defect of atrioventricular septum using prosthetic patch NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K093,Repair of defect of atrioventricular septum using tissue graft,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K094,Repair of persistent ostium primum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K095,Primary repair of defect of atrioventricular septum NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K096,Revision of repair of defect of atrioventricular septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K098,Other specified repair of defect of atrioventricular septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K099,Unspecified repair of defect of atrioventricular septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K10,Repair of defect of interatrial septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K101,Repair of defect of interatrial septum using prosthetic patch,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K102,Repair of defect of interatrial septum using pericardial patch,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K103,Repair of defect of interatrial septum using tissue graft NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K104,Primary repair of defect of interatrial septum NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K105,Revision of repair of defect of interatrial septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K108,Other specified repair of defect of interatrial septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K109,Unspecified repair of defect of interatrial septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K11,Repair of defect of interventricular septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K111,Repair of defect of interventricular septum using prosthetic patch,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K112,Repair of defect of interventricular septum using pericardial patch,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K113,Repair of defect of interventricular septum using tissue graft NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K114,Primary repair of defect of interventricular septum NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K115,Revision of repair of defect of interventricular septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K116,Repair of multiple interventricular septal defects,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K117,Repair of interventricular septal defect using intraoperative transluminal prosthesis,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K118,Other specified repair of defect of interventricular septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K119,Unspecified repair of defect of interventricular septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K12,Repair of defect of unspecified septum of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K121,Repair of defect of septum of heart using prosthetic patch NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K122,Repair of defect of septum of heart using pericardial patch NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K123,Repair of defect of septum of heart using tissue graft NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K124,Primary repair of defect of septum of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K125,Revision of repair of septum of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K128,Other specified repair of defect of unspecified septum of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K129,Unspecified repair of defect of unspecified septum of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K14,Other open operations on septum of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K141,Open enlargement of defect of atrial septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K142,Open atrial septostomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K143,Atrial septectomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K144,Surgical atrial septation,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K145,Open enlargement of defect of interventricular septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K148,Other specified other open operations on septum of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K149,Unspecified other open operations on septum of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K15,Closed operations on septum of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K151,Closed enlargement of defect of atrial septum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K152,Closed atrial septostomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K158,Other specified closed operations on septum of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K159,Unspecified closed operations on septum of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K17,Repair of univentricular heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K171,Total cavopulmonary connection with extracardiac inferior caval vein to pulmonary artery conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K172,Total cavopulmonary connection with lateral atrial tunnel,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K173,Aortopulmonary reconstruction with systemic to pulmonary arterial shunt,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K174,Aortopulmonary reconstruction with right ventricle to pulmonary arterial valveless conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K175,Biventricular repair of hypoplastic left heart syndrome,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K176,Takedown of total cavopulmonary connection,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K177,Conversion of atrial pulmonary anastomosis to total pulmonary connection,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K178,Other specified repair of univentricular heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K179,Unspecified repair of univentricular heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K18,Creation of valved cardiac conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K181,Creation of valved conduit between atrium and ventricle of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K182,Creation of valved conduit between right atrium and pulmonary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K183,Creation of valved conduit between right ventricle of heart and pulmonary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K184,Creation of valved conduit between left ventricle of heart and aorta,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K185,Revision of valved cardiac conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K186,Creation of valved conduit between left ventricle of heart and pulmonary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K187,Replacement of valved cardiac conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K188,Other specified creation of valved cardiac conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K189,Unspecified creation of valved cardiac conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K19,Creation of other cardiac conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K191,Creation of conduit between atrium and ventricle of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K192,Creation of conduit between right atrium and pulmonary artery NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K193,Creation of conduit between right ventricle of heart and pulmonary artery NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K194,Creation of conduit between right ventricle of heart and vena cava,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K195,Creation of conduit between left ventricle of heart and aorta NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K196,Revision of cardiac conduit NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K198,Other specified creation of other cardiac conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K199,Unspecified creation of other cardiac conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K20,Refashioning of atrium,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K201,Correction of persistent sinus venosus,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K202,Correction of partial anomalous pulmonary venous drainage,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K203,Repair of cor triatriatum,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K204,Repair of coronary sinus abnormality,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K208,Other specified refashioning of atrium,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K209,Unspecified refashioning of atrium,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K22,Other operations on wall of atrium,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K221,Excision of lesion of atrium,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K222,Repair of atrium NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K228,Other specified other operations on wall of atrium,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K229,Unspecified other operations on wall of atrium,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K23,Other operations of wall of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K231,Excision of lesion of wall of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K232,Biopsy of lesion of wall of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K233,Repair of wall of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K234,Revascularisation of wall of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K235,Partial left ventriculectomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K236,Cardiomyoplasty,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K238,Other specified other operations of wall of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K239,Unspecified other operations of wall of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K24,Other operations on ventricles of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K241,Relief of right ventricular outflow tract obstruction,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K242,Repair of double chambered right ventricle,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K243,Repair of right ventricular aneurysm,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K244,Repair of left ventricular aneurysm,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K245,Relief of left ventricular outflow tract obstruction,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K246,Myectomy of left ventricular outflow tract,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K247,Myotomy of left ventricular outflow tract,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K248,Other specified other operations on ventricles of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K249,Unspecified other operations on ventricles of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K25,Plastic repair of mitral valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K251,Allograft replacement of mitral valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K252,Xenograft replacement of mitral valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K253,Prosthetic replacement of mitral valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K254,Replacement of mitral valve NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K255,Mitral valve repair NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K258,Other specified plastic repair of mitral valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K259,Unspecified plastic repair of mitral valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K26,Plastic repair of aortic valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K261,Allograft replacement of aortic valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K262,Xenograft replacement of aortic valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K263,Prosthetic replacement of aortic valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K264,Replacement of aortic valve NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K265,Aortic valve repair NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K268,Other specified plastic repair of aortic valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K269,Unspecified plastic repair of aortic valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K27,Plastic repair of tricuspid valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K271,Allograft replacement of tricuspid valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K272,Xenograft replacement of tricuspid valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K273,Prosthetic replacement of tricuspid valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K274,Replacement of tricuspid valve NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K275,Repositioning of tricuspid valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K276,Tricuspid valve repair NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K278,Other specified plastic repair of tricuspid valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K279,Unspecified plastic repair of tricuspid valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K28,Plastic repair of pulmonary valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K281,Allograft replacement of pulmonary valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K282,Xenograft replacement of pulmonary valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K283,Prosthetic replacement of pulmonary valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K284,Replacement of pulmonary valve NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K285,Pulmonary valve repair NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K288,Other specified plastic repair of pulmonary valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K289,Unspecified plastic repair of pulmonary valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K29,Plastic repair of unspecified valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K291,Allograft replacement of valve of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K292,Xenograft replacement of valve of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K293,Prosthetic replacement of valve of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K294,Replacement of valve of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K295,Repair of valve of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K296,Truncal valve repair,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K297,Replacement of truncal valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K298,Other specified plastic repair of unspecified valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K299,Unspecified plastic repair of unspecified valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K30,Revision of plastic repair of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K301,Revision of plastic repair of mitral valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K302,Revision of plastic repair of aortic valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K303,Revision of plastic repair of tricuspid valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K304,Revision of plastic repair of pulmonary valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K305,Revision of plastic repair of truncal valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K308,Other specified revision of plastic repair of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K309,Unspecified revision of plastic repair of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K31,Open incision of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K311,Open mitral valvotomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K312,Open aortic valvotomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K313,Open tricuspid valvotomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K314,Open pulmonary valvotomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K315,Open truncal valvotomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K318,Other specified open incision of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K319,Unspecified open incision of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K32,Closed incision of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K321,Closed mitral valvotomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K322,Closed aortic valvotomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K323,Closed tricuspid valvotomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K324,Closed pulmonary valvotomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K328,Other specified closed incision of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K329,Unspecified closed incision of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K33,Operations on aortic root,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K331,Aortic root replacement using pulmonary valve autograft with right ventricle to pulmonary artery valved conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K332,Aortic root replacement using pulmonary valve autograft with right ventricle to pulmonary artery valved conduit and aortoventriculoplasty,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K333,Aortic root replacement using homograft,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K334,Aortic root replacement using mechanical prosthesis,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K335,Aortic root replacement NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K336,Aortoventriculoplasty with pulmonary valve autograft,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K338,Other specified operations on aortic root,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K339,Unspecified operations on aortic root,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K34,Other open operations on valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K341,Annuloplasty of mitral valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K342,Annuloplasty of tricuspid valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K343,Annuloplasty of valve of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K344,Excision of vegetations of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K345,Closure of tricuspid valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K346,Closure of pulmonary valve,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K348,Other specified other open operations on valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K349,Unspecified other open operations on valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K36,Excision of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K361,Tricuspid valvectomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K362,Pulmonary valvectomy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K368,Other specified excision of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K369,Unspecified excision of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K37,Removal of obstruction from structure adjacent to valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K371,Infundibulectomy of heart using patch,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K372,Infundibulectomy of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K373,Repair of subaortic stenosis,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K374,Repair of supra-aortic stenosis,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K375,Excision of supramitral ring,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K376,Aortoventriculoplasty,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K378,Other specified removal of obstruction from structure adjacent to valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K379,Unspecified removal of obstruction from structure adjacent to valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K38,Other operations on structure adjacent to valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K381,Operations on papillary muscle,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K382,Operations on chordae tendineae,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K383,Operations on mitral subvalvar apparatus,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K384,Closure of aorto-left ventricular tunnel,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K385,Closure of aortic sinus of Valsalva fistula,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K386,Repair of aortic sinus of Valsalva aneurysm,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K388,Other specified other operations on structure adjacent to valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K389,Unspecified other operations on structure adjacent to valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K40,Saphenous vein graft replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K401,Saphenous vein graft replacement of one coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K402,Saphenous vein graft replacement of two coronary arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K403,Saphenous vein graft replacement of three coronary arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K404,Saphenous vein graft replacement of four or more coronary arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K408,Other specified saphenous vein graft replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K409,Unspecified saphenous vein graft replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K41,Other autograft replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K411,Autograft replacement of one coronary artery NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K412,Autograft replacement of two coronary arteries NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K413,Autograft replacement of three coronary arteries NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K414,Autograft replacement of four or more coronary arteries NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K418,Other specified other autograft replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K419,Unspecified other autograft replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K42,Allograft replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K421,Allograft replacement of one coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K422,Allograft replacement of two coronary arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K423,Allograft replacement of three coronary arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K424,Allograft replacement of four or more coronary arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K428,Other specified allograft replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K429,Unspecified allograft replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K43,Prosthetic replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K431,Prosthetic replacement of one coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K432,Prosthetic replacement of two coronary arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K433,Prosthetic replacement of three coronary arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K434,Prosthetic replacement of four or more coronary arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K438,Other specified prosthetic replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K439,Unspecified prosthetic replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K44,Other replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K441,Replacement of coronary arteries using multiple methods,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K442,Revision of replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K448,Other specified other replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K449,Unspecified other replacement of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K45,Connection of thoracic artery to coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K451,Double anastomosis of mammary arteries to coronary arteries,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K452,Double anastomosis of thoracic arteries to coronary arteries NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K453,Anastomosis of mammary artery to left anterior descending coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K454,Anastomosis of mammary artery to coronary artery NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K455,Anastomosis of thoracic artery to coronary artery NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K456,Revision of connection of thoracic artery to coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K458,Other specified connection of thoracic artery to coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K459,Unspecified connection of thoracic artery to coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K46,Other bypass of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K461,Double implantation of mammary arteries into heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K462,Double implantation of thoracic arteries into heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K463,Implantation of mammary artery into heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K464,Implantation of thoracic artery into heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K465,Revision of implantation of thoracic artery into heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K468,Other specified other bypass of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K469,Unspecified other bypass of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K47,Repair of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K471,Endarterectomy of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K472,Repair of arteriovenous fistula of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K473,Repair of aneurysm of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K474,Repair of rupture of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K475,Repair of arteriovenous malformation of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K478,Other specified repair of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K479,Unspecified repair of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K48,Other open operations on coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K481,Transection of muscle bridge of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K482,Transposition of coronary artery NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K483,Open angioplasty of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K484,Exploration of coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K488,Other specified other open operations on coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K489,Unspecified other open operations on coronary artery,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K52,Open operations on conducting system of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K521,Open ablation of atrioventricular node,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K522,Epicardial excision of rhythmogenic focus,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K523,Endocardial excision of rhythmogenic focus,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K524,Open division of accessory pathway within heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K525,Open division of conducting system of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K526,Incision of tissue in atria,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K528,Other specified open operations on conducting system of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K529,Unspecified open operations on conducting system of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K53,Other incision of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K531,Inspection of valve of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K532,Exploration of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K538,Other specified other incision of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K539,Unspecified other incision of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K54,Open heart assist operations,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K541,Open implantation of ventricular assist device,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K542,Open removal of ventricular assist device,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K548,Other specified open heart assist operations,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K549,Unspecified open heart assist operations,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K55,Other open operations on heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K551,Ligation of sinus of Valsalva,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K552,Open chest massage of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K553,Open removal of cardiac thrombus,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K554,Open removal of cardiac vegetations NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K555,Resection of heart tumour,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K556,Repair of traumatic injury of heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K558,Other specified other open operations on heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K559,Unspecified other open operations on heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K56,Transluminal heart assist operations,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K561,Transluminal insertion of pulsation balloon into aorta,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K562,Transluminal insertion of heart assist system NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K563,Transluminal maintenance of heart assist system,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K564,Transluminal removal of heart assist system,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K568,Other specified transluminal heart assist operations,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K569,Unspecified transluminal heart assist operations,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K57,Other therapeutic transluminal operations on heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K571,Percutaneous transluminal ablation of atrioventricular node,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K572,Percutaneous transluminal ablation of conducting system of heart NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K573,Percutaneous transluminal removal of foreign body from heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K574,Percutaneous transluminal ablation of accessory pathway,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K575,Percutaneous transluminal ablation of atrial wall NEC,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K576,Percutaneous transluminal ablation of ventricular wall,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K577,Percutaneous transluminal ablation for congenital heart malformation,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K578,Other specified other therapeutic transluminal operations on heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K579,Unspecified other therapeutic transluminal operations on heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K66,Other operations on heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K661,Cardiotachygraphy,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K668,Other specified other operations on heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K669,Unspecified other operations on heart,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K67,Excision of pericardium,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K671,Excision of lesion of pericardium,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K678,Other specified excision of pericardium,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K679,Unspecified excision of pericardium,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K76,Transluminal operations on cardiac conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K761,Percutaneous transluminal balloon dilation of cardiac conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K768,Other specified transluminal operations on cardiac conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation
+K769,Unspecified transluminal operations on cardiac conduit,OPCS4 codes,C3188,8535,File - Atrial Fibrillation - Secondary Care - Procedure,PH1025,2259,Atrial Fibrillation

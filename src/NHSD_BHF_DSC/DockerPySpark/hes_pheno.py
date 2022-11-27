@@ -93,12 +93,16 @@ diabetes_codelist = diabetes_codelist.union(diabetes_icd_codelist_df)
 # Params
 
 # Params
-hes_apc_diabetes_yaml = """\
-phenotype_name: diabetes
+hes_apc_yaml = """\
+phenotype_name: na
 table_tag: hes_apc
 codelist_format: bhf_tre
+quality_control:
+  # Time window for event date quality check. Any dates before or after this window must be excluded for quality assurance.
+  start_date_qc: "1900-01-01" # time window for event date quality check.
+  end_date_qc: "2022-08-31"  # final_production date
 pheno_details:
-  evdt_pheno: hes_diabetes_evdt
+  evdt_pheno: hesapc_evdt
   pheno_pattern: code_based_diagnosis # Todo
   terminology: ICD10
   check_code_type: no # if ture, set the code_type
@@ -118,13 +122,11 @@ table_details:
   production_date_str: '2022-08-31'
 hes_apc_specific:
   primary_diagnosis_only: no
-quality_control:
-  # Time window for event date quality check. Any dates before or after this window must be excluded for quality assurance.
-  start_date_qc: "1900-01-01" # time window for event date quality check.
-  end_date_qc: "2022-08-31"  # final_production date
+  code_col_3: DIAG_3_CONCAT
+  code_col_4: DIAG_4_CONCAT
 optional_settings:
   full_report: yes
-  spark_cache_midway: yes
+  spark_cache_midway: no
   impute_multi_col_null_dates: yes
   impute_multi_col_invalid_dates: yes
   drop_null_ids: yes
@@ -134,19 +136,19 @@ optional_settings:
 # hes_apc_diabetes_settings = yaml.load(hes_apc_diabetes_yaml, Loader=yaml.SafeLoader)
 
 diabetes_set_2 = make_code_base_pheno(df_in=hes_apc_df, table_tag="hes_apc",
-                                      param_yaml=hes_apc_diabetes_yaml,
+                                      param_yaml=hes_apc_yaml,
                                       codelist_df=diabetes_codelist, list_extra_cols_to_keep=["details"],
                                       pre_cleaned=False)
-display(diabetes_set_2.df_final)
+# display(diabetes_set_2.df_final)
 
-display(diabetes_set_2.df_pheno_alpha)
+# display(diabetes_set_2.df_pheno_alpha)
 
-display(diabetes_set_2.first_eventdate_pheno())
-display(diabetes_set_2.last_eventdate_pheno())
-display(diabetes_set_2.last_eventdate_pheno(show_code=False, show_isin_flag=True))
-display(diabetes_set_2.all_eventdates_pheno())
-# df_pandas_hes = diabetes_set_2.df_final.toPandas()
-# df_pandas_hes.to_csv("../../../fake_data/NHSD_BHF_DSC/df_pandas_hes.csv", index=False)
+# display(diabetes_set_2.first_eventdate_pheno())
+# display(diabetes_set_2.last_eventdate_pheno())
+# display(diabetes_set_2.all_eventdates_pheno(show_code=True, show_isin_flag=True))
+# display(diabetes_set_2.all_eventdates_pheno())
+df_pandas_hes = diabetes_set_2.df_final.toPandas()
+df_pandas_hes.to_csv("../../../fake_data/NHSD_BHF_DSC/df_pandas_hes.csv", index=False)
 
 '''
 df_pandas_loaded = import_csv(spark_session=spark_pyspark, table_name="df_pandas.csv",

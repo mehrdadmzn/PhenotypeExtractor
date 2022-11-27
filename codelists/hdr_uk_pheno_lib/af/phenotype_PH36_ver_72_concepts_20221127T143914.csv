@@ -1,0 +1,48 @@
+code,description,coding_system,concept_id,concept_version_id,concept_name,phenotype_id,phenotype_version_id,phenotype_name
+14AN.00,H/O: atrial fibrillation,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+14AR.00,History of atrial flutter,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+212R.00,Atrial fibrillation resolved,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+3272.00,ECG: atrial fibrillation,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+3273.00,ECG: atrial flutter,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+662S.00,Atrial fibrillation monitoring,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+6A9..00,Atrial fibrillation annual review,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+9Os..00,Atrial fibrillation monitoring administration,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+9Os0.00,Atrial fibrillation monitoring first letter,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+9Os1.00,Atrial fibrillation monitoring second letter,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+9Os2.00,Atrial fibrillation monitoring third letter,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+9Os3.00,Atrial fibrillation monitoring verbal invite,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+9Os4.00,Atrial fibrillation monitoring telephone invite,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+9hF..00,Exception reporting: atrial fibrillation quality indicators,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+9hF1.00,Excepted from atrial fibrillation qual indic: Inform dissent,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+G573.00,Atrial fibrillation and flutter,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+G573000,Atrial fibrillation,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+G573100,Atrial flutter,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+G573200,Paroxysmal atrial fibrillation,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+G573300,Non-rheumatic atrial fibrillation,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+G573400,Permanent atrial fibrillation,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+G573500,Persistent atrial fibrillation,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+G573z00,Atrial fibrillation and flutter NOS,Read codes v2,C789,2717,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+1268,Paroxysmal atrial fibrillation (3),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+1664,"Atrial fibrillation, not otherwise specified (5)",Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+1757,Atrial flutter (7),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+18746,Atrial fibrillation monitoring (2),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+2212,Atrial fibrillation or flutter (6),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+23437,Atrial fibrillation or flutter (6),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+28994,History of atrial fibrillation or flutter (1),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+35127,"Atrial fibrillation, not otherwise specified (5)",Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+3757,"Atrial fibrillation, not otherwise specified (5)",Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+39114,Atrial fibrillation monitoring (2),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+45773,Atrial fibrillation monitoring (2),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+57832,Atrial fibrillation monitoring (2),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+63350,Atrial fibrillation monitoring (2),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+6345,History of atrial fibrillation or flutter (1),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+6771,Atrial flutter (7),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+90187,Atrial fibrillation monitoring (2),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+90188,Atrial fibrillation monitoring (2),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+90189,Atrial fibrillation monitoring (2),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+90190,Atrial fibrillation monitoring (2),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+90191,Atrial fibrillation monitoring (2),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+93460,History of atrial fibrillation or flutter (1),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+96076,Persistent or permanent atrial fibrillation (4),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+96277,Persistent or permanent atrial fibrillation (4),Med codes,C790,2719,Atrial fibrillation - Primary care,PH36,72,Atrial fibrillation
+I48,Atrial fibrillation and flutter,ICD10 codes,C791,2721,Atrial fibrillation - Secondary care - Diagnoses,PH36,72,Atrial fibrillation

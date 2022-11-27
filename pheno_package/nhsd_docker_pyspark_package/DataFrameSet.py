@@ -451,6 +451,9 @@ class PhenoTableSetHesApc(PhenoTableCodeBased):
         super().__init__(df_raw, param_yaml)
 
     def cleaning_and_report(self, list_extra_cols_to_keep=[]):
+        # add code_col_3 and code_col_4 that are specific to HeS APC (concaticated columns)
+        list_extra_cols_to_keep = list_extra_cols_to_keep + [self.ps.code_col_3, self.ps.code_col_4]
+
         super().cleaning_and_report(list_extra_cols_to_keep)
         # Todo make the text constant based
         if self.ps.pheno_pattern == "code_based_diagnosis":
@@ -483,8 +486,23 @@ class PhenoTableSetHesApc(PhenoTableCodeBased):
         print(
             "Making df_pheno_flag: New flags are added: code_hit indicates the row is a candidate phenotype. code_type indicates the rows with the same values in code_type parameter. For HES APC, any '.' character in DIAG_4_CONCAT is removed ")
         self.df_pheno_flag = self.df_pheno_mixed
+
         self.df_pheno_flag = self.df_pheno_flag.withColumn(self.ps.code_col,
                                                            F.regexp_replace(F.col(self.ps.code_col), "\\.", ""))
+        self.df_pheno_flag = self.df_pheno_flag.withColumn(self.ps.code_col_4,
+                                                           F.regexp_replace(F.col(self.ps.code_col_4), "\\.", ""))
+        self.df_pheno_flag = self.df_pheno_flag.withColumn(self.ps.code_col_3,
+                                                           F.regexp_replace(F.col(self.ps.code_col_3), "\\.", ""))
+        # check to see of all codes are 4 or 3 caracters long, or a mixture
+        code_length = "both"
+        if all([len(x) == 3 for x in codelist_list]):
+            code_length = "3"
+        elif all([len(x) == 4 for x in codelist_list]):
+            code_length == "4"
+
+        # default is the 4_concat
+        # self.df_pheno_flag = self.df_pheno_flag.withColumn("temp_3_4", F.col(self.ps.code_col_4))
+
         # HeS APC specific: make an array of codes
         # temp_col = "temp_col"
         # list_hit_col = "list_hit"
@@ -493,19 +511,38 @@ class PhenoTableSetHesApc(PhenoTableCodeBased):
 
         # If primary diagnosis only
         if self.ps.primary_diagnosis_only:
+
             self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_any",
                                                                F.array(
-                                                                   F.split(F.col(self.ps.code_col), ",")[0]))
+                                                                   F.split(F.col(self.ps.code_col_4), ",")[0]))
+            # if the codelist contains 3_lengh codes
+            if (code_length == "3") or (code_length == "both"):
+                self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_any",
+
+                                                                   F.array_union(F.col("list_hit_any"), F.array(
+                                                                       F.split(F.col(self.ps.code_col_3), ",")[
+                                                                           0])))
+
+
+
+
         else:
             self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_any",
-                                                               F.split(F.col(self.ps.code_col), ","))
+                                                               F.array(F.split(F.col(self.ps.code_col_4), ",")))
+            # if the codelist contains 3_lengh codes
+            if (code_length == "3") or (code_length == "both"):
+                self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_any",
+                                                                   F.flatten(
+                                                                       F.array_union(F.col("list_hit_any"), F.array(
+                                                                           F.split(F.col(self.ps.code_col_3), ",")))))
 
-        # Temp_col hols a list of all codelists that match the code_type
+            # Temp_col hols a list of all codelists that match the code_type
         self.df_pheno_flag = self.df_pheno_flag.withColumn("temp_col",
                                                            F.array([F.lit(x) for x in codelist_list]))
         self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_pheno",
                                                            F.array_intersect(F.col("list_hit_any"),
                                                                              F.col("temp_col")))
+
         self.df_pheno_flag = self.df_pheno_flag.withColumn("codeNtype_hit",
                                                            F.when(F.size(F.col("list_hit_pheno")) > 0,
                                                                   F.lit(1)).otherwise(F.lit(0)))
@@ -544,8 +581,11 @@ class PhenoTableSetHesApc(PhenoTableCodeBased):
         print(
             "making df_pheno_beta: The dataframe with code_hit and code_type_hit applied and only with  index_col, code, eventdate, and isin_flag")
         self.df_pheno_beta = self.df_pheno_alpha.filter(F.col("codeNtype_hit") == 1)
-        columns_to_keep = [self.ps.index_col, self.ps.evdt_pheno, self.ps.code_col,
-                           "list_hit_pheno"] + list_extra_cols_to_keep
+
+        # Todo for now code_col and code_col_4 are the same. To keep in inline with other classes, both are kept. So: set
+        columns_to_keep = list(set([self.ps.index_col, self.ps.evdt_pheno, self.ps.code_col,
+                                    "list_hit_pheno"] + [self.ps.code_col_3,
+                                                         self.ps.code_col_4] + list_extra_cols_to_keep))
 
         self.df_pheno_beta = self.df_pheno_beta.select(columns_to_keep)
         self.df_pheno_beta = self.df_pheno_beta.withColumn(self.isin_flag_col, F.lit(1))
