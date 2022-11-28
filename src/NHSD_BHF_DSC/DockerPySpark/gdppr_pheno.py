@@ -92,11 +92,11 @@ diabetes_codelist.select(F.col("name")).distinct().show()
 
 # Params
 gdppr_diabetes_yaml = """\
-phenotype_name: diabetes
+phenotype_name: na
 table_tag: gdppr
 codelist_format: bhf_tre
 pheno_details:
-  evdt_pheno: gdppr_diabetes_evdt
+  evdt_pheno: gdppr_evdt
   pheno_pattern: code_based_diagnosis # Todo
   terminology: SNOMED
   check_code_type: no
@@ -142,11 +142,12 @@ diabetes_set_1 = make_code_base_pheno(df_in=gdppr_df, table_tag="gdppr",
 # display(diabetes_set_1.df_sel)
 
 display(diabetes_set_1.df_final)
+df_pandas = diabetes_set_1.df_final.toPandas()
+df_pandas.to_csv("../DockerPySpark/gdppr_clean.csv", header=True, index=False)
+# display(diabetes_set_1.df_pheno_alpha)
+# display(diabetes_set_1.df_pheno_beta)
 
-display(diabetes_set_1.df_pheno_alpha)
-display(diabetes_set_1.df_pheno_beta)
-
-display(diabetes_set_1.first_eventdate_pheno())
-display(diabetes_set_1.last_eventdate_pheno())
-display(diabetes_set_1.last_eventdate_pheno(show_code=False, show_isin_flag=True))
-display(diabetes_set_1.all_eventdates_pheno())
+# display(diabetes_set_1.first_eventdate_pheno())
+# display(diabetes_set_1.last_eventdate_pheno())
+# display(diabetes_set_1.last_eventdate_pheno(show_code=False, show_isin_flag=True))
+# display(diabetes_set_1.all_eventdates_pheno())

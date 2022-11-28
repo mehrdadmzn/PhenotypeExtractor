@@ -96,11 +96,11 @@ phenotype_name: diabetes
 table_tag: gdppr
 codelist_format: bhf_tre
 pheno_details:
-  evdt_pheno: gdppr_diabetes_evdt
+  evdt_pheno: gdppr_evdt
   pheno_pattern: code_based_diagnosis # Todo
   terminology: SNOMED
   check_code_type: no
-  code_type: both
+  code_type: incident
   limit_pheno_window: no # if set to yes, the following two optins must be set
   pheno_window_start: '1900-06-12'
   pheno_window_end: '2021-06-12'
@@ -134,28 +134,8 @@ optional_settings:
   drop_remaining_invalid_dates: yes
 """
 gdppr_diabetes_settings = yaml.load(gdppr_diabetes_yaml, Loader=yaml.SafeLoader)
-# COMMAND ----------
 
-# diabetes_set_1 = make_code_base_pheno(df_raw=gdppr_df, table_tag="gdppr",
-#                                     param_yaml=gdppr_diabetes_yaml, codelist_df=diabetes_codelist,
-#                                     list_extra_cols_to_keep=["details"])
-
-# display(diabetes_set_1.df_sel)
-
-# display(diabetes_set_1.df_final)
-
-# display(diabetes_set_1.df_pheno_alpha)
-# display(diabetes_set_1.df_pheno_beta)
-
-# display(diabetes_set_1.first_eventdate_pheno())
-# display(diabetes_set_1.last_eventdate_pheno())
-# display(diabetes_set_1.last_eventdate_pheno(show_code=False, show_isin_flag=True))
-# display(diabetes_set_1.all_eventdates_pheno())
-# Test of saving, loadig,and phenotyping
-# print("try saving and loading")
-# df_pandas = diabetes_set_1.df_final.toPandas()
-# df_pandas.to_csv("df_pandas.csv", index=False)
-df_pandas_loaded = import_csv(spark_session=spark_pyspark, table_name="df_pandas.csv",
+df_pandas_loaded = import_csv(spark_session=spark_pyspark, table_name="gdppr_clean.csv",
                               path="../../../fake_data/NHSD_BHF_DSC",
                               databricks_import=False)
 
@@ -171,5 +151,4 @@ display(diabetes_set_1.df_pheno_beta)
 
 display(diabetes_set_1.first_eventdate_pheno())
 display(diabetes_set_1.last_eventdate_pheno())
-display(diabetes_set_1.last_eventdate_pheno(show_code=False, show_isin_flag=True))
-display(diabetes_set_1.all_eventdates_pheno())
+display(diabetes_set_1.all_eventdates_pheno(show_code=False, show_isin_flag=True))

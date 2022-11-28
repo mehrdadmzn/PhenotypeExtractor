@@ -397,10 +397,6 @@ class PhenoTableSetGdppr(PhenoTableCodeBased):
         # Todo test: check if the type of the pheno_pattern is code_based_diagnosis. also that code_column
 
         temp_codelist = codelist_df.filter(F.lower(F.col("terminology")) == str(self.ps.terminology).lower())
-        if (self.ps.check_code_type):
-            if len(self.ps.code_type_list) > 0:
-                temp_codelist = temp_codelist.filter(
-                    F.col("code_type").cast(T.StringType()).isin(list(map(str, self.ps.code_type_list))))
 
         # keep only rows with the codes in the codelist. also make a column indicating this
         codelist_pandas = temp_codelist.select(F.col("code")).toPandas()["code"]
@@ -422,13 +418,28 @@ class PhenoTableSetGdppr(PhenoTableCodeBased):
                                                                 F.lit(0)))
         print(
             " code_type indicates the rows with the same values in code_type parameter. If check_code_type is set to False, all values in code_type_hit will be 1. ")
-        self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit", F.lit(1))
-        if self.ps.check_code_type:
-            if len(self.ps.code_type_list) > 0:
+
+        self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit", F.lit(0))
+        if (self.ps.check_code_type):
+            if (str(self.ps.code_type) == "0") or (str(self.ps.code_type) == "historical"):
                 self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit",
-                                                                   F.when(F.col("code_type").cast(T.StringType()).isin(
-                                                                       list(map(str, self.ps.code_type_list))),
+                                                                   F.when(
+                                                                       F.col("code_type").cast(
+                                                                           T.StringType()) == "0",
                                                                        F.lit(1)).otherwise(F.lit(0)))
+
+            elif (str(self.ps.code_type) == "1") or (str(self.ps.code_type) == "incident"):
+                self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit",
+                                                                   F.when(
+                                                                       F.col("code_type").cast(
+                                                                           T.StringType()) == "1",
+                                                                       F.lit(1)).otherwise(F.lit(0)))
+
+            else:
+                self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit", F.lit(1))
+        else:
+            self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit", F.lit(1))
+
         print(
             "Making df_pheno_alpha: The dataframe with time window applied. If limit_pheno_window = True, the event dates will be limited to a time window from (and including) pheno_window_start to (and including) pheno_window_end ")
 

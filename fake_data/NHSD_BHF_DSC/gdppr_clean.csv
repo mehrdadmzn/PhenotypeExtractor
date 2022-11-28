@@ -1,0 +1,13 @@
+details,RECORD_DATE,CODE,NHS_NUMBER_DEID,DATE,gdppr_evdt
+brittle diabetes-DATE larger than RECORD_DATE,2018-08-09,11530004,cat_1,2020-06-12,2020-06-12
+Ketoacidosis in diabetes-DATE smaller than RECORD_DATE,2019-08-11,421750000,cat_4,2018-09-11,2018-09-11
+Diabetic on insulin-RECORD_DATE larger than DATE,2022-01-01,170747006,cat_1,2021-07-11,2021-07-11
+History of diabetes-RECROD_DATE null,,472969004,cat_1,2020-05-13,2020-05-13
+Ketoacidosis in diabetes-DATE null,2019-03-11,421750000,cat_2,,2019-03-11
+Ketoacidosis in diabetes-both dates are the same,2019-09-11,421750000,cat_4,2019-09-11,2019-09-11
+Hf Only DATE,,84114007,cat_3,2021-01-12,2021-01-12
+Ketoacidosis in diabetes-DATE null,2019-03-11,421750000,cat_3,,2019-03-11
+covid diagnosis,,1240381000000100,cat_3,2021-02-11,2021-02-11
+covid diagnosis,,1321541000000100,cat_1,2020-01-12,2020-01-12
+Covid diagnosis before pandemic,,1321761000000103,cat_4,2017-01-13,2017-01-13
+Ketoacidosis in diabetes-code null,2021-07-13,,cat_3,2021-07-13,2021-07-13
