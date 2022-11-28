@@ -59,14 +59,14 @@ masterdf = import_csv(spark_session=spark_pyspark, table_name="master_codelist.c
 # COMMAND ---------- Diabetes Import ICD-10 only codes using copy and paste (open the csv in Visual Studio Code)
 # Note: we need tab delimited file. Open the csv file in Excel, select the cells with data only, paste in a new .txt
 # file in Visual Studio Code, then copy and paste in triple double-quotes.
-text_input = """
+text_input_3_4 = """
 name	terminology	code	term	code_type	RecordDate
 diabetes	ICD10	E10	Insulin-dependent diabetes mellitus	1	20210127
 diabetes	ICD10	E10X	Insulin-dependent diabetes mellitus	1	20210127
 diabetes	ICD10	E10Y	Insulin-dependent diabetes mellitus	1	20210127
 diabetes	ICD10	E11	Non-insulin-dependent diabetes mellitus	1	20210127
 diabetes	ICD10	E12	Malnutrition-related diabetes mellitus	1	20210127
-diabetes	ICD10	O242	Diabetes mellitus in pregnancy: Pre-existing malnutrition-related diabetes mellitus	1	20210127
+diabetes	ICD10	9242	Diabetes mellitus in pregnancy: Pre-existing malnutrition-related diabetes mellitus	1	20210127
 diabetes	ICD10	E13	Other specified diabetes mellitus	1	20210127
 diabetes	ICD10	E14	Unspecified diabetes mellitus	1	20210127
 diabetes	ICD10	G590	Diabetic mononeuropathy	1	20210127
@@ -75,11 +75,53 @@ diabetes	ICD10	H280	Diabetic cataract	1	20210127
 diabetes	ICD10	H360	Diabetic retinopathy	1	20210127
 diabetes	ICD10	M142	Diabetic athropathy	1	20210127
 diabetes	ICD10	N083	Glomerular disorders in diabetes mellitus	1	20210127
-diabetes	ICD10	O240	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, insulin-dependent	0	20210127
-diabetes	ICD10	O241	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, non-insulin-dependent	0	20210127
-diabetes	ICD10	O243	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, unspecified	0	20210127
+diabetes	ICD10	0240	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, insulin-dependent	0	20210127
+diabetes	ICD10	024	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, non-insulin-dependent	0	20210127
+diabetes	ICD10	0243	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, unspecified	0	20210127
 """
-diabetes_icd_codelist, header = cell_csv_import(text_input, drop_header=True, delimiter="\t", format="tre_masterlist")
+text_input_4 = """
+name	terminology	code	term	code_type	RecordDate
+diabetes	ICD10	E10X	Insulin-dependent diabetes mellitus	1	20210127
+diabetes	ICD10	E10X	Insulin-dependent diabetes mellitus	1	20210127
+diabetes	ICD10	E10Y	Insulin-dependent diabetes mellitus	1	20210127
+diabetes	ICD10	E11X	Non-insulin-dependent diabetes mellitus	1	20210127
+diabetes	ICD10	E12X	Malnutrition-related diabetes mellitus	1	20210127
+diabetes	ICD10	0242	Diabetes mellitus in pregnancy: Pre-existing malnutrition-related diabetes mellitus	1	20210127
+diabetes	ICD10	E13X	Other specified diabetes mellitus	1	20210127
+diabetes	ICD10	E14X	Unspecified diabetes mellitus	1	20210127
+diabetes	ICD10	G590	Diabetic mononeuropathy	1	20210127
+diabetes	ICD10	G632	Diabetic polyneuropathy	1	20210127
+diabetes	ICD10	H280	Diabetic cataract	1	20210127
+diabetes	ICD10	H360	Diabetic retinopathy	1	20210127
+diabetes	ICD10	M142	Diabetic athropathy	1	20210127
+diabetes	ICD10	N083	Glomerular disorders in diabetes mellitus	1	20210127
+diabetes	ICD10	0240	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, insulin-dependent	0	20210127
+diabetes	ICD10	0240	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, non-insulin-dependent	0	20210127
+diabetes	ICD10	0243	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, unspecified	0	20210127
+"""
+
+text_input_3 = """
+name	terminology	code	term	code_type	RecordDate
+diabetes	ICD10	E10	Insulin-dependent diabetes mellitus	1	20210127
+diabetes	ICD10	E10	Insulin-dependent diabetes mellitus	1	20210127
+diabetes	ICD10	E10	Insulin-dependent diabetes mellitus	1	20210127
+diabetes	ICD10	E11	Non-insulin-dependent diabetes mellitus	1	20210127
+diabetes	ICD10	E12	Malnutrition-related diabetes mellitus	1	20210127
+diabetes	ICD10	924	Diabetes mellitus in pregnancy: Pre-existing malnutrition-related diabetes mellitus	1	20210127
+diabetes	ICD10	E13	Other specified diabetes mellitus	1	20210127
+diabetes	ICD10	E14	Unspecified diabetes mellitus	1	20210127
+diabetes	ICD10	G59	Diabetic mononeuropathy	1	20210127
+diabetes	ICD10	G63	Diabetic polyneuropathy	1	20210127
+diabetes	ICD10	H28	Diabetic cataract	1	20210127
+diabetes	ICD10	H36	Diabetic retinopathy	1	20210127
+diabetes	ICD10	M14	Diabetic athropathy	1	20210127
+diabetes	ICD10	N08	Glomerular disorders in diabetes mellitus	1	20210127
+diabetes	ICD10	024	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, insulin-dependent	0	20210127
+diabetes	ICD10	024	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, non-insulin-dependent	0	20210127
+diabetes	ICD10	924	Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, unspecified	0	20210127
+"""
+diabetes_icd_codelist, header = cell_csv_import(text_input_3_4, drop_header=True, delimiter="\t",
+                                                format="tre_masterlist")
 # print(diabetes_icd_codelist)
 # print(header)
 diabetes_icd_codelist_df = list_to_pyspark_df(spark_pyspark, diabetes_icd_codelist, header)
@@ -94,7 +136,7 @@ diabetes_codelist = diabetes_codelist.union(diabetes_icd_codelist_df)
 
 # Params
 hes_apc_diabetes_yaml = """\
-phenotype_name: DIABETES
+phenotype_name: diabetes
 table_tag: hes_apc
 codelist_format: bhf_tre
 pheno_details:
@@ -102,7 +144,7 @@ pheno_details:
   pheno_pattern: code_based_diagnosis # Todo
   terminology: ICD10
   check_code_type: no # if ture, set the code_type
-  code_type: incident # option: "1" or "incident", "0" or "historical", "both" for 1 and 0, "none" to dismiss 
+  code_type: historical # option: "1" or "incident", "0" or "historical", "both" for 1 and 0, "none" to dismiss 
   limit_pheno_window: no # if set to yes, the following two optins must be set
   pheno_window_start: '1900-06-12'
   pheno_window_end: '2021-06-12'
@@ -136,26 +178,7 @@ optional_settings:
 hes_apc_diabetes_settings = yaml.load(hes_apc_diabetes_yaml, Loader=yaml.SafeLoader)
 # COMMAND ----------
 
-# diabetes_set_1 = make_code_base_pheno(df_raw=gdppr_df, table_tag="gdppr",
-#                                     param_yaml=gdppr_diabetes_yaml, codelist_df=diabetes_codelist,
-#                                     list_extra_cols_to_keep=["details"])
-
-# display(diabetes_set_1.df_sel)
-
-# display(diabetes_set_1.df_final)
-
-# display(diabetes_set_1.df_pheno_alpha)
-# display(diabetes_set_1.df_pheno_beta)
-
-# display(diabetes_set_1.first_eventdate_pheno())
-# display(diabetes_set_1.last_eventdate_pheno())
-# display(diabetes_set_1.last_eventdate_pheno(show_code=False, show_isin_flag=True))
-# display(diabetes_set_1.all_eventdates_pheno())
-# Test of saving, loadig,and phenotyping
-# print("try saving and loading")
-# df_pandas = diabetes_set_1.df_final.toPandas()
-# df_pandas.to_csv("df_pandas.csv", index=False)
-df_pandas_loaded = import_csv(spark_session=spark_pyspark, table_name="df_pandas_hes.csv",
+df_pandas_loaded = import_csv(spark_session=spark_pyspark, table_name="hes_apc_clean.csv",
                               path="../../../fake_data/NHSD_BHF_DSC",
                               databricks_import=False)
 diabetes_set_2 = make_code_base_pheno(df_in=df_pandas_loaded, table_tag="hes_apc",
@@ -165,9 +188,8 @@ diabetes_set_2 = make_code_base_pheno(df_in=df_pandas_loaded, table_tag="hes_apc
 
 # display(diabetes_set_2.df_pheno_alpha)
 
-# display(diabetes_set_2.first_eventdate_pheno())
-# display(diabetes_set_2.last_eventdate_pheno())
-# display(diabetes_set_2.last_eventdate_pheno(show_code=True, show_isin_flag=True))
+display(diabetes_set_2.first_eventdate_pheno())
+display(diabetes_set_2.last_eventdate_pheno())
 display(diabetes_set_2.all_eventdates_pheno(show_code=True, show_isin_flag=True))
 
 # Test of code existance in df

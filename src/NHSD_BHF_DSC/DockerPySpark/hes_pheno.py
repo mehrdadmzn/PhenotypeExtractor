@@ -148,7 +148,7 @@ diabetes_set_2 = make_code_base_pheno(df_in=hes_apc_df, table_tag="hes_apc",
 # display(diabetes_set_2.all_eventdates_pheno(show_code=True, show_isin_flag=True))
 # display(diabetes_set_2.all_eventdates_pheno())
 df_pandas_hes = diabetes_set_2.df_final.toPandas()
-df_pandas_hes.to_csv("../../../fake_data/NHSD_BHF_DSC/df_pandas_hes.csv", index=False)
+df_pandas_hes.to_csv("../../../fake_data/NHSD_BHF_DSC/hes_apc_clean.csv", header=True, index=False)
 
 '''
 df_pandas_loaded = import_csv(spark_session=spark_pyspark, table_name="df_pandas.csv",

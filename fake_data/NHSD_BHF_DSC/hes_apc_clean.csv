@@ -1,0 +1,19 @@
+details,PERSON_ID_DEID,EPISTART,EPIEND,DIAG_3_CONCAT,DIAG_4_CONCAT,ADMIDATE,hesapc_evdt
+1st-diabetes,cat_1,2018-07-12,2018-07-14,H28,H280,2018-07-12,2018-07-12
+1st-diabetes_2nd-CKD,cat_1,2018-07-14,2018-07-16,"E11,Z49","E11X,Z490",2018-07-12,2018-07-14
+1st-covid,cat_1,2018-07-16,2018-07-20,U07,U071,2018-07-12,2018-07-16
+pre-existing diabetes_codetype_0,cat_6,2019-07-18,2019-09-20,024,0240,2019-07-18,2019-07-18
+1st-diabetes and ADMIDATE is null,cat_2,2018-07-16,2018-07-20,H28,H280,,2018-07-16
+1st-diabetes and ADMIDATE and EPISTART are null,cat_3,,2018-07-20,H28,H280,,2018-07-20
+1st-diabetes and ADMIDATE and EPISTART are null and DISDATE is 1801-01-01,cat_6,,2018-07-20,H28,H280,,2018-07-20
+"1st-CKD,no diabetes",cat_4,2017-11-14,2017-11-16,Z49,Z490,2017-11-12,2017-11-14
+"Both are diabetes, both code_types = 1",cat_6,2017-11-16,2017-11-19,"E11,H28","E11X,H280",2017-11-12,2017-11-16
+"Both are diabetes, the first one is code_type = 0",cat_6,2017-11-16,2017-11-19,"024,H28","0240,H280",2017-11-12,2017-11-16
+"The first two are diabetes,third covid",cat_6,2018-11-16,2018-11-19,"E13,E11","E13X,E11X,U072",2018-11-12,2018-11-16
+"first ckd, the rest are diabetes,",cat_6,2018-11-16,2018-11-19,"Z49,E11,E13","Z490,E11X,E13X",2018-11-12,2018-11-16
+"1st-CKS,2nd-diabetes",cat_4,2017-11-16,2017-11-19,"Z49,E11","Z490,E11X",2017-11-12,2017-11-16
+last-diabetes,cat_5,2018-03-12,2018-03-14,"Y84,I77,H28","Y841,I770,H280",2018-03-12,2018-03-12
+no diabetes covid only,cat_5,2018-03-1,2018-03-1,U07,U072,2018-03-01,2018-03-1
+code null and DIAG_COUNT null,cat_3,2018-03-17,2018-03-17,,,2018-03-17,2018-03-17
+invalid date replacement test,cat_3,1800-07-20,2016-07-22,N08,N083,2016-07-21,2016-07-22
+"First code is the invalid code, DIAG_COUNT is null",cat_2,1800-07-20,2016-07-22,R69,R69X,2016-07-21,2016-07-22

@@ -477,10 +477,20 @@ class PhenoTableSetHesApc(PhenoTableCodeBased):
         # In Hes APC, for simplicity, unwanted  codes (based on code_type) will be removed from the codelist
 
         temp_codelist = codelist_df.filter(F.lower(F.col("terminology")) == str(self.ps.terminology).lower())
+        # A simpler approach in HES APC
+
         if (self.ps.check_code_type):
-            if len(self.ps.code_type_list) > 0:
+            if (str(self.ps.code_type) == "0") or (str(self.ps.code_type) == "historical"):
                 temp_codelist = temp_codelist.filter(
-                    F.col("code_type").cast(T.StringType()).isin(list(map(str, self.ps.code_type_list))))
+                    F.col("code_type").cast(T.StringType()) == "0")
+
+            elif (str(self.ps.code_type) == "1") or (str(self.ps.code_type) == "incident"):
+                temp_codelist = temp_codelist.filter(
+                    F.col("code_type").cast(T.StringType()) == "1")
+            else:
+                pass
+        else:
+            pass
 
         codelist_pandas = temp_codelist.select(F.col("code")).toPandas()["code"]
         # Hes apc specific Drop . form ICD10 codes
@@ -505,86 +515,69 @@ class PhenoTableSetHesApc(PhenoTableCodeBased):
         self.df_pheno_flag = self.df_pheno_flag.withColumn(self.ps.code_col_3,
                                                            F.regexp_replace(F.col(self.ps.code_col_3), "\\.", ""))
         # check to see of all codes are 4 or 3 caracters long, or a mixture
-        code_length = "both"
-        if all([len(x) == 3 for x in codelist_list]):
-            code_length = "3"
-        elif all([len(x) == 4 for x in codelist_list]):
-            code_length == "4"
-
-        # default is the 4_concat
-        # self.df_pheno_flag = self.df_pheno_flag.withColumn("temp_3_4", F.col(self.ps.code_col_4))
-
-        # HeS APC specific: make an array of codes
-        # temp_col = "temp_col"
-        # list_hit_col = "list_hit"
-        # temp_type_col = "temp_type_col"
-        # temp_map_col = "temp_map_col"
+        all_3 = all([len(x) == 3 for x in codelist_list])
 
         # If primary diagnosis only
         if self.ps.primary_diagnosis_only:
 
-            self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_any",
-                                                               F.array(
-                                                                   F.split(F.col(self.ps.code_col_4), ",")[0]))
-            # if the codelist contains 3_lengh codes
-            if (code_length == "3") or (code_length == "both"):
+            # If all codes are 3-char, the array_union will not act as expected
+            # Initialise with an empty array first
+            if all_3:
                 self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_any",
 
-                                                                   F.array_union(F.col("list_hit_any"), F.array(
-                                                                       F.split(F.col(self.ps.code_col_3), ",")[
-                                                                           0])))
+                                                                   F.array(F.split(F.col(self.ps.code_col_3), ",")[0]))
+            else:
+                # Do not union the column with itself. Create a temporaty one
+                self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_4",
+
+                                                                   F.array(F.split(F.col(self.ps.code_col_4), ",")[0]))
+                self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_3",
+
+                                                                   F.array(F.split(F.col(self.ps.code_col_3), ",")[0]))
+                self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_any",
+
+                                                                   F.concat(F.col("list_hit_4"),
+                                                                            F.col("list_hit_3")))
 
 
 
 
         else:
-            self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_any",
-                                                               F.array(F.split(F.col(self.ps.code_col_4), ",")))
-            # if the codelist contains 3_lengh codes
-            if (code_length == "3") or (code_length == "both"):
+            if all_3:
                 self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_any",
-                                                                   F.flatten(
-                                                                       F.array_union(F.col("list_hit_any"), F.array(
-                                                                           F.split(F.col(self.ps.code_col_3), ",")))))
 
+                                                                   F.split(F.col(self.ps.code_col_3), ","))
+            else:
+                self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_4",
+
+                                                                   F.split(F.col(self.ps.code_col_4), ","))
+                self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_3",
+
+                                                                   F.split(F.col(self.ps.code_col_3), ","))
+
+                self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_any",
+
+                                                                   F.concat(F.col("list_hit_4"),
+                                                                            F.col("list_hit_3")))
             # Temp_col hols a list of all codelists that match the code_type
         self.df_pheno_flag = self.df_pheno_flag.withColumn("temp_col",
                                                            F.array([F.lit(x) for x in codelist_list]))
+
         self.df_pheno_flag = self.df_pheno_flag.withColumn("list_hit_pheno",
                                                            F.array_intersect(F.col("list_hit_any"),
                                                                              F.col("temp_col")))
+        # print("types")
+        # print(self.df_pheno_flag.dtypes)
+        # self.df_pheno_flag = self.df_pheno_flag.withColumn("codeNtype_hit",
+        #                                                F.when(F.size(F.col("list_hit_pheno")) > 0,
+        #                                                   F.lit(1)).otherwise(F.lit(0)))
+        self.df_pheno_flag = self.df_pheno_flag.withColumn("codeNtype_hit", F.when(
+            F.arrays_overlap(F.col("list_hit_any"), F.col("temp_col")), F.lit(1)).otherwise(F.lit(0)))
 
-        self.df_pheno_flag = self.df_pheno_flag.withColumn("codeNtype_hit",
-                                                           F.when(F.size(F.col("list_hit_pheno")) > 0,
-                                                                  F.lit(1)).otherwise(F.lit(0)))
-        #   F.when(F.col(self.ps.code_col).cast("string").isin(
-        #      codelist_list),
-        #     F.lit(1)).otherwise(
-        #   F.lit(0)))
-
-        # For code_type management in mu
-        #   code_type_pandas = temp_codelist.select(F.col("code_type")).toPandas()["code_type"]
-        #   code_type_list = list(map(lambda x: str(x), code_type_pandas))
-
-        #  self.df_pheno_flag = self.df_pheno_flag.withColumn(temp_type_col, F.array([F.lit(x) for x in code_type_list]))
-        #  self.df_pheno_flag = self.df_pheno_flag.withColumn(temp_map_col,
-        #                                             F.map_from_arrays(F.col("temp_col"), F.col(temp_type_col)))
-        #  self.df_pheno_flag = self.df_pheno_flag.withColumn("map_code_and_type",
-        #                                                    F.map_filter(F.col(temp_map_col),
-        #                                                                lambda k, v: F.array_contains(
-        #                                                                   F.col("list_hit"),
-        #                                                                 k))).withColumn("list_all_code_types",
-        #                                                                                F.map_values(F.col(
-        #                                                                                 "map_code_and_type")))
-        # self.df_pheno_flag = self.df_pheno_flag.withColumn("code_type_hit",
-        #                                       F.when(
-        #                                           F.forall(F.col("list_all_code_types"), lambda x: x == 1),
-        #                                        F.lit(1)).otherwise(F.lit(0)))
-        # .drop(temp_col).drop(temp_type_col)
         print(
             "Making df_pheno_alpha: The dataframe with time window applied. If limit_pheno_window = True, the event dates will be limited to a time window from (and including) pheno_window_start to (and including) pheno_window_end ")
 
-        self.df_pheno_alpha = self.df_pheno_flag.filter(F.col("codeNtype_hit") == 1)
+        self.df_pheno_alpha = self.df_pheno_flag
         if self.ps.limit_pheno_window:
             self.df_pheno_alpha = self.df_pheno_alpha.filter(
                 (F.col(self.ps.evdt_pheno) >= self.ps.pheno_window_start) & (
@@ -595,8 +588,10 @@ class PhenoTableSetHesApc(PhenoTableCodeBased):
 
         # Todo for now code_col and code_col_4 are the same. To keep in inline with other classes, both are kept. So: set
         columns_to_keep = list(set([self.ps.index_col, self.ps.evdt_pheno, self.ps.code_col,
-                                    "list_hit_pheno"] + [self.ps.code_col_3,
-                                                         self.ps.code_col_4] + list_extra_cols_to_keep))
+                                    #  "list_hit_pheno", "list_hit_any", 'list_hit_3', 'list_hit_4', "temp_col"] + [
+                                    "list_hit_pheno"] + [
+                                       self.ps.code_col_3,
+                                       self.ps.code_col_4] + list_extra_cols_to_keep))
 
         self.df_pheno_beta = self.df_pheno_beta.select(columns_to_keep)
         self.df_pheno_beta = self.df_pheno_beta.withColumn(self.isin_flag_col, F.lit(1))
