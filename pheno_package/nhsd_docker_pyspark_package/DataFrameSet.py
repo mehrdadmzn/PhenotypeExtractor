@@ -113,6 +113,8 @@ class DataFrameSet:
         if self.ps.code_col is not None:
             code_col_list.append(self.ps.code_col)
 
+        # print(f'''test: {list_extra_cols_to_keep}''')
+
         self.df_sel = self.df_sel.select(
             list(set([self.ps.index_col] + self.ps.evdt_col_list + code_col_list + list_extra_cols_to_keep)))
 
@@ -628,6 +630,29 @@ def concat_nonnull_eventdate_extractor(df: DataFrame, index_col, date_col) -> Da
     df_out = df_out.withColumn("list_distinct", F.array_distinct(F.col("list_all")))
     df_out = df_out.withColumn("count_distinct", F.size(F.col("list_distinct")))
     df_out = df_out.withColumnRenamed("rank_col", "count_all").drop("keep_rank").drop(date_col)
+
+    return df_out
+
+
+def concat_nonnull_maparray_extractor(df: DataFrame, index_col, date_col, code_col) -> DataFrame:
+    window_spec = Window.partitionBy(df[index_col]).orderBy(F.col(date_col).asc_nulls_last())
+
+    df_out = df.select(index_col, code_col, date_col,
+                       F.create_map(F.lit("code"), code_col, F.lit('evdt'), date_col).alias("map_dict"))
+
+    df_out = df_out.withColumn("rank_col", F.row_number().over(window_spec))
+    df_out = df_out.withColumn("list_all", F.collect_list(date_col).over(window_spec))
+    df_out = df_out.withColumn("maplist_all", F.collect_list("map_dict").over(window_spec))
+    df_first_infection = df_out.filter(F.col("rank_col") == 1).drop("rank_col")
+    df_out = df_out.withColumn("list_all", F.array_sort("list_all"))
+    window_rank = Window.partitionBy(df_out[index_col]).orderBy(F.col("rank_col").desc_nulls_last())
+    df_out = df_out.withColumn("keep_rank", F.row_number().over(window_rank))
+    df_out = df_out.filter(F.col("keep_rank") == 1)
+    # df_out = df_out.withColumn("count_null", F.col("rank_col") - F.size(F.col("list_all")))
+    df_out = df_out.withColumn("list_distinct", F.array_distinct(F.col("list_all")))
+    df_out = df_out.withColumn("count_distinct", F.size(F.col("list_distinct")))
+    df_out = df_out.withColumnRenamed("rank_col", "count_all").drop("keep_rank").drop(date_col).drop(code_col).drop(
+        "keep_rank").drop("map_dict")
 
     return df_out
 

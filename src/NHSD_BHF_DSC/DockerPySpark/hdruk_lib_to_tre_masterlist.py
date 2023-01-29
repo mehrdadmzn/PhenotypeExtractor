@@ -58,7 +58,6 @@ def temp_AF():
         sep='\t', index=False)
     return tre_pd
 
+# tre_pd = temp_AF()
 
-tre_pd = temp_AF()
-
-print("hello")
+# print("hello")

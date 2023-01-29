@@ -137,7 +137,7 @@ optional_settings:
 
 diabetes_set_2 = make_code_base_pheno(df_in=hes_apc_df, table_tag="hes_apc",
                                       param_yaml=hes_apc_yaml,
-                                      codelist_df=diabetes_codelist, list_extra_cols_to_keep=["details"],
+                                      codelist_df=None, list_extra_cols_to_keep=["details"],
                                       pre_cleaned=False)
 # display(diabetes_set_2.df_final)
 

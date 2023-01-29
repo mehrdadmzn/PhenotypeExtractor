@@ -44,7 +44,8 @@ def make_code_base_pheno(df_in: DataFrame, table_tag: str, param_yaml: dict, cod
         else:
             tset = PhenoTableSetGdppr(df_in, param_yaml=param_yaml)
             tset.cleaning_and_report(list_extra_cols_to_keep)
-        tset.extract_pheno_tables(codelist_df, list_extra_cols_to_keep)
+        if codelist_df is not None:
+            tset.extract_pheno_tables(codelist_df, list_extra_cols_to_keep)
 
     elif table_tag == "hes_apc":
         if pre_cleaned:
@@ -53,7 +54,8 @@ def make_code_base_pheno(df_in: DataFrame, table_tag: str, param_yaml: dict, cod
         else:
             tset = PhenoTableSetHesApc(df_in, param_yaml=param_yaml)
             tset.cleaning_and_report(list_extra_cols_to_keep)
-        tset.extract_pheno_tables(codelist_df, list_extra_cols_to_keep)
+        if codelist_df is not None:
+            tset.extract_pheno_tables(codelist_df, list_extra_cols_to_keep)
     else:
 
         tset = None

@@ -12,7 +12,7 @@ from pyspark.sql import SparkSession
 
 from pheno_package.input_output_package.CsvFileLoader import import_csv, cell_csv_import, list_to_pyspark_df
 from pheno_package.nhsd_docker_pyspark_package.DataFrameSet import PhenoTableSetDateBased, PhenoTableSetGdppr, \
-    PhenoTableSetHesApc
+    PhenoTableSetHesApc, concat_nonnull_maparray_extractor
 from pheno_package.nhsd_docker_pyspark_package.FacadeFunctions import make_code_base_pheno
 from pheno_package.pyspark_databricks_interface.DockerPysparkToDatabricks import display
 
@@ -152,3 +152,7 @@ display(diabetes_set_1.df_pheno_beta)
 display(diabetes_set_1.first_eventdate_pheno())
 display(diabetes_set_1.last_eventdate_pheno())
 display(diabetes_set_1.all_eventdates_pheno(show_code=False, show_isin_flag=True))
+
+display(
+    concat_nonnull_maparray_extractor(diabetes_set_1.df_pheno_alpha, index_col="NHS_NUMBER_DEID", date_col="gdppr_evdt",
+                                      code_col="CODE"))
